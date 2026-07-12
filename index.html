@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waterfly Technologies — As Fast as a Plane, As Cheap as a Ship</title>
+<meta name="description" content="Waterfly Technologies, an IIT Madras incubated startup in Chennai, builds Wing-In-Ground craft that fly metres above the sea — near-aircraft speed at ship-like operating cost, roughly 10x cheaper than air freight.">
+<meta name="theme-color" content="#FAF7F2">
+<link rel="canonical" href="https://waterflytechnologies.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://waterflytechnologies.com/">
+<meta property="og:site_name" content="Waterfly Technologies">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="Waterfly Technologies — As Fast as a Plane, As Cheap as a Ship">
+<meta property="og:description" content="Wing-In-Ground craft from an IIT Madras incubated startup: high-speed, sustainable marine transportation that operates straight from the waterfront.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Waterfly Technologies — As Fast as a Plane, As Cheap as a Ship">
+<meta name="twitter:description" content="Wing-In-Ground craft that fly metres above the sea: near-aircraft speed at ship-like cost, straight from the waterfront.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cellipse cx='14.5' cy='13' rx='10.5' ry='3.4' transform='rotate(-24 14.5 13)' fill='%23E4572E'/%3E%3Cellipse cx='25.5' cy='13' rx='10.5' ry='3.4' transform='rotate(24 25.5 13)' fill='%23E4572E'/%3E%3Cellipse cx='15.5' cy='19' rx='8.6' ry='2.7' transform='rotate(-38 15.5 19)' fill='%23C4400F' opacity='.7'/%3E%3Cellipse cx='24.5' cy='19' rx='8.6' ry='2.7' transform='rotate(38 24.5 19)' fill='%23C4400F' opacity='.7'/%3E%3Cpath d='M20 9.5c1.3 4 1.3 18-.001 27.5-1.3-9.5-1.3-23.5.001-27.5Z' fill='%230C2340'/%3E%3Ccircle cx='20' cy='7.6' r='2.5' fill='%230C2340'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..640;1,9..144,340..640&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF7F2;
+  --paper-2:#F3EEE5;
+  --ink:#0C2340;
+  --ink-soft:#43586F;
+  --accent:#C4400F;
+  --accent-bright:#E4572E;
+  --accent-soft:#FF8A5E;
+  --sea:#1B5E7C;
+  --line:rgba(12,35,64,.16);
+  --line-soft:rgba(12,35,64,.08);
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'Cascadia Mono',monospace;
+  --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2.5rem; --s5:4rem; --s6:6rem; --s7:8.5rem;
+  --maxw:72rem;
+  --nav-h:3.8rem;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 14px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::selection{background:var(--ink);color:var(--paper)}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--serif);font-weight:480;line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+p{max-width:38rem}
+.container{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--paper);padding:.75rem 1.25rem;font-family:var(--mono);font-size:.8rem}
+.skip-link:focus{left:0}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* ---------- kicker / labels ---------- */
+.kicker{
+  display:flex;align-items:center;gap:.9rem;
+  font-family:var(--mono);font-size:.72rem;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--accent);
+}
+.kicker::before{content:"";width:2.4rem;height:1px;background:var(--accent);flex:none}
+.sec-head{display:grid;gap:var(--s3);margin-bottom:clamp(2.5rem,6vw,4rem)}
+.sec-head h2{font-size:clamp(1.9rem,4.4vw,3rem)}
+.sec-num{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;color:var(--ink-soft)}
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,247,242,.86);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled{box-shadow:0 6px 24px -18px rgba(12,35,64,.45)}
+.nav-inner{
+  max-width:var(--maxw);margin-inline:auto;
+  padding:.85rem clamp(1.25rem,4vw,2.5rem);
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand svg{width:2rem;height:2rem;flex:none}
+.brand-name{font-family:var(--serif);font-size:1.22rem;font-weight:560;letter-spacing:-.01em}
+.brand-name em{font-style:italic;color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:clamp(.9rem,2.5vw,2rem);list-style:none}
+.nav-links a{
+  text-decoration:none;font-family:var(--mono);font-size:.76rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+  padding:.35rem 0;border-bottom:1px solid transparent;
+  transition:color .2s ease,border-color .2s ease;
+}
+.nav-links a:hover{color:var(--ink);border-bottom-color:var(--accent)}
+.nav-links a.active{color:var(--ink);border-bottom-color:var(--accent)}
+.nav-links a.nav-cta{
+  color:var(--paper);background:var(--ink);border:1px solid var(--ink);
+  padding:.5rem 1rem;border-radius:99px;
+  transition:background .2s ease,border-color .2s ease;
+}
+.nav-links a.nav-cta:hover,
+.nav-links a.nav-cta.active{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(3.5rem,9vw,6.5rem)}
+.hero-copy{display:grid;gap:var(--s3);max-width:54rem}
+.hero h1{font-size:clamp(2.55rem,7.2vw,5.4rem);font-weight:500}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:480}
+.hero-sub{font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--ink-soft);max-width:42rem}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;list-style:none;
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft);
+}
+.hero-meta li::before{content:"";display:inline-block;width:.42rem;height:.42rem;border-radius:50%;background:var(--accent);margin-right:.55rem;vertical-align:.06em}
+.cta-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:var(--s2)}
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--mono);font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;padding:.95rem 1.5rem;border-radius:99px;border:1px solid var(--ink);
+  transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+}
+.btn svg{width:.9rem;height:.9rem;flex:none;transition:transform .25s ease}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--accent);border-color:var(--accent)}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost:hover svg{transform:translateY(3px)}
+.btn:active{transform:scale(.98)}
+/* ---------- hero plate (SVG scene) ---------- */
+.hero-plate{
+  margin-top:clamp(2.5rem,6vw,4.5rem);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,var(--paper) 0%,#EEF3F4 78%,#E4EDEF 100%);
+  overflow:hidden;
+}
+.hero-plate svg{width:100%;height:auto}
+.plate-caption{
+  display:flex;flex-wrap:wrap;gap:.35rem 1.5rem;justify-content:space-between;
+  max-width:none;
+  padding:.8rem 0;font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+}
+/* wave + craft motion — foreground drifts fastest, background slowest */
+.w-drift-a{animation:drift 22s linear infinite}
+.w-drift-b{animation:drift 14s linear infinite}
+.w-drift-c{animation:drift 9s linear infinite}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-240px)}}
+.craft-bob{animation:bob 6.5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media (max-width:700px){.dim-note{display:none}}
+/* ---------- value props ---------- */
+.props{padding-block:clamp(4rem,9vw,7rem)}
+.prop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,2.5rem)}
+.prop{
+  border-top:2px solid var(--ink);padding-top:var(--s3);
+  display:grid;gap:var(--s2);align-content:start;
+  transition:border-color .25s ease;
+}
+.prop:hover{border-top-color:var(--accent)}
+.prop:hover .prop-icon{transform:translateY(-3px)}
+.prop:hover .prop-icon .icon-accent{stroke:var(--accent-bright)}
+.prop-num{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;color:var(--ink-soft)}
+.prop-icon{width:3.25rem;height:3.25rem;transition:transform .3s ease}
+.prop-icon *{vector-effect:non-scaling-stroke}
+.prop h3{font-size:1.45rem}
+.prop p{font-size:.98rem;color:var(--ink-soft)}
+.stat-band{
+  margin-top:clamp(2.5rem,6vw,4rem);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding-block:clamp(1.75rem,4vw,2.75rem);
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.75rem 2rem;
+}
+.stat-band .big{
+  font-family:var(--serif);font-style:italic;font-weight:560;
+  font-size:clamp(3rem,8vw,5.5rem);line-height:1;color:var(--accent);
+  letter-spacing:-.02em;
+}
+.stat-band .label{font-size:clamp(1.05rem,2vw,1.35rem);font-family:var(--serif);max-width:24rem;line-height:1.35}
+.stat-band .foot{margin-left:auto;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+/* ---------- technology ---------- */
+.tech{padding-block:clamp(4rem,9vw,7rem);background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tech-cols{display:grid;grid-template-columns:5fr 4fr;gap:clamp(2rem,5vw,4.5rem);align-items:start;margin-bottom:clamp(2.5rem,6vw,4rem)}
+.tech-cols .lead{font-size:clamp(1.1rem,1.9vw,1.3rem);font-family:var(--serif);line-height:1.5}
+.tech-facts{display:grid;gap:var(--s3);border-left:1px solid var(--line);padding-left:clamp(1.25rem,3vw,2rem)}
+.tech-fact{display:grid;gap:.35rem}
+.tech-fact .t{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.tech-fact p{font-size:.96rem;color:var(--ink-soft)}
+.sheet{
+  background:var(--paper);border:1px solid var(--line);
+  box-shadow:0 24px 60px -44px rgba(12,35,64,.5);
+}
+.sheet-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sheet-scroll svg{min-width:760px;width:100%;height:auto}
+.sheet figcaption{
+  border-top:1px solid var(--line);
+  padding:.9rem clamp(1rem,2.5vw,1.5rem);
+  font-size:.92rem;color:var(--ink-soft);max-width:none;
+}
+/* ---------- use cases ---------- */
+.cases{padding-block:clamp(4rem,9vw,7rem)}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,3vw,2.5rem)}
+.case{
+  border:1px solid var(--line);background:var(--paper);
+  display:grid;grid-template-rows:auto 1fr;
+  transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;
+}
+.case:hover{border-color:var(--ink);box-shadow:0 20px 44px -34px rgba(12,35,64,.55);transform:translateY(-3px)}
+.case-art{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#F6F2EA,#EDF2F2)}
+.case-art svg{width:100%;height:auto}
+.case-body{padding:clamp(1.5rem,3vw,2.25rem);display:grid;gap:var(--s2);align-content:start;justify-items:start}
+.case-body h3{font-size:1.6rem}
+.case-body p{font-size:.98rem;color:var(--ink-soft)}
+.case-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.route-chip{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--accent);
+  border:1px solid rgba(196,64,15,.35);border-radius:99px;padding:.35rem .9rem;
+}
+.case-note{
+  border-top:1px dashed var(--line);padding-top:var(--s2);justify-self:stretch;
+  font-family:var(--mono);font-size:.76rem;line-height:1.7;color:var(--ink-soft);
+}
+/* ---------- media ---------- */
+.press{padding-block:clamp(4rem,9vw,7rem);border-top:1px solid var(--line)}
+.press-list{list-style:none;border-top:1px solid var(--line)}
+.press-item{
+  display:grid;grid-template-columns:minmax(11rem,16rem) 1fr;
+  gap:.5rem 2.5rem;align-items:baseline;
+  padding:clamp(1.4rem,3vw,2rem) 0;border-bottom:1px solid var(--line);
+}
+.press-item > *{transition:transform .25s ease}
+.press-item:hover > *{transform:translateX(.85rem)}
+.press-item:hover .press-logo{color:var(--accent)}
+.press-logo{font-size:1.3rem;line-height:1.2;transition:transform .25s ease,color .25s ease}
+.logo-et{font-family:var(--serif);font-weight:560;letter-spacing:.01em}
+.logo-n18{font-family:var(--sans);font-weight:600;letter-spacing:-.02em}
+.logo-mc{font-family:var(--sans);font-weight:600;text-transform:lowercase;letter-spacing:-.03em}
+.press-item p{font-size:.98rem;color:var(--ink-soft);max-width:44rem}
+.press-foot{margin-top:var(--s3);font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);max-width:none}
+/* ---------- vision ---------- */
+.vision{
+  background:var(--ink);color:var(--paper);
+  padding-block:clamp(4.5rem,10vw,8rem);
+  position:relative;overflow:hidden;
+}
+.vision .kicker{color:var(--accent-soft)}
+.vision .kicker::before{background:var(--accent-soft)}
+.vision blockquote p{
+  font-family:var(--serif);font-style:italic;font-weight:440;
+  font-size:clamp(1.7rem,4.6vw,3.3rem);line-height:1.22;letter-spacing:-.01em;
+  max-width:56rem;margin-top:var(--s3);text-wrap:balance;
+}
+.vision blockquote strong{font-weight:560;color:var(--accent-bright);font-style:italic}
+.vision figcaption{
+  margin-top:var(--s4);
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#9FB2C6;
+}
+.vision-waves{position:absolute;inset-inline:0;bottom:0;opacity:.5;pointer-events:none}
+/* ---------- contact ---------- */
+.contact{padding-block:clamp(4.5rem,10vw,8rem)}
+.contact-lede{font-size:clamp(1rem,1.6vw,1.15rem);color:var(--ink-soft);max-width:42rem}
+.contact-mail{
+  display:inline-block;text-decoration:none;
+  font-family:var(--serif);font-weight:500;letter-spacing:-.02em;
+  font-size:clamp(1.6rem,5.8vw,4rem);line-height:1.15;
+  border-bottom:2px solid var(--line);padding-bottom:.15em;
+  transition:color .25s ease,border-color .25s ease;
+  overflow-wrap:anywhere;
+}
+.contact-mail:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.contact-row{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;align-items:center;margin-top:var(--s4)}
+.link-arrow{
+  display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;
+  font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:.3rem;
+  transition:color .2s ease,border-color .2s ease;
+}
+.link-arrow svg{width:.85rem;height:.85rem;transition:transform .25s ease}
+.link-arrow:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.link-arrow:hover svg{transform:translate(2px,-2px)}
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding-block:var(--s4)}
+.foot-inner{
+  display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between;
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;color:var(--ink-soft);
+}
+.foot-brand{display:flex;align-items:center;gap:.5rem}
+.foot-brand svg{width:1.4rem;height:1.4rem;flex:none}
+/* ---------- reveal (JS progressive enhancement) ---------- */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.8,.3,1)}
+.js .reveal.in-view{opacity:1;transform:none}
+.js .prop-grid > .reveal:nth-child(2){transition-delay:.08s}
+.js .prop-grid > .reveal:nth-child(3){transition-delay:.16s}
+.js .case-grid > .reveal:nth-child(2){transition-delay:.1s}
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .js .reveal{opacity:1;transform:none}
+}
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .prop-grid{grid-template-columns:1fr}
+  .tech-cols{grid-template-columns:1fr}
+  .tech-facts{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:var(--s3)}
+  .case-grid{grid-template-columns:1fr}
+  .press-item{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  :root{--nav-h:5.4rem}
+  body{font-size:1rem}
+  .nav-inner{flex-wrap:wrap;row-gap:.1rem;padding-block:.6rem}
+  .nav-inner nav{flex-basis:100%}
+  .brand-name{font-size:1.05rem}
+  .nav-links{gap:.75rem;justify-content:flex-start}
+  .nav-links a{font-size:.68rem;letter-spacing:.08em}
+  .nav-links a.nav-cta{padding:.42rem .8rem;margin-left:auto}
+  .stat-band .foot{margin-left:0}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Shared geometry: the WIG craft hull is defined once and re-used in the hero,
+     the FIG. 02 drawing and the cargo plate so the silhouettes can never drift apart. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="wf-hull">
+      <!-- T-tail: horizontal stabilizer -->
+      <path d="M52 8 L144 8 L136 0 L62 0 Z"/>
+      <!-- fin -->
+      <path d="M122 42 L104 6 L84 6 L76 46 Z"/>
+      <!-- fuselage + planing hull -->
+      <path d="M352 64 C340 50 314 40 284 37 L128 40 L86 44 L84 56 L150 70 L156 82 L296 80 C324 76 344 70 352 64 Z"/>
+      <!-- low wide wing (near chord) -->
+      <path d="M150 62 L284 57 L294 64 L268 71 L160 73 Z"/>
+      <!-- wingtip float / endplate -->
+      <path d="M170 76 L252 76 Q263 76 257 85 L182 87 Q166 87 170 76 Z"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Waterfly Technologies — home">
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <g fill="none" stroke-linecap="round">
+          <ellipse cx="14.5" cy="13" rx="10.5" ry="3.4" transform="rotate(-24 14.5 13)" fill="#E4572E" opacity=".85"/>
+          <ellipse cx="25.5" cy="13" rx="10.5" ry="3.4" transform="rotate(24 25.5 13)" fill="#E4572E" opacity=".85"/>
+          <ellipse cx="15.5" cy="19" rx="8.6" ry="2.7" transform="rotate(-38 15.5 19)" fill="#C4400F" opacity=".6"/>
+          <ellipse cx="24.5" cy="19" rx="8.6" ry="2.7" transform="rotate(38 24.5 19)" fill="#C4400F" opacity=".6"/>
+          <path d="M20 9.5c1.3 4 1.3 18-.001 27.5-1.3-9.5-1.3-23.5.001-27.5Z" fill="#0C2340"/>
+          <circle cx="20" cy="7.6" r="2.5" fill="#0C2340"/>
+        </g>
+      </svg>
+      <span class="brand-name">Water<em>fly</em></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" role="list">
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#use-cases">Use&nbsp;Cases</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a class="nav-cta" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-copy">
+      <p class="kicker">Future of Marine Transportation</p>
+      <h1 id="hero-title">As Fast as a <em>Plane</em>,<br>As Cheap as a <em>Ship</em></h1>
+      <p class="hero-sub">Waterfly Technologies builds Wing-In-Ground craft — vehicles that fly metres above the sea on a cushion of air, pairing near-aircraft speed with ship-like operating cost.</p>
+      <ul class="hero-meta" role="list" aria-label="Company facts">
+        <li>IIT Madras incubated</li>
+        <li>Chennai, India</li>
+        <li>~10&#215; cheaper than air freight</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:fly@waterfly.blue">Write to us
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost" href="#technology">How it works
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 1v13M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="hero-plate">
+      <svg viewBox="0 0 1440 470" role="img" aria-labelledby="heroSvgTitle heroSvgDesc" preserveAspectRatio="xMidYMax slice">
+        <title id="heroSvgTitle">A Wing-In-Ground craft skimming metres above layered ocean waves</title>
+        <desc id="heroSvgDesc">Side profile of a WIG craft with boat hull, low wide wing and T-tail, flying just above the sea. A dashed dimension line marks the small gap between hull and water.</desc>
+        <!-- horizon -->
+        <line x1="0" y1="352" x2="1440" y2="352" stroke="rgba(12,35,64,.18)" stroke-width="1"/>
+        <line x1="0" y1="352" x2="1440" y2="352" stroke="rgba(12,35,64,.06)" stroke-width="7"/>
+        <!-- speed lines behind craft -->
+        <g stroke="rgba(12,35,64,.3)" stroke-width="2" stroke-linecap="round">
+          <line x1="380" y1="222" x2="470" y2="222"/>
+          <line x1="330" y1="248" x2="452" y2="248"/>
+          <line x1="396" y1="274" x2="486" y2="274"/>
+        </g>
+        <!-- craft -->
+        <g class="craft-bob">
+          <g transform="translate(540,158) scale(1.14)" fill="#0C2340">
+            <use href="#wf-hull"/>
+            <!-- engine pylon + nacelle -->
+            <path d="M230 38 L226 22 L242 22 L244 38 Z"/>
+            <path d="M216 19 a5 5 0 0 1 5 -5 h28 a5 5 0 0 1 5 5 a5 5 0 0 1 -5 5 h-28 a5 5 0 0 1 -5 -5 Z"/>
+            <!-- prop disc (blur) -->
+            <ellipse cx="257" cy="19" rx="2.6" ry="17" fill="rgba(12,35,64,.35)"/>
+            <circle cx="256" cy="19" r="3.2"/>
+            <!-- windscreen + windows in paper -->
+            <path d="M282 40 L262 40 L272 48 L290 45 Z" fill="#FAF7F2" opacity=".9"/>
+            <circle cx="236" cy="50" r="2.6" fill="#FAF7F2" opacity=".85"/>
+            <circle cx="219" cy="51" r="2.6" fill="#FAF7F2" opacity=".85"/>
+            <circle cx="202" cy="52" r="2.6" fill="#FAF7F2" opacity=".85"/>
+            <!-- accent cheat line -->
+            <path d="M300 51 L136 50 L136 47 L302 48 Z" fill="#E4572E"/>
+          </g>
+        </g>
+        <!-- shadow on water, centred under the hull -->
+        <ellipse cx="756" cy="368" rx="180" ry="7" fill="rgba(12,35,64,.14)"/>
+        <!-- dimension line: height above surface -->
+        <g class="dim-note" font-family="IBM Plex Mono,monospace" font-size="13" fill="#43586F">
+          <line x1="1020" y1="262" x2="1020" y2="360" stroke="#43586F" stroke-width="1" stroke-dasharray="4 4"/>
+          <path d="M1016 268 L1020 260 L1024 268 Z" fill="#43586F"/>
+          <path d="M1016 354 L1020 362 L1024 354 Z" fill="#43586F"/>
+          <line x1="948" y1="260" x2="1032" y2="260" stroke="rgba(67,88,111,.5)" stroke-width="1"/>
+          <text x="1036" y="306" letter-spacing="1">h = metres, not</text>
+          <text x="1036" y="324" letter-spacing="1">kilometres</text>
+        </g>
+        <!-- layered waves (periodic, wavelength 120): nearest layer drifts fastest -->
+        <g class="w-drift-a">
+          <path fill="#D8E7EA" d="M-240 366 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 L1800 470 L-240 470 Z"/>
+        </g>
+        <g class="w-drift-b">
+          <path fill="#AECDD5" d="M-240 398 q30 -12 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 L1800 470 L-240 470 Z"/>
+        </g>
+        <g class="w-drift-c">
+          <path fill="#6E9DAD" stroke="#4E8296" stroke-width="1.5" d="M-240 432 q30 -14 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 L1800 470 L-240 470 Z"/>
+        </g>
+        <!-- faint mirrored reflection of the hull on the water -->
+        <g transform="translate(540,418) scale(1.14,-0.57)" opacity=".1" fill="#0C2340">
+          <use href="#wf-hull"/>
+        </g>
+      </svg>
+    </div>
+    <div class="container">
+      <p class="plate-caption">
+        <span>Plate 01 — WIG craft in ground effect</span>
+        <span>Flight height: within &#8776;1 wingspan</span>
+        <span>Class: maritime vessel (IMO)</span>
+      </p>
+    </div>
+  </section>
+  <!-- ============ WHY WIG ============ -->
+  <section class="props" aria-labelledby="props-title">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-num">01 — Why WIG</p>
+        <h2 id="props-title">A third way to cross the water</h2>
+      </div>
+      <div class="prop-grid">
+        <article class="prop reveal">
+          <p class="prop-num">A</p>
+          <svg class="prop-icon" viewBox="0 0 52 52" aria-hidden="true" focusable="false" fill="none" stroke="#0C2340" stroke-width="1.7" stroke-linecap="round">
+            <path d="M4 26 H40"/><path class="icon-accent" d="M32 18 L42 26 L32 34" stroke="#C4400F"/>
+            <path d="M6 42 q5 -5 10 0 t10 0 t10 0 t10 0"/>
+            <path d="M12 34 q5 -5 10 0 t10 0" opacity=".45"/>
+          </svg>
+          <h3>Fast &amp; affordable</h3>
+          <p>Near-aircraft speed at ship-like operating cost. Ground effect does the heavy lifting, so speed stops being a luxury on the water.</p>
+        </article>
+        <article class="prop reveal">
+          <p class="prop-num">B</p>
+          <svg class="prop-icon" viewBox="0 0 52 52" aria-hidden="true" focusable="false" fill="none" stroke="#0C2340" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 14 H24 V40 H6 Z"/><path d="M10 14 V8 h8 v6"/>
+            <path class="icon-accent" d="M13 22 a3.5 3.5 0 1 1 2 0 v8" stroke="#C4400F"/>
+            <path d="M24 40 q7 -6 14 0 t14 0" /><path d="M30 32 q5 -5 10 0" opacity=".45"/>
+          </svg>
+          <h3>Minimal infrastructure</h3>
+          <p>Operates straight from waterfronts. No runways to pour, no deep ports to dredge — if a place has a shoreline, it has a terminal.</p>
+        </article>
+        <article class="prop reveal">
+          <p class="prop-num">C</p>
+          <svg class="prop-icon" viewBox="0 0 52 52" aria-hidden="true" focusable="false" fill="none" stroke="#0C2340" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M26 6 C36 18 42 26 42 33 a16 16 0 0 1 -32 0 C10 26 16 18 26 6 Z"/>
+            <path class="icon-accent" d="M26 40 V22 M26 28 l6 -5 M26 34 l-6 -5" stroke="#C4400F"/>
+          </svg>
+          <h3>Sustainable fuel</h3>
+          <p>High speed without the heavy footprint: the craft is built around sustainable fuel, so going faster does not mean burning dirtier.</p>
+        </article>
+      </div>
+      <div class="stat-band reveal">
+        <span class="big">&#8776;10&#215;</span>
+        <span class="label">cheaper than air freight — the efficiency of flying on an air cushion, priced like the sea.</span>
+        <span class="foot">Waterfly value proposition</span>
+      </div>
+    </div>
+  </section>
+  <!-- ============ TECHNOLOGY ============ -->
+  <section class="tech" id="technology" aria-labelledby="tech-title">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-num">02 — Technology</p>
+        <h2 id="tech-title">How ground effect works</h2>
+      </div>
+      <div class="tech-cols">
+        <p class="lead reveal">When a wing flies within roughly one wingspan of a surface, the physics change in its favour: induced drag drops and lift increases. The craft rides a cushion of air trapped between wing and water — and efficiency improves dramatically.</p>
+        <div class="tech-facts reveal">
+          <div class="tech-fact">
+            <p class="t">The regime</p>
+            <p>A Wing-In-Ground craft is designed to stay inside this cushion. It skims metres above the surface, where every kilometre costs a fraction of what it would at altitude.</p>
+          </div>
+          <div class="tech-fact">
+            <p class="t">The rulebook</p>
+            <p>WIG craft are classified as maritime vessels under IMO rules — it flies, but legally and operationally it lives on the water.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="sheet reveal">
+        <div class="sheet-scroll">
+        <svg viewBox="0 0 1000 620" role="img" aria-labelledby="diaTitle diaDesc">
+          <title id="diaTitle">Operating regimes: airliner at cruise altitude, WIG craft within one wingspan of the sea, ship on the water</title>
+          <desc id="diaDesc">A technical drawing. An altitude axis with a scale break shows an airliner kilometres up trailing wingtip vortices, a WIG craft riding an air cushion metres above the waterline, and a displacement ship sitting in the water.</desc>
+          <defs>
+            <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+              <path d="M25 0 H0 V25" fill="none" stroke="rgba(12,35,64,.07)" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect x="24" y="24" width="952" height="572" fill="url(#grid)" stroke="rgba(12,35,64,.25)" stroke-width="1.2"/>
+          <!-- altitude axis with scale break -->
+          <g stroke="#43586F" stroke-width="1.2" fill="none">
+            <line x1="80" y1="60" x2="80" y2="244"/>
+            <path d="M74 252 l12 8 l-12 8"/>
+            <line x1="80" y1="276" x2="80" y2="470"/>
+            <line x1="74" y1="100" x2="86" y2="100"/>
+            <line x1="74" y1="438" x2="86" y2="438"/>
+            <line x1="74" y1="470" x2="86" y2="470"/>
+          </g>
+          <g font-family="IBM Plex Mono,monospace" font-size="13.5" fill="#43586F">
+            <text x="94" y="82">altitude</text>
+            <text x="94" y="250" fill="#C4400F">scale break</text>
+          </g>
+          <!-- airliner -->
+          <g fill="#0C2340">
+            <path d="M560 100 h96 q20 2 32 8 q-14 7 -34 7 h-94 q-11 -8 0 -15 Z"/>
+            <path d="M614 108 l-36 24 h14 l42 -20 Z"/>
+            <path d="M572 101 l-16 -18 h-11 l10 20 Z"/>
+            <path d="M640 112 l-12 12 h10 l14 -11 Z"/>
+          </g>
+          <!-- wingtip vortices: energy shed as induced drag -->
+          <g fill="none" stroke="#C4400F" stroke-width="1.6" stroke-linecap="round">
+            <path d="M576 136 q-13 5 -9 14 q4 8 12 4 q6 -3 2 -8 q-3 -3 -6 1"/>
+            <path d="M556 148 q-10 4 -7 11 q3 6 9 3 q4 -2 1 -6" opacity=".55"/>
+          </g>
+          <g font-family="IBM Plex Mono,monospace" font-size="13" fill="#C4400F" letter-spacing="1">
+            <text x="600" y="146">WINGTIP VORTICES &#8212;</text>
+            <text x="600" y="164">ENERGY LOST TO INDUCED DRAG</text>
+          </g>
+          <line x1="80" y1="100" x2="548" y2="100" stroke="rgba(67,88,111,.45)" stroke-width="1" stroke-dasharray="5 5"/>
+          <g font-family="IBM Plex Mono,monospace" font-size="14" fill="#0C2340">
+            <text x="560" y="86" font-weight="600" letter-spacing="1.5">AIRLINER</text>
+            <text x="700" y="103" fill="#43586F">kilometres up &#183; fast, expensive</text>
+          </g>
+          <!-- waterline + sea -->
+          <g>
+            <!-- ship (drawn before water so its draft sits in the sea) -->
+            <g fill="#0C2340">
+              <path d="M756 448 L936 448 L920 488 L774 488 Z"/>
+              <rect x="800" y="418" width="44" height="30"/>
+              <rect x="808" y="404" width="20" height="14"/>
+              <rect x="852" y="432" width="52" height="16"/>
+              <line x1="784" y1="418" x2="784" y2="448" stroke="#0C2340" stroke-width="2.5"/>
+            </g>
+            <rect x="24" y="470" width="952" height="126" fill="rgba(27,94,124,.18)"/>
+            <path d="M24 470 H976" stroke="#1B5E7C" stroke-width="2"/>
+            <path d="M40 486 q7 -6 14 0 t14 0 M120 502 q7 -6 14 0 t14 0 M60 528 q7 -6 14 0 t14 0 M210 486 q7 -6 14 0 t14 0 M320 516 q7 -6 14 0 t14 0 M480 492 q7 -6 14 0 t14 0 M600 530 q7 -6 14 0 t14 0" fill="none" stroke="rgba(27,94,124,.5)" stroke-width="1.4" stroke-linecap="round"/>
+          </g>
+          <!-- WIG craft, line-art, metres above waterline -->
+          <g transform="translate(320,384) scale(.62)" fill="#F3EEE5" stroke="#0C2340" stroke-width="2.4" stroke-linejoin="round">
+            <use href="#wf-hull"/>
+          </g>
+          <line x1="80" y1="438" x2="308" y2="438" stroke="rgba(67,88,111,.45)" stroke-width="1" stroke-dasharray="5 5"/>
+          <g font-family="IBM Plex Mono,monospace" font-size="14">
+            <text x="320" y="372" font-weight="600" letter-spacing="1.5" fill="#0C2340">WIG CRAFT</text>
+            <text x="415" y="372" fill="#43586F">&#8212; within ~one wingspan &#183; drag drops, lift rises</text>
+            <text x="756" y="440" font-weight="600" letter-spacing="1.5" fill="#0C2340">SHIP</text>
+            <text x="812" y="440" fill="#43586F">&#8212; pushes water aside &#183; cheap, slow</text>
+          </g>
+          <!-- air cushion arrows -->
+          <g stroke="#C4400F" stroke-width="2" fill="none" stroke-linecap="round">
+            <path d="M360 466 V448 M355 453 L360 447 L365 453"/>
+            <path d="M400 466 V448 M395 453 L400 447 L405 453"/>
+            <path d="M440 466 V448 M435 453 L440 447 L445 453"/>
+            <path d="M480 466 V448 M475 453 L480 447 L485 453"/>
+          </g>
+          <text x="360" y="510" font-family="IBM Plex Mono,monospace" font-size="13" fill="#C4400F" letter-spacing="1">AIR CUSHION &#8212; PRESSURE RISES UNDER THE WING</text>
+          <!-- title block -->
+          <g font-family="IBM Plex Mono,monospace" font-size="12.5" fill="#43586F">
+            <rect x="640" y="524" width="336" height="72" fill="#FAF7F2" stroke="rgba(12,35,64,.25)"/>
+            <line x1="640" y1="548" x2="976" y2="548" stroke="rgba(12,35,64,.18)"/>
+            <line x1="640" y1="572" x2="976" y2="572" stroke="rgba(12,35,64,.18)"/>
+            <text x="652" y="541" fill="#0C2340" font-weight="600">FIG. 02 &#8212; OPERATING REGIMES</text>
+            <text x="652" y="565">WATERFLY TECHNOLOGIES &#183; CHENNAI</text>
+            <text x="652" y="589">DRAWING NOT TO SCALE</text>
+          </g>
+        </svg>
+        </div>
+        <figcaption>Ground effect, plainly: within about one wingspan of the surface, induced drag falls and lift rises — the efficiency zone Waterfly craft are built to occupy.</figcaption>
+      </figure>
+    </div>
+  </section>
+  <!-- ============ USE CASES ============ -->
+  <section class="cases" id="use-cases" aria-labelledby="cases-title">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-num">03 — Use cases</p>
+        <h2 id="cases-title">Where the air cushion earns its keep</h2>
+      </div>
+      <div class="case-grid">
+        <article class="case reveal">
+          <div class="case-art" aria-hidden="true">
+            <svg viewBox="0 0 600 250" focusable="false">
+              <line x1="0" y1="178" x2="600" y2="178" stroke="rgba(12,35,64,.2)"/>
+              <!-- quay -->
+              <g stroke="#0C2340" stroke-width="2" fill="none" stroke-linejoin="round">
+                <path d="M40 178 V120 H160 V178" fill="#F6F2EA"/>
+                <path d="M96 120 v-8 a7 7 0 0 1 14 0 v8"/>
+              </g>
+              <!-- crates -->
+              <g stroke="#0C2340" stroke-width="2" fill="#F6F2EA" stroke-linejoin="round">
+                <rect x="58" y="90" width="30" height="30"/>
+                <rect x="88" y="90" width="30" height="30"/>
+                <rect x="73" y="60" width="30" height="30"/>
+                <path d="M73 60 l30 30 M103 60 l-30 30" stroke-width="1.2" stroke="rgba(12,35,64,.4)"/>
+              </g>
+              <!-- transfer arrow -->
+              <path d="M170 96 q60 -34 120 12" fill="none" stroke="#C4400F" stroke-width="2" stroke-dasharray="5 5"/>
+              <path d="M283 100 l9 10 l-13 2 Z" fill="#C4400F"/>
+              <!-- craft hull line-art -->
+              <g transform="translate(280,86) scale(.72)" fill="#F6F2EA" stroke="#0C2340" stroke-width="2.6" stroke-linejoin="round">
+                <use href="#wf-hull"/>
+              </g>
+              <path d="M20 208 q10 -8 20 0 t20 0 t20 0 M480 214 q10 -8 20 0 t20 0 M200 220 q10 -8 20 0 t20 0 t20 0" fill="none" stroke="rgba(27,94,124,.55)" stroke-width="1.6" stroke-linecap="round"/>
+              <text x="40" y="238" font-family="IBM Plex Mono,monospace" font-size="13" fill="#43586F" letter-spacing="2">LOAD AT THE QUAY &#8212; FLY THE COAST</text>
+            </svg>
+          </div>
+          <div class="case-body">
+            <p class="case-tag">Coastal cargo</p>
+            <h3>Freight at flying speed, at sea prices</h3>
+            <p>Cargo today chooses between slow ships and expensive air freight. WIG opens a third lane along the coast — roughly a tenth of air-freight cost, loading straight from the waterfront with no runway and no deep port in sight.</p>
+            <p class="case-note">Infrastructure required: a shoreline.</p>
+          </div>
+        </article>
+        <article class="case reveal">
+          <div class="case-art" aria-hidden="true">
+            <svg viewBox="0 0 600 250" focusable="false">
+              <path d="M90 180 Q300 20 510 150" fill="none" stroke="#C4400F" stroke-width="2" stroke-dasharray="6 6"/>
+              <!-- Chennai skyline, ink line-art -->
+              <g stroke="#0C2340" stroke-width="1.8" fill="#F6F2EA" stroke-linejoin="round">
+                <rect x="24" y="150" width="14" height="30"/>
+                <rect x="42" y="136" width="18" height="44"/>
+                <rect x="64" y="156" width="12" height="24"/>
+              </g>
+              <path d="M46 144 h10 M46 152 h10 M46 160 h10" stroke="rgba(12,35,64,.35)" stroke-width="1.2"/>
+              <!-- Kolkata skyline, ink line-art -->
+              <g stroke="#0C2340" stroke-width="1.8" fill="#F6F2EA" stroke-linejoin="round">
+                <rect x="526" y="118" width="14" height="32"/>
+                <rect x="544" y="102" width="18" height="48"/>
+                <rect x="566" y="124" width="12" height="26"/>
+              </g>
+              <path d="M548 110 h10 M548 118 h10 M548 126 h10" stroke="rgba(12,35,64,.35)" stroke-width="1.2"/>
+              <!-- city markers -->
+              <g fill="#0C2340">
+                <circle cx="90" cy="180" r="6"/>
+                <circle cx="510" cy="150" r="6"/>
+              </g>
+              <circle cx="90" cy="180" r="11" fill="none" stroke="rgba(12,35,64,.35)"/>
+              <circle cx="510" cy="150" r="11" fill="none" stroke="rgba(12,35,64,.35)"/>
+              <!-- craft marker on route -->
+              <g transform="translate(268,74) rotate(-4)" fill="#0C2340">
+                <path d="M0 12 L34 6 L52 12 L34 18 Z"/>
+                <path d="M8 6 L14 -4 L20 -4 L18 7 Z"/>
+              </g>
+              <text x="60" y="212" font-family="IBM Plex Mono,monospace" font-size="14" fill="#0C2340" letter-spacing="2" font-weight="600">CHENNAI</text>
+              <text x="452" y="90" font-family="IBM Plex Mono,monospace" font-size="14" fill="#0C2340" letter-spacing="2" font-weight="600">KOLKATA</text>
+              <text x="228" y="140" font-family="IBM Plex Mono,monospace" font-size="14" fill="#C4400F" letter-spacing="1.5">&#8776;3 h &#183; ~&#8377;600</text>
+              <path d="M40 232 q10 -8 20 0 t20 0 t20 0 M300 236 q10 -8 20 0 t20 0 M480 230 q10 -8 20 0 t20 0" fill="none" stroke="rgba(27,94,124,.55)" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="case-body">
+            <p class="case-tag">Passenger ferry</p>
+            <h3>Kolkata to Chennai in about three hours</h3>
+            <p class="route-chip">Kolkata &#8594; Chennai &#183; ~3 hours &#183; ~&#8377;600</p>
+            <p>Coastal city pairs collapse from days at sea into a short skim down the coastline. Media coverage has framed the promise memorably: Kolkata to Chennai in about 3 hours, for around &#8377;600.</p>
+            <p class="case-note">Illustrative route &#8212; as covered by News18.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRESS ============ -->
+  <section class="press" aria-labelledby="press-title">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-num">04 — Media</p>
+        <h2 id="press-title">In the press</h2>
+      </div>
+      <ul class="press-list reveal" role="list">
+        <li class="press-item">
+          <span class="press-logo logo-et">The Economic Times</span>
+          <p>Anand Mahindra shared the SeaGlider design.</p>
+        </li>
+        <li class="press-item">
+          <span class="press-logo logo-n18">News18</span>
+          <p>Put the promise in plain numbers: Kolkata to Chennai in about 3 hours, for around &#8377;600.</p>
+        </li>
+        <li class="press-item">
+          <span class="press-logo logo-mc">moneycontrol</span>
+          <p>Covered the unveiling of the flying boat.</p>
+        </li>
+      </ul>
+      <p class="press-foot reveal">Publication names are the trademarks of their respective owners and are shown here to indicate coverage.</p>
+    </div>
+  </section>
+  <!-- ============ VISION ============ -->
+  <section class="vision" id="vision" aria-labelledby="vision-title">
+    <div class="container">
+      <h2 class="visually-hidden" id="vision-title">Our vision</h2>
+      <p class="kicker">05 — Vision</p>
+      <figure>
+        <blockquote>
+          <p>&#8220;Our mission is to offer high speed sustainable marine transportation at a cost <strong>you cannot imagine</strong>.&#8221;</p>
+        </blockquote>
+        <figcaption>Waterfly Technologies &#183; IIT Madras incubated &#183; Chennai</figcaption>
+      </figure>
+    </div>
+    <svg class="vision-waves" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M-240 40 q30 -12 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="rgba(255,138,94,.5)" stroke-width="1.5" class="w-drift-b"/>
+      <path d="M-240 68 q30 -12 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="rgba(250,247,242,.28)" stroke-width="1.5" class="w-drift-c"/>
+    </svg>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-num">06 — Contact</p>
+        <h2 id="contact-title">The water is ready. Write to us.</h2>
+        <p class="contact-lede">Operators, ports, partners, press — if faster, cheaper coastal transport matters to you, we would like to hear from you.</p>
+      </div>
+      <div class="reveal">
+        <a class="contact-mail" href="mailto:fly@waterfly.blue">fly@waterfly.blue</a>
+        <div class="contact-row">
+          <a class="link-arrow" href="https://www.linkedin.com/company/waterfly" rel="noopener">Waterfly on LinkedIn
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 L13 3 M6 3 h7 v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot-inner">
+    <span class="foot-brand">
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <ellipse cx="14.5" cy="13" rx="10.5" ry="3.4" transform="rotate(-24 14.5 13)" fill="#E4572E" opacity=".85"/>
+        <ellipse cx="25.5" cy="13" rx="10.5" ry="3.4" transform="rotate(24 25.5 13)" fill="#E4572E" opacity=".85"/>
+        <ellipse cx="15.5" cy="19" rx="8.6" ry="2.7" transform="rotate(-38 15.5 19)" fill="#C4400F" opacity=".6"/>
+        <ellipse cx="24.5" cy="19" rx="8.6" ry="2.7" transform="rotate(38 24.5 19)" fill="#C4400F" opacity=".6"/>
+        <path d="M20 9.5c1.3 4 1.3 18-.001 27.5-1.3-9.5-1.3-23.5.001-27.5Z" fill="#0C2340"/>
+        <circle cx="20" cy="7.6" r="2.5" fill="#0C2340"/>
+      </svg>
+      <span>&#169; 2026 Waterfly Technologies. IIT Madras incubated.</span>
+    </span>
+    <span>waterflytechnologies.com</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  root.classList.add('js');
+  // entrance reveals
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=document.querySelectorAll('.reveal');
+  if(!reduce && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}
+      });
+    },{threshold:.14,rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){io.observe(el);});
+  }else{
+    items.forEach(function(el){el.classList.add('in-view');});
+  }
+  // nav shadow after scroll
+  var nav=document.querySelector('.nav');
+  var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>8);};
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  // scroll-spy: underline the section currently in view
+  var links=document.querySelectorAll('.nav-links a[href^="#"]');
+  var map={};
+  links.forEach(function(a){
+    var id=a.getAttribute('href').slice(1);
+    var sec=document.getElementById(id);
+    if(sec){map[id]=a;}
+  });
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting && map[e.target.id]){
+          links.forEach(function(a){a.classList.remove('active');});
+          map[e.target.id].classList.add('active');
+        }
+      });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    Object.keys(map).forEach(function(id){spy.observe(document.getElementById(id));});
+  }
+})();
+</script>
+</body>
+</html>
