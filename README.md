@@ -10,7 +10,6 @@ Content is drawn from [waterfly.info](https://waterfly.info). This repo is a san
 
 - `index.html` — the whole site: a single self-contained page (inline CSS/JS, hand-drawn SVG artwork, no build step, no dependencies)
 - `404.html` — on-brand not-found page
-- `CNAME` — custom domain for GitHub Pages
 
 ## Local preview
 
@@ -22,19 +21,9 @@ python -m http.server 8000
 
 ## Deployment
 
-Served by **GitHub Pages** from the `main` branch root. Pushing to `main` deploys automatically.
+**Production — Vercel.** `waterflytechnologies.com` uses Vercel nameservers, so the domain is served by importing this repo as a Vercel project (no build command, root output) and attaching the domain in the project's Domains tab. Every push to `main` auto-deploys. `404.html` at the root doubles as Vercel's custom not-found page.
 
-To point `waterflytechnologies.com` at it, set these DNS records at the domain registrar:
-
-| Type  | Host | Value                   |
-|-------|------|-------------------------|
-| A     | @    | 185.199.108.153         |
-| A     | @    | 185.199.109.153         |
-| A     | @    | 185.199.110.153         |
-| A     | @    | 185.199.111.153         |
-| CNAME | www  | bindusara-reddy.github.io |
-
-Until DNS is set, the site is reachable at <https://bindusara-reddy.github.io/waterflytechnologies/>.
+**Preview mirror — GitHub Pages.** The same branch is also published at <https://bindusara-reddy.github.io/waterflytechnologies/> (no custom domain, no redirect) as a zero-setup staging mirror.
 
 ## Contact
 
