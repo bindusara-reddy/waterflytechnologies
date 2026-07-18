@@ -1,832 +1,797 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Waterfly Technologies — As Fast as a Plane, As Cheap as a Ship</title>
-<meta name="description" content="Waterfly Technologies, an IIT Madras incubated startup in Chennai, builds Wing-In-Ground craft that fly metres above the sea — near-aircraft speed at ship-like operating cost, roughly 10x cheaper than air freight.">
-<meta name="theme-color" content="#FAF7F2">
+<title>Waterfly Technologies — Future of Marine Transportation</title>
+<meta name="description" content="IIT Madras incubated startup building Wing-In-Ground craft: 500 km/h cargo vessels flying metres above the ocean. As fast as a plane, as cheap as a ship.">
 <link rel="canonical" href="https://waterflytechnologies.com/">
+<meta name="theme-color" content="#F3F7FA">
+
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://waterflytechnologies.com/">
 <meta property="og:site_name" content="Waterfly Technologies">
-<meta property="og:locale" content="en_IN">
-<meta property="og:title" content="Waterfly Technologies — As Fast as a Plane, As Cheap as a Ship">
-<meta property="og:description" content="Wing-In-Ground craft from an IIT Madras incubated startup: high-speed, sustainable marine transportation that operates straight from the waterfront.">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Waterfly Technologies — As Fast as a Plane, As Cheap as a Ship">
-<meta name="twitter:description" content="Wing-In-Ground craft that fly metres above the sea: near-aircraft speed at ship-like cost, straight from the waterfront.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cellipse cx='14.5' cy='13' rx='10.5' ry='3.4' transform='rotate(-24 14.5 13)' fill='%23E4572E'/%3E%3Cellipse cx='25.5' cy='13' rx='10.5' ry='3.4' transform='rotate(24 25.5 13)' fill='%23E4572E'/%3E%3Cellipse cx='15.5' cy='19' rx='8.6' ry='2.7' transform='rotate(-38 15.5 19)' fill='%23C4400F' opacity='.7'/%3E%3Cellipse cx='24.5' cy='19' rx='8.6' ry='2.7' transform='rotate(38 24.5 19)' fill='%23C4400F' opacity='.7'/%3E%3Cpath d='M20 9.5c1.3 4 1.3 18-.001 27.5-1.3-9.5-1.3-23.5.001-27.5Z' fill='%230C2340'/%3E%3Ccircle cx='20' cy='7.6' r='2.5' fill='%230C2340'/%3E%3C/svg%3E">
+<meta property="og:url" content="https://waterflytechnologies.com/">
+<meta property="og:title" content="Waterfly Technologies — Future of Marine Transportation">
+<meta property="og:description" content="Cargo at 500 km/h, metres above the waves. As fast as a plane, as cheap as a ship.">
+<meta property="og:image" content="https://waterflytechnologies.com/assets/render-studio.jpg">
+<meta property="og:image:alt" content="3D render of blended wing body cargo craft with 30 m wingspan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Waterfly Technologies — Future of Marine Transportation">
+<meta name="twitter:description" content="Cargo at 500 km/h, metres above the waves. As fast as a plane, as cheap as a ship.">
+<meta name="twitter:image" content="https://waterflytechnologies.com/assets/render-studio.jpg">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..640;1,9..144,340..640&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Waterfly Technologies",
+  "url": "https://waterflytechnologies.com/",
+  "logo": "https://waterflytechnologies.com/assets/logo.png",
+  "email": "fly@waterfly.blue",
+  "sameAs": ["https://www.linkedin.com/company/waterfly"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "NBCC Building, IIT Madras Thaiyur Campus",
+    "addressLocality": "Chennai",
+    "postalCode": "603103",
+    "addressCountry": "IN"
+  }
+}
+</script>
+
 <style>
+/* ---------- Sea Light — design tokens ---------- */
 :root{
-  --paper:#FAF7F2;
-  --paper-2:#F3EEE5;
-  --ink:#0C2340;
-  --ink-soft:#43586F;
-  --accent:#C4400F;
-  --accent-bright:#E4572E;
-  --accent-soft:#FF8A5E;
-  --sea:#1B5E7C;
-  --line:rgba(12,35,64,.16);
-  --line-soft:rgba(12,35,64,.08);
-  --serif:'Fraunces',Georgia,'Times New Roman',serif;
-  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,'Cascadia Mono',monospace;
-  --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2.5rem; --s5:4rem; --s6:6rem; --s7:8.5rem;
-  --maxw:72rem;
-  --nav-h:3.8rem;
+  --ink:#0A1A2A;
+  --ink-2:#41586D;
+  --paper:#FFFFFF;
+  --mist:#F3F7FA;
+  --sea:#E7EFF4;
+  --line:rgba(10,26,42,.12);
+  --accent:#0A66E8;
+  --accent-deep:#084FBE;
+  --accent-sky:#6FB0FF;
+  --deep:#071626;
+  --deep-2:#04080F;
+  --w:rgba(255,255,255,1);
+  --w-soft:#A9BDCE;
+  --w-line:rgba(160,196,224,.16);
+  --radius:18px;
+  --pad:clamp(4.5rem,10vw,8.5rem);
 }
+
+/* ---------- reset / base ---------- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 14px)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html{scroll-padding-top:5.5rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{
-  font-family:var(--sans);
-  font-size:1.0625rem;
-  line-height:1.65;
-  color:var(--ink);
-  background:var(--paper);
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;line-height:1.6;
+  color:var(--ink);background:var(--paper);
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
-::selection{background:var(--ink);color:var(--paper)}
-img,svg{display:block;max-width:100%}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-h1,h2,h3{font-family:var(--serif);font-weight:480;line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
-p{max-width:38rem}
-.container{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
-.skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--paper);padding:.75rem 1.25rem;font-family:var(--mono);font-size:.8rem}
-.skip-link:focus{left:0}
-.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-/* ---------- kicker / labels ---------- */
-.kicker{
-  display:flex;align-items:center;gap:.9rem;
-  font-family:var(--mono);font-size:.72rem;font-weight:500;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--accent);
+img,svg,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(10,102,232,.18)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+main:focus{outline:none}
+h1,h2{font-family:"Space Grotesk","Inter",sans-serif;font-weight:600;line-height:1.04;letter-spacing:-.025em;text-wrap:balance}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:99;background:var(--ink);color:#fff;padding:.65rem 1.1rem;border-radius:999px;font-size:.9rem;transition:top .2s}
+.skip:focus{top:1rem}
+
+.container{width:min(1160px,92%);margin-inline:auto}
+.narrow{width:min(740px,92%);margin-inline:auto}
+
+/* ---------- shared type ---------- */
+.eyebrow{
+  font-size:.75rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--accent-deep);margin-bottom:1.4rem;
 }
-.kicker::before{content:"";width:2.4rem;height:1px;background:var(--accent);flex:none}
-.sec-head{display:grid;gap:var(--s3);margin-bottom:clamp(2.5rem,6vw,4rem)}
-.sec-head h2{font-size:clamp(1.9rem,4.4vw,3rem)}
-.sec-num{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;color:var(--ink-soft)}
-/* ---------- nav ---------- */
-.nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(250,247,242,.86);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
-  transition:box-shadow .3s ease;
+.sx{
+  display:flex;align-items:center;gap:.75rem;
+  font-size:.7rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  font-variant-numeric:tabular-nums;
+  color:var(--accent);margin-bottom:1.2rem;
 }
-.nav.scrolled{box-shadow:0 6px 24px -18px rgba(12,35,64,.45)}
-.nav-inner{
-  max-width:var(--maxw);margin-inline:auto;
-  padding:.85rem clamp(1.25rem,4vw,2.5rem);
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+.sx::before{content:"";width:26px;height:1px;background:currentColor;opacity:.55;flex:none}
+.dark .sx{color:var(--accent-sky)}
+.sx.center{justify-content:center}
+.lead{font-size:clamp(1.05rem,1.4vw,1.25rem);color:var(--ink-2);max-width:34em;text-wrap:pretty}
+.dark .lead{color:var(--w-soft)}
+.caption{
+  font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-2);
 }
-.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
-.brand svg{width:2rem;height:2rem;flex:none}
-.brand-name{font-family:var(--serif);font-size:1.22rem;font-weight:560;letter-spacing:-.01em}
-.brand-name em{font-style:italic;color:var(--accent)}
-.nav-links{display:flex;align-items:center;gap:clamp(.9rem,2.5vw,2rem);list-style:none}
-.nav-links a{
-  text-decoration:none;font-family:var(--mono);font-size:.76rem;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
-  padding:.35rem 0;border-bottom:1px solid transparent;
-  transition:color .2s ease,border-color .2s ease;
+.dark .caption{color:var(--w-soft)}
+.tick::before{
+  content:"";display:inline-block;width:16px;height:1px;background:currentColor;
+  vertical-align:middle;margin-right:.65rem;opacity:.7;
 }
-.nav-links a:hover{color:var(--ink);border-bottom-color:var(--accent)}
-.nav-links a.active{color:var(--ink);border-bottom-color:var(--accent)}
-.nav-links a.nav-cta{
-  color:var(--paper);background:var(--ink);border:1px solid var(--ink);
-  padding:.5rem 1rem;border-radius:99px;
-  transition:background .2s ease,border-color .2s ease;
-}
-.nav-links a.nav-cta:hover,
-.nav-links a.nav-cta.active{background:var(--accent);border-color:var(--accent);color:var(--paper)}
-/* ---------- hero ---------- */
-.hero{padding-top:clamp(3.5rem,9vw,6.5rem)}
-.hero-copy{display:grid;gap:var(--s3);max-width:54rem}
-.hero h1{font-size:clamp(2.55rem,7.2vw,5.4rem);font-weight:500}
-.hero h1 em{font-style:italic;color:var(--accent);font-weight:480}
-.hero-sub{font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--ink-soft);max-width:42rem}
-.hero-meta{
-  display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;list-style:none;
-  font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--ink-soft);
-}
-.hero-meta li::before{content:"";display:inline-block;width:.42rem;height:.42rem;border-radius:50%;background:var(--accent);margin-right:.55rem;vertical-align:.06em}
-.cta-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:var(--s2)}
+
+/* ---------- buttons ---------- */
+.btns{display:flex;gap:.8rem;flex-wrap:wrap}
 .btn{
   display:inline-flex;align-items:center;gap:.55rem;
-  font-family:var(--mono);font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
-  text-decoration:none;padding:.95rem 1.5rem;border-radius:99px;border:1px solid var(--ink);
-  transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+  font-weight:600;font-size:.95rem;letter-spacing:.01em;
+  padding:.85rem 1.6rem;border-radius:999px;border:1px solid transparent;
+  transition:background .25s,color .25s,border-color .25s,transform .25s,box-shadow .25s;
 }
-.btn svg{width:.9rem;height:.9rem;flex:none;transition:transform .25s ease}
-.btn-primary{background:var(--ink);color:var(--paper)}
-.btn-primary:hover{background:var(--accent);border-color:var(--accent)}
-.btn-primary:hover svg{transform:translateX(3px)}
-.btn-ghost{background:transparent;color:var(--ink)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-.btn-ghost:hover svg{transform:translateY(3px)}
-.btn:active{transform:scale(.98)}
-/* ---------- hero plate (SVG scene) ---------- */
-.hero-plate{
-  margin-top:clamp(2.5rem,6vw,4.5rem);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,var(--paper) 0%,#EEF3F4 78%,#E4EDEF 100%);
-  overflow:hidden;
+.btn svg{width:.95em;height:.95em;flex:none}
+.btn-p{background:var(--accent);color:#fff;box-shadow:0 10px 30px -12px rgba(10,102,232,.55)}
+.btn-p:hover{background:var(--accent-deep);transform:translateY(-2px)}
+.btn-g{border-color:rgba(10,26,42,.35);color:var(--ink);background:rgba(255,255,255,.4)}
+.btn-g:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-2px)}
+
+/* ---------- header ---------- */
+.hd{position:fixed;inset-inline:0;top:0;z-index:50;transition:background .3s,box-shadow .3s,padding .3s}
+.hd-in{
+  width:min(1240px,94%);margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.1rem 0;transition:padding .3s;
 }
-.hero-plate svg{width:100%;height:auto}
-.plate-caption{
-  display:flex;flex-wrap:wrap;gap:.35rem 1.5rem;justify-content:space-between;
-  max-width:none;
-  padding:.8rem 0;font-family:var(--mono);font-size:.72rem;
-  letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+.hd.on{background:rgba(255,255,255,.85);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 var(--line)}
+.hd.on .hd-in{padding:.7rem 0}
+.brand{display:flex;align-items:center;gap:.65rem}
+.brand img{width:2.1rem;height:auto}
+.brand span{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.02rem;letter-spacing:-.01em;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:clamp(1rem,2.4vw,2.1rem)}
+.nav > a:not(.pill){font-size:.92rem;font-weight:500;color:var(--ink);opacity:.82;transition:opacity .2s}
+.nav > a:not(.pill):hover{opacity:1}
+.pill{
+  font-size:.88rem;font-weight:600;color:#fff;background:var(--ink);
+  padding:.55rem 1.15rem;border-radius:999px;transition:background .25s,transform .25s;
 }
-/* wave + craft motion — foreground drifts fastest, background slowest */
-.w-drift-a{animation:drift 22s linear infinite}
-.w-drift-b{animation:drift 14s linear infinite}
-.w-drift-c{animation:drift 9s linear infinite}
-@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-240px)}}
-.craft-bob{animation:bob 6.5s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-@media (max-width:700px){.dim-note{display:none}}
-/* ---------- value props ---------- */
-.props{padding-block:clamp(4rem,9vw,7rem)}
-.prop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,2.5rem)}
-.prop{
-  border-top:2px solid var(--ink);padding-top:var(--s3);
-  display:grid;gap:var(--s2);align-content:start;
-  transition:border-color .25s ease;
+.pill:hover{background:var(--accent);transform:translateY(-1px)}
+/* mobile menu (dependency-free details/summary) */
+.menu{display:none;position:relative}
+.menu summary{
+  list-style:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;
+  padding:.85rem .75rem;border:1px solid var(--line);border-radius:12px;
+  background:rgba(255,255,255,.75);
 }
-.prop:hover{border-top-color:var(--accent)}
-.prop:hover .prop-icon{transform:translateY(-3px)}
-.prop:hover .prop-icon .icon-accent{stroke:var(--accent-bright)}
-.prop-num{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;color:var(--ink-soft)}
-.prop-icon{width:3.25rem;height:3.25rem;transition:transform .3s ease}
-.prop-icon *{vector-effect:non-scaling-stroke}
-.prop h3{font-size:1.45rem}
-.prop p{font-size:.98rem;color:var(--ink-soft)}
-.stat-band{
-  margin-top:clamp(2.5rem,6vw,4rem);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding-block:clamp(1.75rem,4vw,2.75rem);
-  display:flex;flex-wrap:wrap;align-items:baseline;gap:.75rem 2rem;
+.menu summary::-webkit-details-marker{display:none}
+.menu summary span{width:20px;height:2px;background:var(--ink);border-radius:2px}
+.menu[open] summary{border-color:var(--accent)}
+.menu-panel{
+  position:absolute;right:0;top:calc(100% + 10px);min-width:220px;
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 24px 60px -30px rgba(10,26,42,.4);
+  padding:.45rem;display:flex;flex-direction:column;
 }
-.stat-band .big{
-  font-family:var(--serif);font-style:italic;font-weight:560;
-  font-size:clamp(3rem,8vw,5.5rem);line-height:1;color:var(--accent);
-  letter-spacing:-.02em;
+.menu-panel a{font-size:.95rem;font-weight:500;padding:.8rem .95rem;border-radius:9px;color:var(--ink)}
+.menu-panel a:hover{background:var(--mist);color:var(--accent-deep)}
+@media (max-width:719px){
+  .nav > a:not(.pill){display:none}
+  .menu{display:block}
 }
-.stat-band .label{font-size:clamp(1.05rem,2vw,1.35rem);font-family:var(--serif);max-width:24rem;line-height:1.35}
-.stat-band .foot{margin-left:auto;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
-/* ---------- technology ---------- */
-.tech{padding-block:clamp(4rem,9vw,7rem);background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.tech-cols{display:grid;grid-template-columns:5fr 4fr;gap:clamp(2rem,5vw,4.5rem);align-items:start;margin-bottom:clamp(2.5rem,6vw,4rem)}
-.tech-cols .lead{font-size:clamp(1.1rem,1.9vw,1.3rem);font-family:var(--serif);line-height:1.5}
-.tech-facts{display:grid;gap:var(--s3);border-left:1px solid var(--line);padding-left:clamp(1.25rem,3vw,2rem)}
-.tech-fact{display:grid;gap:.35rem}
-.tech-fact .t{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
-.tech-fact p{font-size:.96rem;color:var(--ink-soft)}
-.sheet{
-  background:var(--paper);border:1px solid var(--line);
-  box-shadow:0 24px 60px -44px rgba(12,35,64,.5);
+@media (max-width:439px){.pill{display:none}}
+
+/* ---------- S1 hero ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--mist)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(243,247,250,.96) 0%,rgba(243,247,250,.72) 16%,rgba(243,247,250,.44) 34%,rgba(243,247,250,0) 66%);
 }
-.sheet-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.sheet-scroll svg{min-width:760px;width:100%;height:auto}
-.sheet figcaption{
-  border-top:1px solid var(--line);
-  padding:.9rem clamp(1rem,2.5vw,1.5rem);
-  font-size:.92rem;color:var(--ink-soft);max-width:none;
+.hero-c{position:relative;z-index:1;padding-bottom:clamp(3.2rem,8vh,5.5rem);padding-top:8rem}
+.hero-c .eyebrow,.hero-c h1,.hero-c .lead{text-shadow:0 1px 26px rgba(243,247,250,.9),0 0 10px rgba(243,247,250,.6)}
+.hero h1{font-size:clamp(2.5rem,6.8vw,5.1rem)}
+.hero h1 span{display:block}
+.hero .lead{margin:1.5rem 0 2.2rem;color:#24384A}
+.cue{position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);width:1px;height:52px;overflow:hidden;z-index:1}
+.cue::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:linear-gradient(var(--ink),transparent);animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%{top:-40%}70%,100%{top:110%}}
+
+/* ---------- S2 problem ---------- */
+.problem{position:relative;background:var(--deep);color:var(--w);overflow:hidden;padding-block:var(--pad) clamp(3.5rem,7vw,6rem)}
+.problem h2{font-size:clamp(2.2rem,5vw,3.7rem);color:#fff}
+.problem .lead{margin-top:1.1rem}
+.stage{position:relative;margin-top:clamp(1.6rem,3.5vw,3rem)}
+.stage svg.map{width:100%;height:auto;opacity:.95;pointer-events:none}
+.land{fill:rgba(120,170,210,.07);stroke:rgba(148,190,224,.32);stroke-width:1;stroke-linejoin:round}
+.isl{fill:none;stroke:rgba(148,190,224,.28);stroke-width:1;stroke-linecap:round}
+.grat{stroke:rgba(148,184,214,.06);stroke-width:1}
+.route{stroke:#3F8CFF;stroke-width:1.2;fill:none;stroke-dasharray:3 8;stroke-linecap:round;opacity:.9;animation:crawl 30s linear infinite}
+.route:nth-of-type(2){animation-delay:-7s}
+.route:nth-of-type(3){animation-delay:-14s}
+.route:nth-of-type(4){animation-delay:-21s}
+@keyframes crawl{to{stroke-dashoffset:-440}}
+.hub{fill:var(--accent-sky);animation:pulse 3.4s ease-in-out infinite}
+.hub:nth-of-type(2n){animation-delay:1.1s}
+.hub:nth-of-type(3n){animation-delay:2.2s}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+.stat-grid{
+  position:relative;z-index:1;
+  margin-top:clamp(-7.5rem,-9vw,-2rem);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--w-line);border:1px solid var(--w-line);border-radius:var(--radius);overflow:hidden;
 }
-/* ---------- use cases ---------- */
-.cases{padding-block:clamp(4rem,9vw,7rem)}
-.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,3vw,2.5rem)}
-.case{
-  border:1px solid var(--line);background:var(--paper);
-  display:grid;grid-template-rows:auto 1fr;
-  transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;
+.stat{
+  background:rgba(9,26,44,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  padding:clamp(1.4rem,2.6vw,2.2rem) clamp(1.2rem,2vw,1.8rem);
 }
-.case:hover{border-color:var(--ink);box-shadow:0 20px 44px -34px rgba(12,35,64,.55);transform:translateY(-3px)}
-.case-art{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#F6F2EA,#EDF2F2)}
-.case-art svg{width:100%;height:auto}
-.case-body{padding:clamp(1.5rem,3vw,2.25rem);display:grid;gap:var(--s2);align-content:start;justify-items:start}
-.case-body h3{font-size:1.6rem}
-.case-body p{font-size:.98rem;color:var(--ink-soft)}
-.case-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
-.route-chip{
-  font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--accent);
-  border:1px solid rgba(196,64,15,.35);border-radius:99px;padding:.35rem .9rem;
+.stat .n{
+  font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-.02em;
+  font-size:clamp(2rem,3.6vw,3.1rem);line-height:1;color:#fff;white-space:nowrap;
 }
-.case-note{
-  border-top:1px dashed var(--line);padding-top:var(--s2);justify-self:stretch;
-  font-family:var(--mono);font-size:.76rem;line-height:1.7;color:var(--ink-soft);
+.stat .n small{font-size:.55em;font-weight:500;color:var(--w-soft);letter-spacing:0}
+.stat .l{margin-top:.7rem;font-size:.85rem;color:var(--w-soft);line-height:1.45;text-wrap:pretty}
+@media (max-width:899px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- S3 craft (full-bleed callout sheet) ---------- */
+.craft{
+  position:relative;display:flex;flex-direction:column;justify-content:space-between;
+  min-height:100vh;min-height:100svh;
+  background:var(--deep-2);color:var(--w);overflow:hidden;
 }
-/* ---------- media ---------- */
-.press{padding-block:clamp(4rem,9vw,7rem);border-top:1px solid var(--line)}
-.press-list{list-style:none;border-top:1px solid var(--line)}
-.press-item{
-  display:grid;grid-template-columns:minmax(11rem,16rem) 1fr;
-  gap:.5rem 2.5rem;align-items:baseline;
-  padding:clamp(1.4rem,3vw,2rem) 0;border-bottom:1px solid var(--line);
+.craft .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.craft .shade{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(0deg,rgba(3,7,13,.94) 0%,rgba(3,7,13,.52) 26%,rgba(3,7,13,0) 52%),
+    linear-gradient(180deg,rgba(3,7,13,.55) 0%,rgba(3,7,13,0) 30%);
 }
-.press-item > *{transition:transform .25s ease}
-.press-item:hover > *{transform:translateX(.85rem)}
-.press-item:hover .press-logo{color:var(--accent)}
-.press-logo{font-size:1.3rem;line-height:1.2;transition:transform .25s ease,color .25s ease}
-.logo-et{font-family:var(--serif);font-weight:560;letter-spacing:.01em}
-.logo-n18{font-family:var(--sans);font-weight:600;letter-spacing:-.02em}
-.logo-mc{font-family:var(--sans);font-weight:600;text-transform:lowercase;letter-spacing:-.03em}
-.press-item p{font-size:.98rem;color:var(--ink-soft);max-width:44rem}
-.press-foot{margin-top:var(--s3);font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);max-width:none}
-/* ---------- vision ---------- */
-.vision{
-  background:var(--ink);color:var(--paper);
-  padding-block:clamp(4.5rem,10vw,8rem);
-  position:relative;overflow:hidden;
+.craft-top{position:relative;z-index:1;padding-top:clamp(6rem,13vh,9rem)}
+.craft h2{font-size:clamp(2.2rem,5vw,3.7rem);color:#fff}
+.craft .lead{margin-top:1.1rem}
+.craft .caption{margin-top:1.5rem}
+.craft-bottom{position:relative;z-index:1;margin-top:clamp(3rem,10vh,8rem);padding-bottom:clamp(2.6rem,6vh,4rem)}
+.spec-row{display:grid;grid-template-columns:repeat(6,1fr);gap:1.6rem clamp(1.2rem,2.4vw,2.2rem)}
+.spec{position:relative;border-top:1px solid rgba(160,196,224,.35);padding-top:.95rem}
+.spec::before{content:"";position:absolute;top:-1px;left:0;width:30px;height:2px;background:var(--accent-sky)}
+.spec .n{
+  font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-.02em;
+  font-size:clamp(1.55rem,2.6vw,2.35rem);line-height:1.05;color:#fff;white-space:nowrap;
 }
-.vision .kicker{color:var(--accent-soft)}
-.vision .kicker::before{background:var(--accent-soft)}
-.vision blockquote p{
-  font-family:var(--serif);font-style:italic;font-weight:440;
-  font-size:clamp(1.7rem,4.6vw,3.3rem);line-height:1.22;letter-spacing:-.01em;
-  max-width:56rem;margin-top:var(--s3);text-wrap:balance;
+.spec .n small{font-size:.55em;font-weight:500;color:var(--w-soft)}
+.spec .l{margin-top:.55rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--w-soft);line-height:1.6}
+@media (max-width:1099px){.spec-row{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:639px){.spec-row{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- S4 ground effect ---------- */
+.ge{background:var(--paper);padding-block:var(--pad)}
+.ge h2{font-size:clamp(2.2rem,5vw,3.7rem)}
+.ge .lead{margin-top:1.1rem}
+.cushion{margin-top:clamp(2.2rem,5vw,3.6rem);position:relative}
+.cushion .frame{
+  position:relative;aspect-ratio:2560/1200;border-radius:var(--radius);overflow:hidden;
+  box-shadow:0 30px 80px -40px rgba(10,26,42,.35);background:var(--sea);
 }
-.vision blockquote strong{font-weight:560;color:var(--accent-bright);font-style:italic}
-.vision figcaption{
-  margin-top:var(--s4);
-  font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;
-  text-transform:uppercase;color:#9FB2C6;
+.cushion img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.anno{position:absolute;inset:0;width:100%;height:100%}
+.cushion figcaption{margin-top:1.1rem;text-align:center}
+.arc{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round}
+.arc.a1{opacity:.8;animation:breathe 4.5s ease-in-out infinite}
+.arc.a2{opacity:.5;animation:breathe 4.5s ease-in-out infinite 1.1s}
+.arc.a3{opacity:.3;animation:breathe 4.5s ease-in-out infinite 2.2s}
+@keyframes breathe{0%,100%{opacity:.28}50%{opacity:.85}}
+.dim{stroke:#41586D;stroke-width:1.5;fill:none}
+.anno-lab{
+  position:absolute;font-size:clamp(.625rem,1.05vw,.8rem);font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:#41586D;
+  white-space:nowrap;pointer-events:none;
 }
-.vision-waves{position:absolute;inset-inline:0;bottom:0;opacity:.5;pointer-events:none}
-/* ---------- contact ---------- */
-.contact{padding-block:clamp(4.5rem,10vw,8rem)}
-.contact-lede{font-size:clamp(1rem,1.6vw,1.15rem);color:var(--ink-soft);max-width:42rem}
-.contact-mail{
-  display:inline-block;text-decoration:none;
-  font-family:var(--serif);font-weight:500;letter-spacing:-.02em;
-  font-size:clamp(1.6rem,5.8vw,4rem);line-height:1.15;
-  border-bottom:2px solid var(--line);padding-bottom:.15em;
-  transition:color .25s ease,border-color .25s ease;
-  overflow-wrap:anywhere;
+@media (max-width:599px){.anno-lab,.anno .dim{display:none}}
+
+/* ---------- S5 technology ---------- */
+.tech{background:var(--mist);padding-block:var(--pad);position:relative;overflow:hidden}
+.tech h2{font-size:clamp(2.2rem,5vw,3.7rem);text-align:center}
+.wire{width:min(640px,86%);margin:clamp(1.6rem,4vw,2.6rem) auto 0;opacity:.85;mix-blend-mode:multiply}
+.pillars{
+  margin-top:clamp(1.8rem,4vw,2.8rem);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
 }
-.contact-mail:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.contact-row{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;align-items:center;margin-top:var(--s4)}
-.link-arrow{
-  display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;
-  font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:.3rem;
-  transition:color .2s ease,border-color .2s ease;
+.pillar{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:.9rem;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
 }
-.link-arrow svg{width:.85rem;height:.85rem;transition:transform .25s ease}
-.link-arrow:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.link-arrow:hover svg{transform:translate(2px,-2px)}
+.pillar:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(10,26,42,.35);border-color:rgba(10,102,232,.35)}
+.pillar svg{width:1.8rem;height:1.8rem;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.pillar b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.04rem;letter-spacing:-.01em;line-height:1.25}
+.pillar .sub{font-size:.88rem;color:var(--ink-2)}
+@media (max-width:959px){.pillars{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:599px){.pillars{grid-template-columns:1fr}}
+
+/* ---------- S6 flight ---------- */
+.flight{position:relative;min-height:88vh;min-height:88svh;display:flex;align-items:flex-end;overflow:hidden;background:#06232B;color:#fff}
+.flight video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.flight .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(3,22,28,.88) 0%,rgba(3,22,28,.42) 45%,rgba(3,22,28,.08) 75%)}
+.flight .container{position:relative;z-index:1;padding-block:clamp(3.5rem,8vh,5.5rem)}
+.flight h2{font-size:clamp(2.6rem,6vw,4.6rem);color:#fff}
+.flight .lead{color:#C6DCE6;margin-top:1.1rem}
+.flight .caption{color:#9DBCC9;margin-top:1.6rem}
+.flight .sx{color:#7FD3E8}
+
+/* ---------- S7 news ---------- */
+.news{background:var(--paper);padding-block:var(--pad)}
+.news h2{font-size:clamp(2.2rem,5vw,3.7rem);text-align:center}
+.press{
+  margin-top:clamp(2rem,4vw,3rem);
+  display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;
+}
+.chip{
+  background:#F3F7FA;border:1px solid var(--line);border-radius:14px;
+  height:76px;padding:0 clamp(1.4rem,3vw,2.4rem);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.chip img{filter:grayscale(1);opacity:.8;transition:filter .3s,opacity .3s}
+.chip:hover img{filter:none;opacity:1}
+.chip .n18{height:110px;width:auto}
+.chip .mc{height:46px;width:auto}
+.etname{font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:#5A6E80;white-space:nowrap}
+.news .stat-grid{margin-top:clamp(2rem,4vw,3rem);grid-template-columns:repeat(3,1fr);background:var(--line);border-color:var(--line)}
+.news .stat{background:var(--mist);backdrop-filter:none;-webkit-backdrop-filter:none}
+.news .stat .n{color:var(--ink)}
+.news .stat .n small{color:var(--ink-2)}
+.news .stat .l{color:var(--ink-2)}
+.attrib{margin-top:1.6rem;text-align:center;display:grid;gap:.45rem;justify-items:center}
+.legal{margin-top:2.2rem;text-align:center;font-size:.72rem;color:#41586D}
+@media (max-width:719px){.news .stat-grid{grid-template-columns:1fr}}
+
+/* ---------- S8 vision ---------- */
+.vision{position:relative;min-height:92vh;min-height:92svh;display:flex;align-items:center;overflow:hidden;background:#F6F1E7}
+.vision>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vision .scrim{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,247,240,.94) 0%,rgba(250,247,240,.62) 48%,rgba(250,247,240,.18) 80%,rgba(250,247,240,0) 100%)}
+.vision .container{position:relative;z-index:1;text-align:center;padding-block:8rem}
+.vision h2{font-size:clamp(2.6rem,6.4vw,5rem);max-width:12em;margin-inline:auto}
+.vision .lead{margin:1.5rem auto 2.4rem;color:#24384A}
+.vision .btns{justify-content:center}
+
 /* ---------- footer ---------- */
-footer{border-top:1px solid var(--line);padding-block:var(--s4)}
-.foot-inner{
-  display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between;
-  font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;color:var(--ink-soft);
+footer{background:var(--paper);border-top:1px solid var(--line);padding:2.6rem 0}
+.ft{
+  display:flex;align-items:center;justify-content:space-between;gap:1.4rem;flex-wrap:wrap;
+  font-size:.85rem;color:var(--ink-2);
 }
-.foot-brand{display:flex;align-items:center;gap:.5rem}
-.foot-brand svg{width:1.4rem;height:1.4rem;flex:none}
-/* ---------- reveal (JS progressive enhancement) ---------- */
-.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.8,.3,1)}
-.js .reveal.in-view{opacity:1;transform:none}
-.js .prop-grid > .reveal:nth-child(2){transition-delay:.08s}
-.js .prop-grid > .reveal:nth-child(3){transition-delay:.16s}
-.js .case-grid > .reveal:nth-child(2){transition-delay:.1s}
+.ft-brand{display:flex;align-items:center;gap:.7rem}
+.ft-brand img{width:1.7rem;height:auto}
+.ft a{color:var(--ink);font-weight:500;transition:color .2s}
+.ft a:hover{color:var(--accent)}
+.ft .dot{opacity:.4;margin-inline:.5rem}
+.ft address{font-style:normal}
+
+/* small-screen numerals: keep stat tiles from clipping at 375px */
+@media (max-width:479px){
+  .stat{padding:1.15rem 1rem}
+  .stat .n{font-size:1.55rem}
+  .spec .n{font-size:1.35rem}
+  .spec-row{gap:1.2rem 1rem}
+}
+
+/* ---------- reveal motion ---------- */
+.js [data-r]{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1);transition-delay:var(--d,0s)}
+.js [data-r].in{opacity:1;transform:none}
+
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none !important;transition:none !important}
-  .js .reveal{opacity:1;transform:none}
-}
-/* ---------- responsive ---------- */
-@media (max-width:900px){
-  .prop-grid{grid-template-columns:1fr}
-  .tech-cols{grid-template-columns:1fr}
-  .tech-facts{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:var(--s3)}
-  .case-grid{grid-template-columns:1fr}
-  .press-item{grid-template-columns:1fr}
-}
-@media (max-width:640px){
-  :root{--nav-h:5.4rem}
-  body{font-size:1rem}
-  .nav-inner{flex-wrap:wrap;row-gap:.1rem;padding-block:.6rem}
-  .nav-inner nav{flex-basis:100%}
-  .brand-name{font-size:1.05rem}
-  .nav-links{gap:.75rem;justify-content:flex-start}
-  .nav-links a{font-size:.68rem;letter-spacing:.08em}
-  .nav-links a.nav-cta{padding:.42rem .8rem;margin-left:auto}
-  .stat-band .foot{margin-left:0}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .js [data-r]{opacity:1;transform:none}
+  .cue{display:none}
 }
 </style>
 </head>
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
+<body id="top">
+<script>document.documentElement.classList.add('js');</script>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- Shared geometry: the WIG craft hull is defined once and re-used in the hero,
-     the FIG. 02 drawing and the cargo plate so the silhouettes can never drift apart. -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <g id="wf-hull">
-      <!-- T-tail: horizontal stabilizer -->
-      <path d="M52 8 L144 8 L136 0 L62 0 Z"/>
-      <!-- fin -->
-      <path d="M122 42 L104 6 L84 6 L76 46 Z"/>
-      <!-- fuselage + planing hull -->
-      <path d="M352 64 C340 50 314 40 284 37 L128 40 L86 44 L84 56 L150 70 L156 82 L296 80 C324 76 344 70 352 64 Z"/>
-      <!-- low wide wing (near chord) -->
-      <path d="M150 62 L284 57 L294 64 L268 71 L160 73 Z"/>
-      <!-- wingtip float / endplate -->
-      <path d="M170 76 L252 76 Q263 76 257 85 L182 87 Q166 87 170 76 Z"/>
-    </g>
-  </defs>
-</svg>
-
-<header class="nav" id="top">
-  <div class="nav-inner">
+<!-- ================= HEADER ================= -->
+<header class="hd" id="hd">
+  <div class="hd-in">
     <a class="brand" href="#top" aria-label="Waterfly Technologies — home">
-      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-        <g fill="none" stroke-linecap="round">
-          <ellipse cx="14.5" cy="13" rx="10.5" ry="3.4" transform="rotate(-24 14.5 13)" fill="#E4572E" opacity=".85"/>
-          <ellipse cx="25.5" cy="13" rx="10.5" ry="3.4" transform="rotate(24 25.5 13)" fill="#E4572E" opacity=".85"/>
-          <ellipse cx="15.5" cy="19" rx="8.6" ry="2.7" transform="rotate(-38 15.5 19)" fill="#C4400F" opacity=".6"/>
-          <ellipse cx="24.5" cy="19" rx="8.6" ry="2.7" transform="rotate(38 24.5 19)" fill="#C4400F" opacity=".6"/>
-          <path d="M20 9.5c1.3 4 1.3 18-.001 27.5-1.3-9.5-1.3-23.5.001-27.5Z" fill="#0C2340"/>
-          <circle cx="20" cy="7.6" r="2.5" fill="#0C2340"/>
-        </g>
-      </svg>
-      <span class="brand-name">Water<em>fly</em></span>
+      <img src="assets/logo.png" alt="" width="526" height="474">
+      <span>Waterfly Technologies</span>
     </a>
-    <nav aria-label="Primary">
-      <ul class="nav-links" role="list">
-        <li><a href="#technology">Technology</a></li>
-        <li><a href="#use-cases">Use&nbsp;Cases</a></li>
-        <li><a href="#vision">Vision</a></li>
-        <li><a class="nav-cta" href="#contact">Contact</a></li>
-      </ul>
+    <nav class="nav" aria-label="Primary">
+      <a href="#craft">Craft</a>
+      <a href="#technology">Technology</a>
+      <a href="#flight">Flight</a>
+      <a href="#news">News</a>
+      <a class="pill" href="#contact">Contact</a>
+      <details class="menu" id="menu">
+        <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+        <div class="menu-panel">
+          <a href="#craft">Craft</a>
+          <a href="#technology">Technology</a>
+          <a href="#flight">Flight</a>
+          <a href="#news">News</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </details>
     </nav>
   </div>
 </header>
 
-<main id="main">
-  <!-- ============ HERO ============ -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="container hero-copy">
-      <p class="kicker">Future of Marine Transportation</p>
-      <h1 id="hero-title">As Fast as a <em>Plane</em>,<br>As Cheap as a <em>Ship</em></h1>
-      <p class="hero-sub">Waterfly Technologies builds Wing-In-Ground craft — vehicles that fly metres above the sea on a cushion of air, pairing near-aircraft speed with ship-like operating cost.</p>
-      <ul class="hero-meta" role="list" aria-label="Company facts">
-        <li>IIT Madras incubated</li>
-        <li>Chennai, India</li>
-        <li>~10&#215; cheaper than air freight</li>
-      </ul>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:fly@waterfly.blue">Write to us
-          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a class="btn btn-ghost" href="#technology">How it works
-          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 1v13M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-    </div>
+<main id="main" tabindex="-1">
 
-    <div class="hero-plate">
-      <svg viewBox="0 0 1440 470" role="img" aria-labelledby="heroSvgTitle heroSvgDesc" preserveAspectRatio="xMidYMax slice">
-        <title id="heroSvgTitle">A Wing-In-Ground craft skimming metres above layered ocean waves</title>
-        <desc id="heroSvgDesc">Side profile of a WIG craft with boat hull, low wide wing and T-tail, flying just above the sea. A dashed dimension line marks the small gap between hull and water.</desc>
-        <!-- horizon -->
-        <line x1="0" y1="352" x2="1440" y2="352" stroke="rgba(12,35,64,.18)" stroke-width="1"/>
-        <line x1="0" y1="352" x2="1440" y2="352" stroke="rgba(12,35,64,.06)" stroke-width="7"/>
-        <!-- speed lines behind craft -->
-        <g stroke="rgba(12,35,64,.3)" stroke-width="2" stroke-linecap="round">
-          <line x1="380" y1="222" x2="470" y2="222"/>
-          <line x1="330" y1="248" x2="452" y2="248"/>
-          <line x1="396" y1="274" x2="486" y2="274"/>
-        </g>
-        <!-- craft -->
-        <g class="craft-bob">
-          <g transform="translate(540,158) scale(1.14)" fill="#0C2340">
-            <use href="#wf-hull"/>
-            <!-- engine pylon + nacelle -->
-            <path d="M230 38 L226 22 L242 22 L244 38 Z"/>
-            <path d="M216 19 a5 5 0 0 1 5 -5 h28 a5 5 0 0 1 5 5 a5 5 0 0 1 -5 5 h-28 a5 5 0 0 1 -5 -5 Z"/>
-            <!-- prop disc (blur) -->
-            <ellipse cx="257" cy="19" rx="2.6" ry="17" fill="rgba(12,35,64,.35)"/>
-            <circle cx="256" cy="19" r="3.2"/>
-            <!-- windscreen + windows in paper -->
-            <path d="M282 40 L262 40 L272 48 L290 45 Z" fill="#FAF7F2" opacity=".9"/>
-            <circle cx="236" cy="50" r="2.6" fill="#FAF7F2" opacity=".85"/>
-            <circle cx="219" cy="51" r="2.6" fill="#FAF7F2" opacity=".85"/>
-            <circle cx="202" cy="52" r="2.6" fill="#FAF7F2" opacity=".85"/>
-            <!-- accent cheat line -->
-            <path d="M300 51 L136 50 L136 47 L302 48 Z" fill="#E4572E"/>
-          </g>
-        </g>
-        <!-- shadow on water, centred under the hull -->
-        <ellipse cx="756" cy="368" rx="180" ry="7" fill="rgba(12,35,64,.14)"/>
-        <!-- dimension line: height above surface -->
-        <g class="dim-note" font-family="IBM Plex Mono,monospace" font-size="13" fill="#43586F">
-          <line x1="1020" y1="262" x2="1020" y2="360" stroke="#43586F" stroke-width="1" stroke-dasharray="4 4"/>
-          <path d="M1016 268 L1020 260 L1024 268 Z" fill="#43586F"/>
-          <path d="M1016 354 L1020 362 L1024 354 Z" fill="#43586F"/>
-          <line x1="948" y1="260" x2="1032" y2="260" stroke="rgba(67,88,111,.5)" stroke-width="1"/>
-          <text x="1036" y="306" letter-spacing="1">h = metres, not</text>
-          <text x="1036" y="324" letter-spacing="1">kilometres</text>
-        </g>
-        <!-- layered waves (periodic, wavelength 120): nearest layer drifts fastest -->
-        <g class="w-drift-a">
-          <path fill="#D8E7EA" d="M-240 366 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 L1800 470 L-240 470 Z"/>
-        </g>
-        <g class="w-drift-b">
-          <path fill="#AECDD5" d="M-240 398 q30 -12 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 L1800 470 L-240 470 Z"/>
-        </g>
-        <g class="w-drift-c">
-          <path fill="#6E9DAD" stroke="#4E8296" stroke-width="1.5" d="M-240 432 q30 -14 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 L1800 470 L-240 470 Z"/>
-        </g>
-        <!-- faint mirrored reflection of the hull on the water -->
-        <g transform="translate(540,418) scale(1.14,-0.57)" opacity=".1" fill="#0C2340">
-          <use href="#wf-hull"/>
-        </g>
+<!-- ================= S1 · HERO ================= -->
+<section class="hero">
+  <video autoplay muted loop playsinline preload="metadata"
+         poster="assets/hero-poster.jpg"
+         aria-label="Waterfly wing-in-ground craft flying low over open ocean">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="container hero-c">
+    <p class="eyebrow" data-r>Future of Marine Transportation</p>
+    <h1 data-r style="--d:.08s">
+      <span>As Fast as a Plane.</span>
+      <span>As Cheap as a Ship.</span>
+    </h1>
+    <p class="lead" data-r style="--d:.16s">Wing-in-ground craft flying metres above the ocean. Aircraft speed, ship economics.</p>
+    <div class="btns" data-r style="--d:.24s">
+      <a class="btn btn-p" href="#flight">Watch It Fly
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-g" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+  <div class="cue" aria-hidden="true"></div>
+</section>
+
+<!-- ================= S2 · THE PROBLEM ================= -->
+<section class="problem dark" aria-labelledby="h-problem">
+  <div class="container">
+    <p class="sx" data-r>01 · The Problem</p>
+    <h2 id="h-problem" data-r>Stuck at Sea</h2>
+    <p class="lead" data-r style="--d:.08s">Ships are slow. Air freight costs ten times more. Global trade needs a third option.</p>
+    <div class="stage">
+      <svg class="map" viewBox="0 0 1600 760" preserveAspectRatio="xMidYMid meet" role="img" aria-label="World map showing long ocean trade routes">
+        <g class="grat"><path d="M200 0V760M400 0V760M600 0V760M800 0V760M1000 0V760M1200 0V760M1400 0V760"/><path d="M0 190H1600M0 380H1600M0 570H1600"/></g>
+        <g class="land"><path d="M430.411,729.808L432.109,731.442L433.587,732.859L427.327,732.43L421.695,732.616L416.632,731.565L416.431,731.442L413.456,730.501L419.68,730.626L425.942,730.94L425.915,729.616L425.644,728.468ZM1132.19,728.034L1126.43,728.485L1124.331,727.324L1124.158,726.144L1124.286,725.946L1123.598,725.022L1126.717,723.756L1131.209,724.293L1132.686,725.353L1133.323,726.541ZM460.875,723.154L465.986,724.626L469.629,726.671L471.725,728.095L473.974,729.759L471.18,730.772L467.955,731.581L464.019,732.324L459.371,732.938L452.807,732.753L447.719,731.705L446.253,730.392L450.724,729.506L451.547,728.418L451.356,726.998L450.989,725.752L451.147,724.557L451.219,723.154L452.617,723.154L455.854,722.415ZM1265.109,706.844L1268.103,707.429L1272.393,706.775L1269.075,708.082L1265.152,709.026L1261.532,708.733L1260.295,707.429L1262.468,706.189ZM1252.614,706.775L1255.236,708.226L1253.714,708.082L1250.437,707.718L1247.716,706.7L1250.791,705.899ZM1327.664,701.796L1328.028,700.812L1329.465,700.463L1327.664,701.796ZM270.535,700.463L270.98,700.143L275.415,700.664L280.072,700.959L280.072,700.959L283.984,701.478L286.614,701.036L291.158,703.178L288.486,702.884L285.136,703.031L281.33,702.884L277.676,703.107L273.689,702.367L272.336,701.796L270.535,700.463ZM365.716,697.238L367.923,698.958L369.024,700.446L369.775,701.856L366.914,702.374L364.475,703.114L360.566,703.044L360.315,701.562L357.452,702.08L354.78,702.597L351.261,701.485L349.304,699.925L350.86,698.435L352.377,697.983L355.962,698.131L354.694,696.18L353.316,694.753L349.914,691.641L349.692,689.809L351.834,689.194L354.944,690.647L357.163,692.095L360.302,693.845L363.048,695.503ZM287.974,712.827L292.765,713.458L291.97,711.895L288.348,710.676L285.071,709.376L282.691,709.214L275.649,704.214L275.649,704.214L276.886,704.278L280.346,704.056L284.58,704.646L289.044,705.747L292.085,707.058L296.299,707.278L299.342,706.769L302.331,706.038L305.314,705.596L309.428,706.473L312.905,706.183L311.714,703.324L316.226,705.013L320.427,705.671L323.596,705.305L327.84,706.769L331.825,706.914L335.881,707.348L340.344,708.151L340.88,706.769L340.38,705.45L345.079,706.914L348.6,706.549L352.52,707.348L356.001,708.583L359.396,708.22L361.429,707.423L363.248,706.473L366.165,705.962L369.756,705.526L372.873,705.013L374.814,704.208L375.209,703.025L374.11,701.401L372.068,699.835L369.538,698.345L366.884,696.842L364.355,695.34L362.151,693.976L360.39,692.463L359.095,690.937L359.01,689.485L358.557,687.876L357.488,686.34L355.181,684.639L353.283,683.086L353.026,681.298L353.575,680.132L354.143,678.645L355.06,677.384L356.445,676.208L356.047,674.47L356.734,673.363L357.75,672.329L360.554,672.095L361.373,670.818L362.89,670.026L365.052,669.544L366.443,668.509L367.118,667.223L369.196,666.745L371.949,667.79L371.94,669.144L369.77,670.343L369.177,671.217L366.286,670.584L364.046,670.983L362.751,671.938L361.399,672.966L360.952,674.156L361.975,675.732L363.551,677.228L366.246,678.564L365.011,679.504L362.403,679.815L361.973,681.143L361.368,682.388L361.115,684.097L362.079,685.567L364.757,687.185L367.584,688.413L370.995,689.333L374.516,690.555L377.277,692.082L379.375,693.525L381.79,695.04L384.481,696.316L386.816,697.743L390.851,701.248L393.186,702.655L394.984,704.132L397.462,705.596L399.204,707.567L399.306,709.089L398.996,710.316L395.754,710.818L395.954,712.105L395.644,713.317L392.979,714.662L389.906,715.229L387.329,715.999L384.498,716.773L384.134,718.234L379.822,718.372L374.714,718.234L370.643,718.509L365.932,718.509L368.716,719.891L373.819,720.506L378.258,721.461L381.709,722.677L380.185,723.751L374.952,723.415L372.322,724.287L374.276,725.678L376.225,726.992L381.172,728.09L383.745,729.308L389.171,730.512L395.687,731.016L401.97,731.887L407.473,732.869L414.006,733.845L421.403,734.322L429.329,735.154L435.379,736.036L442.041,737.018L447.168,738.374L450.522,739.419L451.665,738.427L454.332,737.588L457.205,736.671L461.333,735.92L464.645,735.098L471.078,735.037L478.149,735.45L484.53,736.152L484.23,734.858L486.572,733.964L493.153,733.902L497.468,733.238L501.549,732.563L506.515,732.132L511.709,731.576L514.871,730.767L511.645,729.627L509.178,728.479L507.807,727.251L502.687,727.38L497.711,727.9L492.41,727.9L490.22,726.665L487.786,724.155L488.219,723.415L491.303,722.613L495.117,721.801L497.449,720.778L499.812,719.748L501.02,718.372L504.269,717.748L507.621,717.261L509.287,716.978L513.514,716.84L517.218,716.35L520.098,715.648L522.817,714.802L525.231,713.954L528.27,712.819L529.835,711.605L531.701,710.533L531.463,709.089L527.767,708.22L527.654,706.693L528.732,705.526L531.217,704.792L533.792,703.909L535.951,702.731L537.232,701.248L537.485,699.468L538.942,698.416L542.61,698.642L544.873,699.912L548.488,700.06L547.706,698.642L548.283,697.147L551.707,697.523L553.34,698.945L556.993,699.165L560.415,698.493L563.856,698.047L567.339,698.267L569.526,699.835L572.038,698.571L574.668,697.892L577.736,697.368L580.76,696.842L583.304,695.939L586.312,695.34L588.459,694.505L589.577,693.145L592.302,694.133L595.139,693.603L598.199,695.412L600.547,696.771L603.561,696.017L604.181,694.505L606.731,693.446L610.767,693.675L612.582,695.112L614.396,693.675L617.418,693.223L620.868,693.073L624.069,693.145L627.601,693.603L630.922,693.826L632.842,695.112L635.23,696.245L638.216,695.568L641.66,695.412L645.038,695.412L648.336,695.34L651.127,694.812L654.123,694.355L656.392,693.295L658.975,692.614L661.906,692.233L663.854,691.168L664.827,689.029L666.145,687.723L669.475,688.34L671.076,689.717L673.944,690.634L676.991,690.331L679.507,691.701L682.014,692.692L684.819,691.78L685.428,690.1L687.964,689.413L690.779,688.108L693.615,687.571L696.995,686.8L699.187,685.954L701.481,685.027L703.693,684.178L706.662,684.639L709.129,683.247L710.901,682.159L713.801,682.233L716.16,681.298L716.504,679.896L718.912,678.801L721.319,678.015L724.319,677.384L727.13,677.072L729.894,677.309L732.878,677.703L735.52,678.801L736.058,680.517L738.955,681.843L740.956,682.931L744.678,683.401L746.847,684.485L749.489,685.567L752.433,685.801L754.8,685.027L757.282,683.401L760.236,684.251L763.268,684.719L766.172,685.18L769.181,685.487L772.221,685.487L774.97,689.565L774.908,690.555L774.655,692.312L771.848,693.295L769.604,694.734L770.122,696.245L773.434,696.167L773.128,697.672L771.724,699.094L770.45,700.657L772.776,701.843L776.186,702.214L779.535,701.549L781.079,700.06L781.99,698.642L783.569,697.445L785.385,696.316L786.088,694.962L787.61,693.073L789.477,692.692L792.885,692.535L795.871,692.082L798.929,691.47L800.403,689.948L801.298,688.493L803.38,687.032L806.37,686.027L808.95,685.26L810.662,683.943L812.41,683.247L814.659,682.623L817.703,683.012L820.48,682.623L823.508,682.159L826.867,682.388L829.159,681.298L830.909,678.645L831.981,679.74L833.301,681.615L835.83,682.388L838.743,682.703L841.735,682.233L844.833,682.542L847.708,682.623L849.673,682.233L852.233,682.468L854.472,683.32L857.299,682.777L860.611,682.777L863.503,682.233L866.618,682.777L868.862,681.453L870.627,680.132L872.922,679.031L877.286,676.052L879.199,676.603L881.381,677.703L883.194,679.112L886.676,681.534L889.672,681.615L892.506,681.615L895.915,681.143L899.347,680.597L902.13,679.504L904.508,678.327L908.001,678.171L910.513,677.309L912.759,678.096L914.024,679.348L915.89,680.597L919.315,680.442L921.156,681.453L924.554,682.468L928.288,682.858L931.56,682.542L934.336,681.298L936.757,680.051L939.628,679.74L942.249,680.287L945.323,680.678L948.421,680.051L951.198,680.051L953.788,680.442L956.496,680.833L959.512,680.132L963.055,679.504L966.258,679.348L969.774,679.348L972.757,678.956L975.669,678.645L977.26,676.678L978.003,675.023L979.539,676.127L979.397,677.933L979.784,679.585L980.542,680.908L982.853,681.615L986.437,681.379L990.513,681.298L993.383,681.063L997.417,681.063L1000.354,680.988L1004.32,681.143L1007.614,681.453L1009.208,682.703L1007.928,684.178L1009.355,685.334L1012.192,686.26L1015.096,687.265L1018.685,687.955L1022.465,688.565L1025.228,689.181L1028.614,689.26L1031.269,687.955L1033.364,689.029L1035.002,690.251L1037.152,691.168L1040.586,691.549L1043.798,692.003L1044.381,693.525L1047.244,694.433L1048.702,695.789L1051.65,696.394L1055.133,696.316L1058.188,696.544L1061.788,696.466L1065.14,696.771L1068.106,697.296L1070.575,698.196L1073.14,698.945L1074.441,700.06L1073.063,701.549L1070.58,702.878L1068.072,704.57L1066.107,705.893L1063.647,707.423L1059.448,708.007L1056.832,709.307L1052.549,710.098L1050.237,711.537L1047.315,712.893L1044.443,714.027L1042.197,715.508L1040.509,716.84L1039.033,718.437L1038.096,719.748L1038.609,721.12L1038.179,722.409L1038.48,723.618L1043.2,724.085L1043.009,725.547L1037.626,726.076L1032.848,726.795L1027.571,726.924L1023.67,728.801L1021.834,730.327L1019.594,731.517L1017.078,732.69L1019.596,733.72L1019.637,734.981L1020.693,736.092L1022.751,737.073L1025.266,737.983L1028.036,738.871L1032.745,739.742L1032.143,741.065L1038.563,741.636L1038.727,741.834L1039.354,742.593L1047.42,741.939L1051.78,742.743L1054.983,743.341L1054.983,743.341L1055.087,743.362L1060.013,741.891L1063.095,742.692L1063.553,742.602L1064.653,742.391L1065.994,742.127L1067.145,741.9L1067.724,741.786L1068.089,741.79L1068.274,741.834L1069.912,742.896L1075.133,741.834L1075.984,741.684L1084.28,741.222L1085.539,741.834L1086.114,742.144L1088.19,742.985L1093.914,743.615L1097.747,744.366L1105.907,744.915L1114.696,744.274L1124.008,744.735L1127.908,745.449L1136.372,744.778L1145.08,744.133L1148.673,742.985L1139.043,742.887L1132.341,742.292L1132.491,741.276L1126.895,740.699L1129.799,739.471L1132.935,738.316L1135.838,737.245L1137.41,736.036L1134.41,735.216L1134.104,734.141L1131.479,733.175L1137.636,733.359L1144.505,732.869L1146.722,733.902L1152.87,732.996L1159.059,731.828L1162.817,730.767L1163.83,729.44L1161.627,728.546L1158.998,727.576L1153.69,727.38L1149.405,726.924L1144.553,726.597L1144.359,725.348L1142.117,724.287L1141.399,723.084L1145.018,719.13L1146.002,719.475L1147.275,720.571L1152.239,720.228L1157.208,719.748L1157.728,721.255L1162.537,720.913L1167.132,720.163L1171.767,719.201L1176.33,718.024L1180.968,717.676L1182.418,716.35L1182.977,715.016L1185.25,713.746L1189.644,713.108L1189.933,714.308L1195.086,713.605L1199.445,712.678L1203.598,712.604L1207.855,712.253L1212.727,711.394L1216.739,710.601L1221.146,709.812L1223.139,710.03L1224.759,710.316L1229.636,709.812L1232.671,710.458L1236.683,710.39L1241.061,709.887L1244.491,710.241L1248.306,710.601L1252.467,710.458L1256.526,710.533L1260.694,710.601L1264.808,710.458L1269.148,709.376L1273.387,708.801L1275.952,709.594L1280.239,708.945L1285.08,707.643L1285.392,708.801L1284.652,710.098L1284.831,711.32L1289.285,710.241L1290.808,711.605L1294.049,712.037L1295.91,713.034L1300.235,712.819L1304.795,712.179L1308.875,712.32L1311.991,712.819L1312.026,712.827L1290.929,725.866L1266.611,737.563L1236.027,746.892L1216.815,750.134L1193.751,752L800,752L406.249,752L383.185,750.134L363.973,746.892L333.389,737.563L309.071,725.866ZM1317.309,709.214L1315.921,709.089L1316.239,707.712L1317.555,706.328L1320.369,703.54L1321.9,704.056L1324.351,704.214L1317.309,709.214ZM304.512,626.858L310.88,629.475L316.428,630.556L316.545,632.728L313.506,632.94L310.63,631.415L310.856,633.167L309.012,634.506L304.987,634.016L301.525,632.721L297.499,632.09L291.343,629.666L286.068,627.331L277.595,622.43L281.116,623.35L288.141,626.274L293.857,627.84L294.082,625.838L292.939,622.838L294.761,621.025L297.584,621.545L300.378,623.58ZM327.623,614.768L331.687,616.759L331.678,618.305L327.919,619.625L325.331,618.081L323.754,620.065L320.683,618.081L323.045,615.435L326.712,616.542ZM773.076,608.596L767.726,608.883L767.537,606.512L767.977,604.667L768.179,603.75L770.495,605.159L773.831,605.718L773.974,606.565ZM1046.222,568.206L1049.37,569.789L1051.51,569.161L1054.581,568.284L1056.688,568.587L1055.55,574.027L1053.896,575.598L1052.539,579.276L1051.611,578.025L1048.253,581.204L1047.579,580.957L1045.399,580.811L1044.188,576.912L1044.456,573.896L1043.341,569.905L1043.938,567.803ZM1146.94,568.788L1147.116,570.681L1150.358,568.827L1150.736,570.758L1150.054,572.688L1147.95,574.809L1144.361,578.172L1141.843,580.009L1142.37,582.198L1139.576,582.252L1135.858,583.969L1133.777,586.945L1130.014,591.523L1126.429,593.543L1124.165,594.834L1120.932,594.735L1119.193,593.252L1115.447,592.931L1115.471,591.27L1118.611,587.912L1124.73,583.43L1127.353,582.576L1130.567,580.842L1134.511,578.45L1137.522,576.085L1140.318,572.672L1142.105,571.518L1143.518,568.959L1146.799,566.84ZM1159.843,546.867L1161.058,551.725L1162.098,548.578L1163.397,549.836L1162.849,553.325L1165.353,554.822L1167.735,555.197L1170.414,553.434L1172.118,553.972L1169.871,558.057L1167.834,560.744L1165.057,560.651L1163.605,562.044L1163.27,564.019L1162.433,564.874L1160.184,567.352L1157.261,570.487L1153.802,572.316L1153.601,571.115L1152.312,570.456L1155.729,566.685L1155.395,564.151L1152.057,562.316L1152.711,560.651L1155.899,559.047L1157.666,555.501L1158.433,552.521L1157.876,549.429L1158.23,548.617L1157.02,546.711L1155.284,542.622L1154.631,539.352L1156.135,538.992L1157.446,541.558L1160.009,542.755ZM1146.037,482.097L1144.389,483.209L1142.453,481.956L1139.997,479.875L1137.865,477.425L1135.763,474.171L1135.454,472.599L1137.114,472.669L1139.078,474.242L1140.559,475.806L1141.612,477.105L1144.362,479.968ZM1193.329,459.827L1194.493,461.163L1193.493,463.57L1190.976,464.203L1188.905,463.632L1188.818,461.601L1190.552,460.015L1192.247,460.593ZM1200.212,456.211L1197.557,457.343L1194.924,458.312L1194.651,456.594L1196.742,455.649L1198.02,455.391L1200.516,453.954L1201.349,453.743L1200.571,455.961ZM1152.575,455.797L1151.202,456.406L1150.128,454.384L1150.411,453.15ZM1150.478,448.732L1150.704,452.447L1149.708,451.87L1148.86,452.119L1148.45,450.847L1148.744,447.311ZM689.89,442.372L690.705,447.92L691.796,450.074L691.476,452.291L690.832,453.65L689.406,450.941L688.705,452.307L689.579,455.727L689.315,457.679L688.27,458.749L688.174,462.656L686.873,468.041L685.248,474.406L683.298,483.17L682.187,489.598L680.779,494.963L677.712,496.06L674.473,498.018L672.171,496.835L669.002,495.182L667.763,492.738L667.234,488.634L665.626,484.947L665.051,481.62L665.545,478.286L667.291,477.488L667.214,475.947L668.883,472.451L669.075,469.503L668.046,467.314L667.165,464.406L666.631,460.155L667.878,457.57L668.283,454.641L670.226,454.469L672.377,453.525L673.799,452.689L675.522,452.635L677.654,450.004L680.792,447.163L681.887,444.846L681.282,442.872L682.974,443.426L685.043,440.227L685.044,437.451L686.293,435.392L687.713,437.373L688.82,439.33ZM1058.27,443.332L1059.415,446.952L1062.086,445.212L1063.238,447.163L1064.977,448.966L1064.398,451.011L1064.905,454.961L1065.29,457.265L1066.226,457.828L1066.907,461.773L1066.288,464.172L1067.232,467.298L1071.204,469.714L1073.726,471.911L1076.103,473.921L1075.452,475.039L1077.328,477.942L1078.201,482.943L1079.886,481.925L1081.2,483.929L1082.245,483.216L1082.243,488.117L1084.581,490.96L1086.114,492.73L1088.557,496.475L1089.047,500.197L1088.711,502.838L1087.968,505.698L1089.107,509.633L1088.15,513.733L1087.095,515.881L1085.29,520.012L1084.859,522.669L1083.455,525.984L1080.929,530.199L1077.679,532.47L1075.55,536.057L1073.809,538.342L1071.842,542.333L1069.897,544.632L1068.187,548.086L1066.981,551.264L1066.83,552.724L1064.337,554.323L1060.154,554.495L1056.299,556.382L1054.2,558.166L1051.513,560.145L1048.93,558.104L1046.853,557.294L1047.957,554.893L1045.742,555.766L1041.778,559.101L1038.866,557.855L1036.924,557.122L1034.88,556.795L1031.58,555.462L1029.772,552.622L1029.77,549.117L1029.362,546.789L1027.878,544.913L1024.394,544.358L1026.027,542.114L1025.737,538.687L1023.337,541.879L1019.86,542.731L1022.278,540.174L1023.31,537.505L1025.146,535.243L1025.427,531.813L1021.702,535.759L1019.082,537.341L1017.023,541.018L1014.421,539.117L1014.951,536.667L1013.141,533.308L1011.42,531.578L1012.293,530.504L1007.879,527.7L1005.245,527.566L1001.932,525.318L995.083,525.756L989.968,527.41L985.448,528.953L981.885,528.648L977.58,531.021L974.17,532.094L973.137,534.514L971.497,536.393L968.291,536.511L965.886,536.918L962.666,536.08L959.913,536.581L957.305,536.793L954.778,539.258L953.709,539.055L951.664,540.361L949.697,541.824L946.985,541.644L944.48,541.644L940.835,538.695L938.92,537.81L939.283,535.164L941.219,534.53L941.968,533.481L942.007,531.82L942.804,528.601L942.66,525.858L941.112,521.172L940.746,518.53L941.153,515.896L939.899,512.878L939.922,511.515L938.387,509.672L938.206,506.043L936.316,502.383L935.928,500.408L937.462,502.407L936.504,498.112L938.301,499.452L939.31,501.247L939.426,498.872L937.786,495.229L937.532,493.772L936.727,492.386L937.346,489.715L938.206,488.572L938.894,486.262L938.67,483.553L940.48,480.227L940.542,483.749L942.402,480.571L945.652,479.022L947.686,477.05L950.768,475.352L952.558,474.992L953.6,475.564L956.787,473.843L959.179,473.326L959.836,472.318L960.903,471.895L963.044,472.005L967.238,470.652L969.5,468.603L970.664,466.133L973.114,463.789L973.416,461.944L973.673,459.437L976.651,455.516L978.057,459.499L979.795,458.577L978.533,456.398L979.897,454.157L981.561,455.157L982.251,451.651L984.533,449.379L985.585,447.561L987.612,446.773L987.74,445.485L989.439,446.024L989.574,444.869L991.34,444.206L993.274,443.582L996.062,445.696L998.097,448.427L1000.545,448.458L1003.024,448.896L1002.343,446.359L1004.444,442.669L1006.3,441.46L1005.74,440.313L1007.6,437.677L1010.072,436.055L1012.061,436.601L1015.432,435.736L1015.484,433.381L1012.658,431.861L1014.796,431.191L1017.357,432.336L1019.364,434.223L1022.627,435.4L1023.775,434.932L1026.141,436.352L1028.517,435.034L1029.987,435.431L1030.96,434.55L1032.635,436.827L1031.436,439.291L1029.831,441.156L1028.459,441.312L1028.797,443.153L1027.498,445.454L1025.943,447.725L1026.137,449.02L1029.082,451.573L1031.999,453.048L1033.898,454.641L1036.518,457.375L1037.62,457.367L1039.569,458.546L1040.054,459.976L1043.654,461.538L1046.375,459.96L1047.367,457.484L1048.332,455.438L1049.021,452.908L1050.515,449.239L1050.132,447.007L1050.514,445.673L1050.25,443.028L1051.012,439.557L1051.826,438.621L1051.314,437.084L1052.418,434.644L1053.309,432.11L1053.484,430.801L1055.061,429.071L1056.043,431.323L1056.141,434.215L1057.101,434.769L1057.134,436.71L1058.414,439.05L1058.531,441.663ZM1132.617,428.221L1133.614,429.803L1130.855,429.772L1129.546,426.943L1131.832,428.05ZM968.94,427.099L967.271,427.185L962.136,423.959L965.855,423.055L967.89,424.457L969.225,425.86ZM1127.797,425.408L1126.252,425.517L1123.861,425.049L1123.08,424.34L1123.435,422.51L1125.998,423.234L1127.234,424.2ZM1131.155,424.153L1130.502,425.003L1127.815,421.014L1127.159,418.264L1128.5,418.264L1129.711,421.949ZM983.68,426.639L980.253,427.652L979.804,427.099L980.217,425.533L982.011,422.728L985.993,420.897L986.485,419.814L989.927,418.778L992.699,418.622L993.958,418.046L995.437,418.622L993.94,419.869L989.751,421.878L986.384,423.203ZM958.095,417.228L959.489,418.459L961.952,418.085L962.881,420.04L958.278,420.967L955.51,421.582L953.387,421.543L954.813,418.895L956.996,418.856ZM977.922,417.228L977.261,419.783L971.275,421.092L966.018,420.523L966.067,418.84L969.231,417.882L971.673,419.261L974.321,418.911ZM1124.359,418.342L1124.479,419.269L1121.476,417.314L1119.393,415.663L1117.984,414.128L1118.591,413.661L1120.365,414.767L1123.51,416.885ZM1115.331,413.794L1114.519,414.051L1112.84,413.007L1111.296,411.115L1111.528,410.344L1113.815,412.291ZM921.445,411.169L929.047,411.629L929.951,409.729L937.265,411.94L938.646,414.923L944.577,415.764L949.376,418.498L944.811,420.25L940.494,418.396L936.911,418.521L932.811,418.178L929.121,417.353L924.563,415.6L921.661,415.141L919.995,415.717L912.808,413.825L912.155,411.847L908.519,411.504L911.309,407.113L916.119,407.385L919.292,409.184L920.929,409.534ZM1025.048,408.577L1022.914,411.707L1022.63,408.242L1023.374,406.591L1024.242,405.034L1025.108,406.381ZM1108.858,411.364L1107.725,411.823L1106.085,410.056L1104.455,407.136L1103.73,403.633L1104.287,403.189L1104.672,404.552L1105.838,405.595L1107.66,408.514L1109.469,410.072ZM1093.635,405.19L1091.537,405.564L1090.865,406.856L1088.655,407.977L1086.588,409.052L1084.475,409.044L1081.265,407.712L1079.051,406.428L1079.424,405.003L1082.961,405.673L1085.144,405.315L1085.811,403.112L1086.386,402.995L1086.698,405.439L1088.966,405.089L1090.129,403.516L1092.392,401.874L1092.034,399.165L1094.41,399.079L1095.191,399.834L1095.05,402.38ZM995.625,395.904L994.116,397.429L991.383,396.589L990.636,394.612L994.658,394.386ZM1008.447,394.223L1009.84,397.741L1006.523,395.842L1003.21,395.46L1000.961,395.764L998.217,395.6L999.179,393.071L1004.101,392.884ZM1098.356,400.691L1097.079,401.913L1096.408,399.204L1095.521,397.422L1093.751,395.919L1091.529,393.958L1088.692,392.604L1089.81,391.491L1091.936,392.783L1093.263,393.795L1094.916,394.9L1096.463,396.83L1097.945,398.301ZM1023.119,385.297L1024.17,392.729L1028.236,395.484L1031.618,390.604L1036.207,387.834L1039.741,387.826L1043.131,389.429L1046.06,391.079L1050.311,391.958L1057.157,395.126L1064.444,397.756L1067.137,400.107L1069.28,402.419L1069.819,405.136L1076.328,407.977L1077.213,410.414L1073.539,410.912L1074.305,413.973L1077.714,416.994L1080.044,421.878L1082.318,421.723L1082.053,423.764L1085.073,424.543L1083.828,425.408L1087.915,427.348L1087.407,428.681L1084.768,429L1083.859,427.808L1080.501,427.294L1076.54,426.6L1073.624,423.663L1071.501,421.131L1069.635,417.104L1064.555,415.086L1061.148,416.403L1058.659,417.921L1059.005,421.318L1055.822,422.899L1053.65,422.128L1049.554,421.933L1046.198,418.155L1042.212,417.236L1041.176,418.544L1036.15,418.685L1037.977,414.938L1040.52,413.661L1039.657,408.662L1037.85,404.801L1030.253,400.909L1026.987,400.519L1021.102,396.27L1019.892,398.503L1018.355,398.908L1017.483,397.227L1017.5,395.227L1014.498,392.97L1018.794,391.312L1021.625,391.398L1021.309,390.184L1015.487,390.176L1013.936,387.437L1010.393,386.588L1008.731,384.308L1014.086,383.196L1016.121,381.702L1022.497,383.585ZM987.732,373.468L984.557,378.036L981.568,378.916L977.747,378.021L971.122,378.246L967.646,378.908L967.087,382.386L970.621,386.48L972.776,384.394L980.192,382.83L979.87,384.947L978.142,384.277L976.399,386.978L972.883,388.76L976.592,394.651L975.858,396.231L979.34,401.539L979.257,404.559L977.116,405.906L975.59,404.295L977.57,400.527L973.639,402.31L972.673,401.033L973.215,399.258L970.392,396.565L970.74,392.083L968.067,393.476L968.346,398.838L968.396,405.424L965.869,406.085L964.193,404.739L965.391,400.504L964.835,396.067L963.162,396.036L961.965,392.884L963.634,389.872L964.228,386.223L966.23,379.289L967.058,377.398L970.438,373.982L973.548,375.336L978.557,375.974L983.121,375.78L987.039,372.441ZM1001.444,374.791L1001.241,378.815L999.195,378.363L998.594,381.157L1000.22,383.585L999.102,384.137L997.507,381.227L996.325,375.352L997.106,371.679L998.408,370.005L998.714,372.511L1001.062,372.916ZM910.383,406.911L905.982,407.004L902.683,403.158L897.629,399.406L895.949,396.62L892.969,392.876L891.01,389.429L887.993,382.993L884.503,379.157L883.34,375.204L881.858,371.616L878.272,368.721L876.181,364.783L873.178,362.215L869.001,357.14L868.641,354.805L871.185,354.992L877.337,355.879L880.887,360.37L883.981,363.491L886.18,365.406L889.965,370.348L894.014,370.418L897.357,373.57L899.668,377.422L902.689,379.523L901.098,383.273L903.37,384.869L904.801,384.985L905.463,388.192L906.84,390.76L909.756,391.164L911.669,394.075L910.621,399.796ZM958.451,371.601L962.933,375.85L958.228,376.394L956.901,379.53L957.069,383.694L953.237,386.837L953.109,391.421L951.509,398.449L950.942,396.815L946.4,398.885L944.858,396.075L942.029,395.811L940.055,394.34L935.321,395.99L933.896,393.771L931.291,394.02L928.02,393.491L927.441,387.32L925.471,386.044L923.563,382.114L923.019,378.091L923.468,373.826L925.816,370.776L928.741,372.348L931.799,371.492L932.576,367.601L934.272,366.729L939.026,365.733L941.836,362.098L943.759,359.187L945.308,357.467L948.642,354.953L951.643,351.753L953.57,348.156L955.168,348.14L957.259,350.468L957.484,352.469L960.123,353.754L963.448,355.132L963.193,356.938L960.539,357.163L961.288,359.413L958.379,360.977L956.168,365.126L959.124,369.484ZM991.641,341.302L992.136,344.355L992.439,346.941L991.207,351.146L989.628,346.458L987.835,348.794L989.189,352.181L988.108,354.338L983.378,351.667L982.184,348.335L983.326,346.154L980.753,343.974L979.565,345.882L977.69,345.703L974.83,348.272L974.14,346.925L975.591,343.047L978.049,341.754L980.149,340.017L981.611,342.105L984.596,340.843L985.17,338.786L987.96,338.669L987.605,335.109L990.89,337.29L991.299,339.604ZM812.769,351.504L809.314,352.555L807.425,348.895L806.719,342.284L808.504,334.813L811.245,337.368L813.091,340.609L815.013,345.407L814.424,350.196ZM250.429,333.496L247.069,334.002L246.403,333.589L247.702,332.319L247.832,330.503L250.181,329.903L250.987,330.067ZM981.861,332.717L980.494,334.236L979.356,337.142L978.162,338.506L975.618,335.319L976.387,334.088L977.337,332.802L977.655,329.942L979.821,329.669L979.315,332.771L982.057,328.329ZM960.332,337.15L955.195,341.52L957.045,338.295L959.81,335.459L962.084,332.272L963.997,327.697L964.831,331.454L962.312,333.987ZM973.27,325.288L975.69,326.715L978.206,326.707L978.214,328.633L976.456,330.589L974.003,331.976L973.78,329.833L973.972,327.487ZM987.498,324.041L988.836,329.186L985.74,327.962L985.876,329.513L986.958,332.35L985.119,333.387L984.835,330.145L983.63,329.903L982.902,327.12L985.236,327.487L985.102,325.741L982.541,322.224L986.323,322.325ZM971.626,319.869L970.751,323.846L968.961,321.546L966.788,318.036L970.173,318.207ZM969.431,294.799L971.924,296.112L973.043,294.917L973.486,296.089L972.962,298.003L974.509,301.308L973.708,305.143L971.477,306.673L971.072,310.389L972.141,314.065L974.25,314.572L975.965,314.026L981.016,316.585L980.758,319.089L982.103,320.196L981.792,322.318L978.619,320.056L977.04,317.638L976.115,319.331L973.47,316.569L969.915,317.248L967.91,316.234L968.016,314.33L969.19,313.152L967.961,312.09L967.534,313.752L965.46,311.099L964.777,309.093L964.383,304.674L966.05,306.197L966.043,298.972L967.051,294.792ZM238.162,296.073L236.916,297.238L233.977,297.206L231.645,297.37L231.843,295.393L232.553,294.721L235.743,294.745L237.655,295.151ZM193.528,297.73L192.171,298.503L190.138,297.761L188.281,296.081L189.006,295.026L190.714,294.706L191.578,294.862L194.115,295.276L195.931,296.386L196.295,297.644ZM212.591,288.483L215.8,289.21L216.468,288.42L219.51,288.443L221.544,289.632L222.597,289.515L222.917,291.149L225.074,291.063L224.632,292.439L226.339,292.603L227.873,294.299L226.012,296.175L224.371,295.175L222.54,295.37L221.293,295.151L220.404,295.987L218.848,296.276L218.491,295.151L217.048,295.815L214.796,298.98L213.952,298.246L214.044,296.917L211.61,296.136L209.693,296.456L207.388,296.12L205.364,296.98L203.588,295.542L204.266,294.057L207.723,294.698L210.596,295.065L212.236,294.041L210.912,292.04L211.358,290.273L209.072,289.554L210.254,288.279ZM926.435,293.994L923.162,296.214L919.885,294.784L919.585,290.805L921.407,288.717L925.609,287.419L927.847,287.529L928.811,289.296L927.202,291.329ZM1294.046,292.118L1293.62,292.892L1292.521,292.236L1292.38,290.946L1291.395,289.257L1291.489,288.748L1292.008,287.99L1291.554,287.083L1291.69,286.653L1292.002,286.739L1293.666,287.521L1294.437,287.92L1295.196,288.537L1296.523,290.156L1296.477,290.414L1295.155,291.399ZM1290.481,284.908L1289.234,285.245L1288.368,284.267L1287.84,283.891L1287.736,283.602L1288.03,283.211L1289.512,283.649L1290.686,284.353ZM1287.306,282.452L1287.286,282.945L1285.17,282.812L1285.343,282.248ZM1283.673,281.779L1283.52,282.045L1283.241,281.982L1281.847,281.818L1281.131,280.777L1280.936,280.59L1281.831,279.948L1282.219,280.245ZM1276.429,278.727L1276.067,279.181L1274.582,278.344L1274.704,278.007L1275.204,277.553L1276.119,277.647ZM188.571,275.103L189.615,276.794L193.396,276.277L194.456,277.357L196.941,280.222L198.796,282.311L200.102,282.248L202.164,283.187L201.542,284.494L204.367,284.681L206.831,286.574L206.098,287.654L203.354,288.24L200.672,288.467L198.08,288.107L192.378,288.553L195.645,285.98L194.374,284.775L191.944,284.47L190.955,283.133L190.748,280.504L188.501,280.684L185.225,279.439L184.34,278.469L179.484,277.757L178.391,276.856L180.186,275.698L176.444,275.463L172.952,277.866L171.327,277.929L170.438,279.056L168.36,279.564L166.837,279.126L169.299,277.694L170.634,276.027L172.702,275.001L174.959,274.093L178.022,273.655L179.111,273.146L182.359,273.475L185.397,273.529ZM198.242,270.507L197.226,270.734L197.07,268.071L196.045,266.732L197.82,263.794L198.928,263.974L199.054,267.82ZM967.412,274.986L966.049,278.782L963.704,274.876L962.983,271.447L964.87,266.896L967.658,263.394L969.546,264.773L969.114,267.57ZM201.366,257.447L196.919,258.191L197.25,256.475L199.175,256.107L201.669,256.248ZM204.536,257.4L202.764,260.691L202.253,260.103L203.126,257.682L202.043,255.848L202.212,255.323ZM1012.541,222.404L1013.275,223.993L1011.611,226.788L1009.832,225.308L1008.064,226.381L1007.492,229.091L1004.835,227.775L1004.525,225.574L1006.177,222.818L1008.397,223.351L1009.623,221.41ZM637.963,215.371L635.175,217.334L635.342,218.202L635.401,218.577L631.311,220.455L629.558,219.852L628.948,217.998L630.748,217.826L631.007,217.803L631.697,216.684L634.379,216.747ZM597.406,215.215L599.193,216.771L602.14,216.505L604.872,216.833L604.651,217.639L606.769,217.083L606.085,218.452L600.636,218.843L600.799,218.077L596.382,217.177ZM569.207,203.566L567.131,207.193L567.39,208.621L566.142,210.987L563.641,209.253L561.859,208.754L557.184,206.412L558.2,204.042L562.434,204.463L566.318,203.964ZM549.164,189.88L550.547,193.131L548.585,199.212L546.986,198.916L545.128,200.45L544.023,199.235L545.22,193.691L545.031,191.067L546.984,191.299ZM1033.659,208.582L1033,212.268L1034.093,214.581L1032.761,217.834L1028.378,220.009L1021.847,220.291L1017.39,225.574L1014.581,223.797L1013.844,220.338L1007.495,221.355L1003.398,223.539L999.016,223.625L1003.353,227.031L1001.976,234.896L999.804,236.84L997.715,235.045L998.067,230.869L995.483,229.522L993.493,226.35L996.845,224.924L998.365,222.02L1001.767,219.626L1003.987,216.473L1011.184,215.089L1015.339,216.035L1017.743,207.833L1020.63,210.034L1025.182,205.422L1026.925,203.636L1028.059,198.005L1026.319,192.844L1027.209,189.942L1030.889,189.105L1034.335,195.462L1035.039,199.188L1032.63,203.823ZM551.525,185.565L549.426,189.097L548.009,188.167L547.964,185.085L549.137,183.392L551.927,181.646ZM1036.95,176.341L1039.729,177.311L1041.769,175.387L1043.923,180.495L1038.884,181.746L1036.823,186.285L1030.374,183.16L1029.569,188.159L1025.548,188.229L1023.991,183.685L1024.954,180.171L1028.739,179.917L1028.21,173.626L1028.361,170.096L1033.799,174.818ZM296.946,165.581L299.169,166.185L302.529,166.062L299.685,167.913L298.207,168.204L294.819,166.292L294.848,164.779L297.036,163.383ZM310.577,154.103L308.822,154.186L305.191,152.78L303.326,150.675L304.773,150.306L308.624,151.421L310.995,153.286ZM1356.733,156.768L1355.401,157.39L1348.203,155.351L1346.027,153.77L1341.795,152.206L1340.262,150.939L1336.097,150.133L1333.021,147.718L1332.575,146.689L1336.914,147.658L1339.539,148.327L1343.15,148.8L1345.447,150.336L1348.707,152.448L1353.518,154.292ZM334.816,147.057L330.068,150.946L333.273,149.447L335.026,150.396L332.838,151.95L335.197,153.173L337.468,152.085L340.123,153.46L337.093,156.737L339.995,155.972L339.065,158.346L338.556,161.136L334.836,165.1L333.145,165.268L331.283,164.421L334.147,160.732L333.498,160.162L327.155,164.069L325.128,163.909L328.84,161.798L326.082,160.702L322.138,160.968L315.368,160.831L315.621,159.5L318.77,157.921L317.979,156.707L322.593,154.012L330.658,146.922L334.423,144.403L338.406,142.877L339.882,143.071L338.44,144.268ZM1306.882,132.31L1309.878,131.964L1312.635,136.927L1318.257,140.459L1316.878,140.452L1313.325,138.442L1310.546,136.423L1307.799,135.059L1305.717,133.137L1304.852,131.75ZM1027.586,146.794L1033.512,154.677L1027.892,153.203L1027.609,159.675L1032.355,164.283L1033.126,167.439L1029.68,164.718L1028.298,168.212L1026.623,164.421L1025.808,160.04L1024.027,155.2L1023.851,151.829L1022.23,145.886L1018.865,141.54L1017.262,135.533L1019.761,133.528L1017.747,131.507L1019.044,130.895L1020.897,133.78L1023.461,137.996L1024.764,142.324ZM508.793,140.109L501.596,142.713L497.003,142.048L501.768,137.454L501.957,133.004L508.105,129.593L511.572,127.567L514.478,127.392L516.917,130.071L513.8,133.063L513.031,136.185ZM580.579,125.503L577.35,129.005L574.673,126.564L574.845,124.766L580.276,123.344ZM1228.826,119.029L1226.66,120.66L1224.184,119.558L1222.254,117.554L1224.175,116.039L1225.468,115.391L1227.879,115.679L1230.232,116.998ZM533.653,112.568L528.005,117.164L531.646,116.58L535.26,116.601L532.853,120.08L528.154,123.934L531.497,124.211L532.426,129.77L534.454,130.468L534.556,135.437L534.853,137.164L538.682,138.004L537.2,140.817L534.957,142.108L535.49,144.388L531.522,146.712L526.909,146.667L520.541,147.891L519.249,147.019L516.168,149.094L513.145,148.59L510.045,150.291L508.536,149.402L515.448,144.74L518.919,143.789L513.797,143.049L513.526,141.294L517.681,139.93L516.776,137.558L518.61,134.689L523.524,135.089L525.062,132.554L523.896,129.814L520.124,129.05L519.834,127.875L521.907,125.942L521.323,124.751L518.613,126.791L520.271,122.637L519.59,120.45L522.857,116.032L527.053,112.582L529.522,112.919ZM1179.17,107.188L1177.61,107.842L1174.945,107.06L1172.203,105.918L1174.919,105.202L1177.753,105.585ZM296.657,97.83L293.317,100.001L292.232,99.65L292.582,98.417L293.011,98.131L295.449,96.894L296.672,96.985ZM290.492,95.549L284.497,97.823L282.329,97.732L282.743,96.615L287.029,94.715L291.351,94.757ZM1148.323,91.162L1150.817,91.942L1152.489,91.521L1155.816,92.6L1159.355,93.147L1159.408,93.59L1157.609,94.458L1154.571,93.569L1152.841,92.828L1150.209,93.063L1149.205,92.703ZM292.611,83.576L291.295,85.341L293.562,84.72L294.25,85.778L296.218,87.166L298.504,88.428L296.809,90.362L299.447,90.045L300.344,91.397L296.239,92.683L292.309,91.7L292.415,89.866L287.062,92.032L280.367,94.152L281.755,91.756L277.051,92.15L281.914,90.134L285.686,86.94L290.721,83.243ZM514.282,80.377L511.975,82.965L513.835,85.71L507.917,88.799L497.144,91.59L493.96,92.33L490.173,91.728L482.176,90.437L486.424,88.641L480.885,86.66L486.936,85.88L487.579,84.693L481.664,83.76L485.528,81.147L490.61,80.559L493.652,83.27L499.774,81.093L502.94,82.225L509.335,80.093ZM327.647,77.614L323.987,77.816L325.271,75.878L328.92,73.668L332.295,73.123L333.521,74.208L331.778,75.898L330.851,76.447ZM1108.105,70.471L1117.688,73.462L1128.542,77.393L1130.06,79.863L1132.852,80.857L1130.052,77.964L1138.832,78.556L1147.657,82.292L1145.857,84.039L1141.057,84.454L1143.79,88.408L1143.123,89.246L1140.096,89.129L1136.718,87.715L1131.742,86.537L1129.832,84.781L1126.206,84.127L1123.028,84.645L1120.378,83.236L1120.033,81.75L1116.962,82.7L1119.647,84.591L1119.016,86.304L1119.007,86.325L1116.149,88.106L1111.887,87.804L1116.105,89.969L1120.142,93.334L1122.305,94.437L1123.745,96.134L1123.616,97.229L1117.101,96.329L1110.023,99.44L1107.451,99.924L1104.197,102.842L1100.925,105.4L1100.773,107.309L1094.558,104.41L1087.829,107.7L1085.543,106.138L1083.328,107.941L1078.684,107.366L1079.002,110.129L1077.05,114.226L1077.984,115.945L1082.201,116.897L1084.677,123.132L1081.642,123.293L1081.824,126.901L1084.06,128.77L1079.102,130.984L1080.022,135.97L1075.353,137.038L1076.103,141.503L1072.715,145.624L1070.282,142.578L1066.332,136.163L1060.552,126.491L1059.665,120.522L1061.36,117.966L1060.662,115.974L1065.363,115.024L1068.752,109.694L1072.266,105.372L1076.393,102.046L1075.896,96.211L1072.21,96.559L1072.062,99.966L1066.164,104.53L1061.008,99.419L1053.398,100.829L1048.513,107.828L1052.37,110.407L1045.534,111.508L1040.637,111.945L1039.58,108.895L1034.243,108.254L1031.053,110.329L1020.746,109.601L1010.459,110.85L1002.694,119.145L993.07,129.314L998.566,129.858L1001.057,132.583L1004.659,133.558L1006.156,131.374L1009.971,131.661L1016.418,136.467L1017.705,140.198L1016.364,144.613L1017.641,149.907L1018.08,157.048L1014.513,163.551L1014.113,166.674L1010.57,171.944L1006.961,177.188L1005.239,179.878L1001.002,182.549L998.735,182.611L995.993,180.395L991.819,183.732L991.561,185.255L990.121,184.977L988.855,186.532L988.066,188.089L988.815,191.377L987.12,192.386L986.61,193.201L985.482,194.553L983.175,195.307L981.792,196.543L982.013,198.534L981.675,199.04L983.272,199.788L985.696,201.805L989.8,207.24L991.199,210.229L992.091,215.551L991.073,218.092L987.813,218.976L985.102,220.893L981.785,221.292L981.007,218.773L981.199,215.308L978.828,210.503L981.464,209.73L978.311,205.781L976.374,204.899L976.058,205.773L975.037,206.155L974.769,205.281L973.745,204.86L972.634,204.127L973.342,202.101L974.12,201.563L973.654,200.722L974.195,198.239L973.834,197.484L971.598,196.986L969.668,195.758L964.753,197.087L962.384,199.243L958.593,200.496L960.239,198.363L959.203,196.574L961.632,193.489L959.32,191.082L956.388,192.704L952.723,195.898L950.886,198.861L947.315,199.087L945.721,201.228L948.088,204.346L951.211,205.102L951.606,207.169L954.722,208.512L958.419,205.227L961.965,207.021L964.369,207.138L965.328,209.558L960.237,210.846L958.83,213.339L955.505,215.652L953.999,218.89L958.343,221.425L960.374,225.981L963.173,230.219L966.164,233.776L966.494,237.216L964.259,238.478L965.435,240.947L967.84,242.389L967.658,246.16L967.065,249.828L964.973,250.244L962.665,255.26L960.109,261.334L956.998,266.857L952.02,271.125L946.923,275.025L942.59,275.557L940.353,277.608L938.912,276.105L936.868,278.406L931.583,280.723L927.508,281.427L926.448,286.308L924.301,286.582L923.098,283.226L923.925,281.443L918.622,279.956L916.83,280.715L911.833,284.666L908.794,289.03L908.078,292.236L911.268,297.105L915.181,303.136L918.854,305.986L921.388,309.694L923.494,318.223L923.225,326.325L920.01,329.358L915.56,332.327L912.415,336.161L907.57,340.445L906.074,337.501L907.12,334.376L904.13,331.766L900.799,331.088L899.152,328.695L897.036,323.932L893.448,321.818L890.07,321.904L890.565,318.285L887.09,318.309L886.893,323.378L884.896,330.106L883.688,334.174L884.013,337.509L886.594,337.649L888.27,341.847L889.04,345.835L891.287,348.467L893.692,349.004L895.778,351.387L896.697,351.823L899.072,354.594L900.762,357.677L901.019,360.775L900.621,362.869L901.019,364.449L901.322,367.165L902.73,368.433L904.307,372.504L904.24,374.052L901.423,374.363L897.649,370.955L892.927,367.305L892.456,364.962L890.133,361.888L889.56,358.082L888.108,355.575L888.503,352.22L887.61,350.274L886.019,348.506L885.32,346.232L883.175,343.631L881.219,341.45L880.613,344.153L879.824,341.598L880.211,338.724L881.311,334.314L880.869,330.893L882.028,327.37L880.639,324.641L880.861,319.619L879.206,317.232L877.804,311.716L876.953,305.892L875.145,302.066L872.619,304.385L868.243,307.672L866.028,307.259L863.573,306.181L864.803,300.464L863.883,296.136L860.686,290.813L861.122,289.147L858.818,288.553L855.962,284.791L854.796,282.374L854.514,280.018L853.717,277.796L852.029,275.103L848.451,274.923L848.845,276.825L847.686,279.4L846.016,278.461L845.46,279.306L844.359,278.798L842.84,278.383L842.328,280.073L839.682,280.018L834.898,280.973L835.176,284.455L833.14,287.184L827.561,290.297L823.24,295.729L820.318,298.644L816.445,301.659L816.442,303.784L814.499,304.924L810.972,306.579L809.135,306.821L807.956,310.334L808.793,316.335L809.015,320.157L807.348,324.532L807.347,332.358L805.297,332.584L803.506,336.091L804.704,337.61L801.098,338.911L799.773,342.042L798.175,343.366L794.427,339.067L792.611,332.623L791.097,327.978L789.723,325.803L787.632,321.374L786.674,315.609L786.005,312.73L782.456,306.4L780.89,297.456L779.766,291.548L779.827,285.949L779.109,281.622L773.42,284.384L770.679,283.837L765.692,278.234L767.577,276.559L766.461,274.743L761.984,270.82L759.181,269.645L758.097,266.316L755.194,262.799L748.067,263.669L741.805,263.755L736.356,264.405L729.148,263.003L725.002,261.937L720.674,261.342L719.299,255.66L717.501,254.837L714.504,255.668L710.52,257.909L705.913,256.373L702.234,252.815L698.632,251.498L696.35,247.101L693.957,240.924L691.863,241.676L689.551,240.14L688.007,241.95L685.764,241.723L686.407,243.769L685.986,244.827L686.959,248.316L688.185,252.313L690.004,253.371L690.548,254.994L693.052,256.937L693.156,258.85L692.69,260.393L693.082,261.953L694.117,263.246L694.544,264.765L695.05,265.901L694.99,262.533L696.17,260.103L697.251,259.602L698.332,261.059L698.251,263.763L697.255,266.489L697.898,268.259L698.592,268.032L698.679,269.301L701.736,268.572L704.93,268.69L707.262,268.831L710.053,265.698L713.067,262.728L715.642,259.876L716.824,258.301L717.289,258.701L716.84,260.613L716.288,261.459L716.65,265.11L718.251,268.275L720.339,269.951L723.156,270.562L725.409,271.4L727.055,274.054L728.049,275.588L729.425,276.175L729.377,277.209L727.873,279.964L727.215,281.263L725.528,282.741L723.966,285.902L722.207,285.659L721.356,286.762L720.661,289.108L721.04,292.196L720.657,292.759L718.856,292.744L716.352,294.471L715.9,296.722L714.982,297.699L712.544,297.66L710.97,298.824L710.924,300.691L708.992,301.972L706.847,301.534L704.17,303.089L702.353,303.346L699.472,304.588L698.64,306.642L698.503,308.211L694.52,310.155L688.162,312.309L684.524,315.563L682.786,315.812L681.618,315.547L679.242,317.458L676.702,318.34L673.387,318.582L672.385,318.847L671.477,320.064L670.429,320.399L669.793,321.569L667.837,321.468L666.552,322.091L663.833,321.857L662.908,319.167L663.117,316.647L662.517,315.29L661.891,311.88L660.84,309.983L661.642,309.757L661.325,307.649L661.846,306.759L661.768,304.752L661.353,302.776L660.234,301.394L660.016,299.55L658.085,297.894L656.21,294.026L655.315,290.258L652.81,287.083L651.117,286.324L648.826,281.92L648.6,278.704L648.962,275.964L647.126,270.836L645.457,269.027L643.446,268.071L642.386,265.416L642.682,264.374L641.819,261.968L640.786,260.942L639.602,257.494L637.604,253.763L635.972,250.581L634.055,250.604L634.921,248.057L635.253,246.442L635.914,244.592L635.862,243.918L634.594,245.784L633.405,249.28L632.126,251.694L631.148,252.501L630.019,251.004L628.514,248.943L626.525,242.303L626.08,242.719L627.116,247.61L628.979,252.266L631.169,259.477L632.347,261.992L633.359,264.609L636.379,269.731L635.547,270.538L635.426,273.545L639.614,277.694L640.228,278.641L641.161,283.179L640.248,284.017L640.486,288.772L641.57,294.291L642.993,295.425L645.034,297.136L647.009,302.472L647.878,306.712L649.919,308.96L655.087,313.315L657.16,315.937L659.197,318.597L660.372,320.181L662.253,321.569L663.14,322.996L662.947,324.906L660.664,326.013L662.315,327.269L663.583,328.118L664.293,330.02L666.015,331.953L667.979,331.969L671.741,330.792L676.054,330.246L679.579,328.812L681.551,328.508L682.981,327.666L685.233,327.51L686.501,327.417L688.339,326.731L690.441,326.271L692.359,324.696L693.852,324.68L693.904,325.951L693.482,328.633L693.439,331.049L692.562,332.717L691.344,337.696L689.335,342.829L686.782,348.708L683.287,355.451L679.841,360.596L675.111,366.869L671.111,370.597L665.155,375.157L661.443,378.659L657.099,384.223L656.191,386.651L655.295,387.74L652.515,389.577L651.556,391.491L650.071,391.834L649.527,395.071L648.274,396.924L647.54,399.982L645.96,401.5L644.224,407.167L644.504,409.776L647.08,411.458L647.22,412.649L646.199,415.429L646.461,416.831L646.261,419.027L647.722,421.91L649.495,426.452L650.964,427.457L651.67,429.523L651.669,434.106L652.301,438.153L652.749,445.353L653.541,447.616L652.516,450.909L651.142,454.11L648.787,456.968L645.295,458.726L641.005,460.968L636.896,465.922L635.444,466.766L632.933,470.05L631.391,471.113L631.302,474.406L633.409,477.911L634.368,480.618L634.531,482.003L635.198,481.776L635.442,486.309L634.99,488.454L635.961,489.253L635.551,491.18L634.078,492.824L631.032,494.383L626.625,496.89L625.097,498.606L625.619,500.549L626.632,500.863L626.541,503.3L625.918,506.67L625.883,510.519L625.119,512.612L622.77,514.948L622.106,515.622L620.762,517.974L619.991,520.349L618.242,523.672L614.581,528.444L612.295,531.225L609.755,533.332L606.074,535.125L604.201,535.368L603.907,536.652L601.517,535.963L599.787,536.847L595.578,535.955L593.395,536.519L591.801,536.276L588.232,538.1L585.141,538.835L583.132,540.58L581.439,540.69L579.577,539.047L578.294,538.961L576.316,536.894L576.251,537.536L575.536,536.292L575.101,533.582L573.362,530.481L574.432,529.635L573.763,526.086L570.596,521.752L568.089,517.825L568.074,517.817L564.442,511.797L561.083,508.301L559.109,504.915L557.627,500.408L556.234,497.055L554.025,489.926L553.255,484.391L552.472,481.87L550.744,479.968L548.299,476.142L545.656,470.605L544.515,467.704L540.886,463.195L540.31,459.655L539.678,456.75L539.862,452.697L540.875,448.474L540.933,446.492L541.901,442.341L542.705,440.446L544.761,437.435L545.909,435.385L546.115,431.97L545.753,429.359L544.482,427.714L543.282,424.925L542.177,422.159L542.346,421.209L543.474,419.378L542.09,414.938L541.159,411.855L539.074,408.943L539.416,408.047L538.814,406.622L537.658,403.166L534.282,398.293L530.12,393.655L527.435,389.857L524.975,385.11L525.096,383.585L525.964,382.114L526.92,378.768L527.734,375.359L526.994,374.659L528.416,369.5L529.041,365.865L527.553,362.83L525.753,362.052L525,359.989L524.001,359.327L524.077,358.059L519.903,359.717L518.408,359.467L516.853,360.503L513.682,360.402L511.628,357.521L510.43,354.197L507.721,351.161L504.734,351.223L501.235,351.216L497.944,351.753L494.709,352.734L488.385,355.427L486.133,357.008L482.519,358.339L479.015,357.031L477.213,357.086L474.47,356.183L471.925,356.237L467.196,357.039L464.394,358.362L460.411,360.051L459.643,359.934L458.598,359.973L454.58,357.778L451.106,354.275L447.825,351.761L445.291,348.794L444.237,348.452L441.477,346.598L439.556,344.137L438.955,342.455L438.683,339.051L437.127,336.332L435.718,334.524L434.75,333.932L433.837,333.013L433.539,330.979L433.037,329.966L431.96,329.209L430.003,327.284L428.366,326.98L427.585,325.686L427.662,324.984L426.558,324.01L426.394,323.019L426.085,319.487L426.805,317.443L425.558,313.854L423.787,312.215L425.614,311.341L427.89,308.102L429.111,305.728L429.084,303.245L430.479,300.972L431.545,296.62L431.771,292.064L431.634,289.765L432.379,287.458L431.713,285.26L429.987,283.266L430.476,281.317L431.018,279.173L432.715,277.913L434.405,275.502L434.43,273.936L436.358,270.671L439.061,267.726L440.494,266.982L442.034,264.288L442.597,261.82L444.55,258.959L447.451,257.267L450.868,252.541L453.24,250.698L456.917,250.181L460.599,247.022L462.774,245.784L466.795,241.919L467.133,236.158L469.506,232.177L470.592,229.733L473.778,226.608L478.06,224.494L481.315,222.584L485.019,217.795L486.911,214.964L489.66,214.98L491.409,216.943L495.04,216.622L498.663,217.646L500.28,217.693L504.481,215.168L508.701,214.37L511.508,212.463L515.437,211.057L521.936,210.237L528.162,209.862L529.878,210.542L533.797,208.73L537.773,208.691L539.043,209.761L541.644,209.488L546.09,207.622L548.572,208.176L547.947,210.511L551.466,208.816L551.545,209.698L549.206,211.956L548.731,214.097L549.783,215.246L548.489,219.242L545.558,221.566L545.78,224.087L547.699,224.165L548.227,226.365L549.528,227.086L553.657,228.683L555.317,228.284L558.328,229.052L562.968,231.12L564.047,235.241L567.312,236.135L572.345,238.078L576.043,240.375L578.083,239.176L580.22,237.044L579.877,233.502L581.414,231.245L584.474,229.075L587.179,228.448L592.124,229.396L593.104,231.464L594.516,231.48L595.597,232.271L599.275,232.812L599.984,234.348L605.024,234.27L608.513,235.492L612.085,236.864L613.755,237.585L616.863,236.111L618.586,234.787L621.974,234.403L624.601,234.991L625.346,237.287L626.415,235.774L629.314,236.871L632.247,237.13L634.251,235.962L635.517,234.442L635.289,234.176L636.549,232.013L637.723,228.519L638.406,227.352L638.52,227.305L640.318,223.531L642.583,220.275L642.671,220.111L642.766,216.575L643.923,214.675L642.827,212.581L644.462,210.846L642.147,211.245L639.172,210.183L636.251,212.838L630.534,213.354L627.875,210.878L623.884,210.721L622.741,212.635L620.085,213.19L616.87,210.729L612.803,210.807L611.343,206.225L609.072,203.667L611.481,200.091L609.538,197.889L614.392,193.496L620.061,193.318L622.213,189.833L629.054,190.438L633.936,187.47L638.392,186.176L644.411,186.076L650.266,189.298L655.245,191.074L659.588,190.368L662.671,190.78L667.299,188.384L668.111,186.432L667.622,183.314L665.774,181.63L663.845,181.105L662.723,179.708L658.718,175.864L654.895,174.149L652.242,171.484L654.963,170.755L658.558,166.972L656.865,165.184L662.408,163.345L662.471,162.362L659.176,163.086L656.283,163.452L653.667,164.909L650.304,165.146L646.944,166.827L646.645,169.644L648.202,170.732L651.9,170.464L650.919,172.075L646.866,172.866L641.54,175.495L639.714,174.564L640.884,172.436L637.213,171.108L638.017,170.241L641.7,168.732L640.866,167.699L635.551,166.559L635.638,164.871L632.244,165.428L630.43,167.913L627.005,171.261L626.852,172.428L624.918,173.411L623.92,172.981L621.836,178.467L619.602,180.356L617.662,183.616L618.334,186.223L618.44,187.989L621.36,189.461L620.49,190.586L616.109,190.842L614.3,192.254L610.794,194.732L610.039,192.596L610.255,191.649L608.057,191.517L606.234,191.082L601.585,192.277L603.622,194.856L601.62,195.602L599.587,195.602L598.106,193.24L597.223,194.25L597.511,196.994L598.944,199.149L597.363,200.161L599.029,202.28L600.61,203.613L600.201,206.217L596.995,204.993L597.668,207.349L595.233,207.833L595.926,211.901L593.452,211.956L590.754,209.948L590.035,206.264L589.955,203.2L588.926,201.08L587.544,198.457L587.567,197.15L586.996,196.831L587.134,195.82L585.419,194.273L585.558,192.091L586.523,188.965L587.327,187.539L586.88,186.819L586.186,186.463L585.493,184.977L584.13,184.064L581.11,182.379L579.398,180.735L576.42,179.377L574.221,176.025L575.03,175.687L573.869,173.78L574.196,172.244L572.075,171.53L570.472,173.488L569.811,171.967L570.301,170.395L570.448,170.326L571.354,169.912L568.691,169.253L565.354,170.863L564.947,173.111L564.167,174.402L564.74,176.718L567.538,179.014L568.429,182.781L571.586,186.463L574.431,186.44L575.09,187.446L573.86,188.36L576.755,190.012L579.13,191.4L581.75,193.792L581.951,194.654L580.922,196.294L579.341,194.149L576.314,193.395L574.144,196.364L576.428,198.068L575.491,200.473L573.896,200.745L571.119,204.689L569.501,205.047L569.804,203.636L571.075,201.166L572.077,200.185L571.212,197.523L570.593,195.206L569.203,194.631L568.565,192.65L566.399,191.819L565.249,189.973L562.615,189.678L560.266,187.609L557.678,184.637L555.884,182.001L555.947,177.496L554.3,176.972L551.784,175.471L549.959,176.087L547.292,178.197L545.71,178.529L541.727,181.105L534.948,179.87L529.271,181.352L528.072,184.095L527.522,186.757L523.233,189.802L518.289,190.772L517.532,192.316L514.58,194.856L512.152,198.597L512.885,201.228L510.224,203.278L508.652,206.272L505.615,207.193L502.077,210.745L497.35,210.807L493.826,210.721L491.073,212.354L489.201,214.097L487.475,213.714L486.501,212.159L486.151,209.503L482.884,208.785L481.061,209.98L479.287,209.331L477.235,209.839L478.803,206.233L479.264,203.402L477.74,202.974L477.361,201.228L478.547,198.223L480.519,196.551L481.348,194.693L482.963,191.936L483.491,189.996L483.277,188.353L483.617,186.803L484.858,183.554L484.032,181.568L490.24,178.282L494.377,179.107L499.23,179.076L502.823,179.855L505.887,179.616L511.673,179.762L514.39,177.034L517.979,167.997L515.907,163.261L514.091,160.983L509.327,159.25L510.168,155.987L515.074,155.01L520.541,156.161L521.268,151.105L523.874,153.022L533.234,149.545L535.594,145.909L538.944,145.017L542.022,144.141L544.234,142.929L549.606,136.452L554.944,134.623L557.732,134.748L558.728,133.824L561.655,133.588L561.95,134.549L565.016,132.399L564.832,130.763L565.567,128.301L565.084,125.898L566.647,121.495L567.64,120.341L569.094,119.051L572.113,118.791L573.732,117.612L576.848,116.407L575.916,118.602L574.415,119.993L574.363,121.198L575.94,121.844L574.53,123.467L573.7,123.001L570.152,126.103L570.312,128.213L569.764,129.887L572.832,130.903L572.259,132.45L575.998,131.632L578.307,130.439L581.551,132.155L582.707,133.551L585.438,132.266L591.383,130.255L596.112,128.785L599.251,129.52L599.179,130.579L602.431,130.63L603.779,128.719L608.853,127.318L609.242,123.686L610.365,120.45L612.834,117.764L616.415,116.306L618.076,119.5L620.773,119.413L622.386,116.14L623.527,113.63L622.153,114.168L620.532,112.661L621.013,110.229L625.513,109.059L629.817,108.447L633.148,109.138L636.561,109.016L640.944,106.691L638.122,104.707L632.137,105.039L625.941,106.57L620.359,107.458L619.222,105.174L616.545,103.795L618.662,99.706L618.409,95.974L620.779,93.583L624.56,91.017L633.285,86.619L635.659,85.771L635.933,84.066L632.273,82.17L626.519,83.304L622.461,86.12L622.039,88.593L615.833,91.866L608.384,95.396L603.891,101.216L605.127,104.148L607.401,106.471L602.752,111.215L598.992,112.203L595.263,119.348L592.018,123.373L588.098,122.957L585.024,126.374L581.068,126.571L581.419,122.499L580.398,117.634L580.154,111.63L578.959,109.038L570.553,113.931L565.764,114.923L562.076,112.762L562.81,108.226L565.987,98.599L570.122,95.946L580.035,92.503L588.101,88.305L596.256,82.679L606.994,74.996L613.362,72.04L623.718,67.152L630.988,65.458L635.819,65.66L641.604,62.479L646.938,62.647L652.543,61.884L660.841,64.694L656.643,65.725L659.107,68.157L662.642,66.805L666.818,69.157L674.798,70.081L685.042,74.515L686.905,76.394L686.443,79.034L682.495,81.134L677.158,82.198L664.211,79.162L661.796,79.668L665.982,82.598L664.699,88.593L668.418,89.831L670.603,90.886L671.527,88.916L670.04,87.112L672.494,85.641L679.423,88.161L682.307,87.173L680.935,84.216L689.122,80.296L691.914,80.525L694.489,81.92L696.899,79.175L694.887,76.809L696.933,74.448L695.279,72.007L703.48,73.269L704.735,75.477L700.766,75.965L700.303,78.166L702.423,79.533L707.359,78.67L708.626,76.139L715.385,74.255L726.582,70.887L728.825,71.079L725.446,73.462L729.147,73.868L731.538,72.525L737.246,72.418L741.964,70.795L745.116,73.156L748.869,70.563L745.991,68.301L747.719,67.021L756.442,68.196L760.494,69.414L771.11,73.888L773.274,71.834L770.341,69.764L770.311,68.94L766.711,68.558L767.848,66.72L766.487,63.712L766.503,62.485L772.207,59.037L774.361,55.61L776.576,54.875L784.225,55.864L784.75,57.954L781.835,61.031L783.624,62.252L784.471,64.936L783.589,70.246L786.853,72.644L785.455,75.276L779.218,80.917L782.736,81.506L784.011,80.066L787.439,79.047L788.311,77.077L790.998,75.196L789.272,72.957L790.749,70.371L787.453,70.048L786.792,67.887L789.293,64.004L785.539,60.889L790.879,58.332L790.272,55.648L791.731,55.566L793.214,57.654L791.991,61.315L795.142,62.013L793.831,59.268L798.757,57.775L804.837,57.577L810.299,59.736L807.62,56.589L807.248,52.604L812.256,51.858L819.196,52.021L825.412,51.538L822.945,49.612L826.076,47.214L829.335,47.115L834.68,45.321L842.095,44.84L842.914,43.857L850.255,43.525L852.683,44.33L858.678,42.434L863.838,42.494L864.306,40.967L866.647,39.472L872.863,38.049L877.891,39.171L874.323,40.034L880.765,40.569L881.968,42.314L884.305,41.457L892.49,41.499L899.327,43.235L901.998,44.573L901.862,46.446L899.035,47.521L892.084,49.55L890.204,50.639L893.907,51.157L898.405,52.09L900.807,51.388L902.944,53.769L903.945,52.805L908.392,52.221L917.853,52.83L919.107,54.571L931.448,55.128L930.601,52.284L936.972,52.931L941.575,52.912L947.024,54.881L949.302,57.284L948.167,58.863L953.008,61.858L958.271,63.413L959.531,59.409L964.964,61.121L969.555,60.097L975.778,61.27L977.47,60.2L982.542,60.734L978.791,57.213L981.877,55.585L1009.508,58.031L1013.219,60.283L1022.544,63.199L1034.114,62.472L1040.391,63.108L1043.804,64.694L1045.11,67.52L1049.455,68.624L1053.006,67.828L1058.263,67.73L1064.412,68.492L1069.828,68.058L1077.302,71.529L1080.239,70.279L1076.183,67.789L1076.372,66.065L1086.652,67.152L1092.723,66.916L1102.667,68.769ZM694.689,189.546L696.207,192.798L697.897,193.015L698.895,194.25L695.853,194.615L694.852,198.184L694.071,199.795L692.613,200.87L692.483,203.153L693.331,206.553L696.751,207.513L699.126,209.823L704.343,210.62L710.243,209.402L710.688,208.317L710.25,205.063L711.17,200.247L708.438,198.69L709.647,195.54L707.242,195.276L708.391,191.408L711.738,192.534L715.072,191.067L712.657,188.314L711.844,185.696L708.807,186.865L708.131,190.221L707.265,187.253L707.174,186.138L708.244,184.234L707.706,182.642L703.669,181.082L702.474,176.995L700.606,175.841L700.653,174.364L704.094,174.795L704.593,171.476L707.709,170.74L710.765,171.415L711.861,167.003L711.516,164.214L707.944,164.428L705.057,163.33L700.728,165.314L697.302,166.261L695.349,168.939L691.803,169.682L687.661,174.364L690.396,178.683L689.684,181.754L693.033,187.136ZM276.16,69.909L272.607,71.278L269.991,70.094L267.003,70.523L265.071,68.769L269.238,67.566L273.45,65.889L275.241,66.988L276.165,67.684L276.16,68.42ZM1100.857,60.625L1102.821,63.238L1099.704,63.432L1098.286,62.22ZM1100.857,60.625L1101.122,60.47L1103.621,60.476L1108.732,61.567L1108.879,62.091L1106.524,63.004L1102.821,63.238ZM1504.668,297.471L1502.74,297.238L1498.354,295.776L1496.155,293.666L1491.23,291.047L1488.453,288.131L1486.873,285.878L1488.046,285.432L1487.246,284.11L1487.781,282.913L1487.306,281.317L1485.354,279.236L1484.419,277.397L1482.348,275.064L1477.405,270.468L1472.253,266.849L1469.351,263.966L1465.364,262.078L1464.241,260.942L1463.755,258.082L1461.384,257.008L1458.252,254.751L1456.035,251.522L1453.832,251.145L1450.626,248.707L1447.92,246.45L1447.16,245.008L1443.648,241.511L1440.768,237.969L1440.054,236.19L1436.494,234.348L1435.317,234.552L1432.58,233.274L1432.817,235.155L1434.419,237.381L1436.28,240.861L1438.381,242.766L1442.525,245.956L1443.6,247.046L1444.311,247.375L1445.46,248.966L1446.109,248.903L1448.061,251.89L1449.691,253.066L1451.139,254.712L1454.436,257.063L1457.302,261.373L1459.184,263.402L1461.02,265.572L1462.073,268.008L1463.991,268.165L1466.263,270.264L1468.347,272.331L1468.537,273.161L1467.457,274.86L1466.766,274.837L1464.817,272.026L1461.401,269.387L1457.856,267.147L1455.477,265.972L1454.412,262.587L1452.924,260.08L1450.571,258.646L1447.161,256.577L1446.871,257.173L1445.453,255.966L1442.67,254.845L1439.383,252.156L1439.525,251.812L1441.211,252.07L1441.956,250.338L1441.268,248.253L1436.99,244.945L1434.23,243.667L1431.63,240.775L1428.93,237.734L1425.562,234.034L1422.165,229.874L1420.459,227.509L1416.783,224.846L1414.763,224.29L1413.735,222.967L1411.515,222.732L1409.575,221.488L1405.873,221.026L1404.576,220.283L1402.9,217.748L1396.992,213.104L1390.649,206.693L1390.227,205.625L1387.793,204.104L1382.889,200.247L1380.349,196.496L1377.007,193.986L1375.666,190.19L1373.26,186.262L1370.022,182.758L1368.827,178.459L1364.473,170.218L1359.821,164.161L1356.073,160.306L1353.617,158.224L1353.425,157.352L1359.581,158.87L1364.404,163.116L1364.452,161.927L1361.318,158.24L1357.514,154.572L1357.03,154.564L1347.1,150.178L1343.204,148.259L1335.571,146.419L1330.743,142.504L1329.203,139.804L1323.382,137.929L1320.078,134.401L1313.497,131.234L1311.661,128.998L1308.5,127.362L1304.433,125.986L1300.461,122.23L1293.329,118.762L1288.202,114.736L1284.802,114.463L1279.476,114.355L1274.605,113.134L1264.211,108.753L1260.426,107.956L1253.491,106.457L1249.272,106.812L1241.328,104.891L1236.04,103.11L1233.151,103.993L1236.14,106.904L1234.547,107.174L1231.462,108.048L1229.671,109.465L1226.736,110.365L1224.385,107.885L1222.675,103.774L1225.099,102.49L1223.389,101.448L1221.097,103.767L1221.027,106.556L1218.581,109.544L1222.496,111.594L1221.616,114.635L1219.333,116.414L1216.938,117.72L1217.427,119.609L1213.731,121.822L1214.04,123.846L1211.327,125.686L1208.803,125.357L1206.447,126.564L1203.964,128.037L1202.061,129.483L1197.015,130.726L1196.047,129.998L1198.495,127.971L1200.945,126.637L1203.011,124.269L1206.861,123.788L1207.345,122.019L1210.244,119.457L1210.398,118.595L1211.81,117.092L1210.121,113.867L1210.006,111.365L1207.136,112.647L1205.554,111.916L1204.864,113.457L1201.213,111.308L1201.389,112.826L1198.687,110.722L1196.579,112.41L1194.567,112.41L1192.543,109.893L1192.051,108.347L1188.901,106.854L1185.229,107.657L1181.112,105.691L1178.194,104.686L1176.535,102.328L1172.806,100.555L1172.364,98.173L1173.303,95.87L1172.895,93.764L1175.245,93.465L1177.914,94.118L1178.987,92.143L1181.546,92.496L1182.992,91.231L1180.963,89.37L1178.643,88.641L1179.739,87.077L1177.859,87.125L1175.21,88.003L1174.94,88.902L1171.775,88.003L1167.693,88.463L1162.363,87.489L1159.825,85.86L1154.132,83.522L1157.218,81.845L1162.601,79.89L1165.133,79.89L1166.285,81.886L1172.702,81.737L1168.217,79.263L1163.21,77.742L1159.449,75.764L1155.163,74.081L1149.993,72.837L1150.033,70.788L1155.294,70.662L1157.61,68.881L1156.727,66.995L1158.203,65.157L1160.725,64.714L1164.841,63.011L1167.811,63.27L1170.495,61.231L1175.723,62.032L1179.477,63.757L1180.101,63.017L1185.327,63.244L1185.992,64.128L1191.17,64.786L1193.838,64.401L1201.287,65.614L1207.387,65.98L1210.186,66.484L1213.547,65.856L1219.239,67.015L1223.045,67.559L1229.588,68.492L1236.239,70.365L1239.752,70.728L1240.726,69.098L1243.1,67.887L1248.066,68.361L1250.741,66.661L1254.586,65.693L1258.399,67.297L1259.638,66.392L1258.291,64.577L1260.81,64.988L1269.741,68.459L1270.773,65.83L1274.492,68.769L1277.473,68.137L1277.318,67.002L1281.209,67.224L1287.664,68.854L1296.366,70.285L1301.298,70.947L1303.965,70.695L1310.379,72.684L1308.352,74.635L1314.845,75.483L1322.545,75.016L1324.325,74.328L1330.379,76.695L1331.326,74.695L1326.219,73.023L1326.555,71.682L1330.023,71.503L1331.973,71.112L1335.565,72.047L1341.238,74.181L1344.252,73.868L1349.473,75.08L1378.841,100.318L1405.912,126.739L1430.179,154.167L1451.311,182.342L1469.222,210.97L1483.988,239.799L1495.754,268.66L1504.668,297.471ZM250.527,75.08L251.499,75.644L257.007,75.016L261.344,75.109L263.972,72.664L267.508,71.98L270.604,73.309L266.121,77.044L271.817,73.895L274.134,74.002L280.244,70.061L279.949,67.664L278.405,66.098L284.032,61.851L291.095,59.088L294.181,59.698L295.023,61.379L293.693,65.706L288.717,67.605L293.356,68.394L293.356,68.394L288.617,72.385L296.26,69.322L296.933,71.834L292.672,74.749L292.61,77.42L299.021,74.562L305.086,71.172L310.2,66.903L314.107,67.198L317.887,67.769L319.74,69.698L317.76,71.635L313.178,73.728L313.017,75.838L310.526,77.769L301.491,80.552L296.529,81.168L294.649,79.965L291.528,81.974L284.857,85.361L282.049,87.125L275.474,89.872L270.683,90.141L266.335,91.866L263.303,94.527L259.059,95.042L251.623,98.382L243.267,103.054L238.623,106.35L233.527,111.236L237.648,111.945L235.274,115.917L233.75,119.153L239.187,118.306L243.656,120.16L245.493,121.793L246.066,123.825L249.221,125.007L251.193,126.828L256.543,127.077L259.844,127.501L256.148,131.256L253.606,135.644L252.177,140.556L254.088,144.747L257.838,143.311L263.172,138.784L266.879,131.868L266.36,129.579L273.439,127.553L279.756,124.518L284.12,121.524L286.291,118.66L287.177,115.038L286.005,111.845L293.865,107.43L295.945,103.64L301.006,97.166L304.158,96.211L308.557,97.334L311.474,97.732L315.138,96.65L316.804,98.047L318.547,100.45L318.075,102.06L323.542,102.377L320.361,105.882L316.863,111.201L319.308,111.859L319.611,114.355L326.319,112.002L333.332,107.351L337.126,105.408L336.53,109.152L336.436,114.549L336.097,119.667L332.695,122.361L335.333,124.788L336.542,127.26L341.104,128.374L342.294,129.762L341.066,133.447L343.316,134.024L343.569,135.674L340.531,140.608L336.944,142.265L333.464,143.812L326.739,145.384L320.012,149.034L313.657,149.756L306.837,148.815L301.638,148.785L297.838,149.094L292.773,152.289L287,154.269L278.038,160.2L271.301,164.352L274.782,163.612L284.246,157.708L294.051,153.974L299.583,153.528L301.257,155.722L296.03,158.733L294.135,163.581L293.238,166.987L296.532,169.245L302.807,168.587L309.339,163.513L307.657,166.789L309.018,168.426L302.906,171.392L293.449,174.087L288.842,175.925L282.983,179.207L280.434,178.868L282.48,175.018L290.879,171.269L285.067,171.415L280.763,171.967L280.506,173.457L275.402,175.656L270.789,177.226L266.21,178.575L262.435,181.553L261.549,182.31L260.148,184.729L260.009,187.152L261.451,187.268L261.992,185.596L262.518,186.61L261.515,187.919L258.647,188.663L256.954,188.57L253.825,189.376L252.114,189.601L249.865,189.826L246.105,191.152L251.935,190.291L252.541,191.16L246.683,192.534L244.349,192.541L244.758,191.982L242.961,193.256L243.928,193.465L241.378,196.761L236.839,200.302L237.19,199.118L236.508,198.877L235.906,197.733L235.362,200.208L235.81,201.034L235.028,202.763L232.935,204.556L229.001,208.239L228.76,208.051L231.475,204.915L230.483,203.153L232.029,199.336L230.286,201.322L229.566,204.244L227.589,203.558L229.284,205.008L227.256,209.394L228.155,209.714L227.768,211.307L226.093,215.926L222.134,219.36L217.623,220.729L213.937,223.437L211.923,223.734L209.253,225.433L208.033,226.992L202.578,229.992L199.492,232.193L196.538,234.944L194.583,238.227L193.958,241.449L193.66,245.407L194.114,248.684L193.38,250.691L193.263,256.06L192.055,259.179L191.276,260.981L189.376,263.81L188.034,264.389L186.315,263.833L186.383,261.804L185.275,260.738L184.626,256.757L184.123,253.215L184.214,251.404L186.162,248.323L186.088,245.776L184.653,241.903L183.464,241.19L178.757,243.299L178.18,243.064L177.217,240.9L175.312,239.756L170.769,240.344L167.608,239.826L164.571,240.148L162.68,240.798L162.872,242.099L162.021,243.981L162.454,244.898L161.48,245.501L160.345,244.819L158.557,245.697L155.841,245.556L154.021,243.103L150.459,243.683L148.145,242.609L145.633,242.938L141.963,244.02L137.044,247.453L132.42,249.452L129.424,251.663L127.717,253.748L126.421,256.937L125.761,259.163L125.887,260.738L125.897,260.746L125.881,260.754L122.909,264.797L121.039,268.134L118.65,274.328L117.533,276.59L117.4,279.111L117.903,281.364L117.61,284.947L119.198,288.389L119.378,291.024L120.297,293.299L124.126,294.526L125.235,296.456L129.001,295.167L132.106,294.698L135.247,293.869L137.915,293.08L140.884,291.196L142.551,288.498L143.94,284.619L145.001,283.266L147.986,282.053L152.415,280.981L155.811,281.145L158.29,280.754L158.931,281.732L158.173,283.962L155.323,286.707L153.639,289.523L154.144,290.328L153.036,292.322L151.16,295.925L150.455,294.737L149.619,294.815L149.464,295.495L150.204,295.518L149.827,296.769L148.711,298.769L148.881,299.48L148.086,301.136L148.239,301.574L147.26,303.909L146.213,305.127L145.474,305.275L144.35,306.876L145.445,307.711L145.93,307.024L146.966,307.61L147.338,307.789L148.372,306.977L149.503,306.915L149.791,307.29L150.447,307.063L152.184,307.477L154.02,307.352L155.4,306.845L155.961,306.329L157.168,306.572L158.036,306.884L159.091,306.775L159.952,306.376L161.614,307.017L162.215,307.118L163.24,307.977L164.162,309.007L165.449,309.718L166.233,310.982L165.807,311.427L165.41,312.457L165.503,314.143L164.306,315.719L163.55,317.568L163.068,319.604L163.081,320.789L162.84,322.863L162.156,323.316L161.476,325.288L161.56,326.505L160.588,327.682L160.578,328.921L161.081,329.677L161.731,332.179L163.024,334.034L164.629,335.997L165.854,337.649L165.655,338.623L167.213,338.833L167.627,338.459L168.596,339.589L170.571,339.261L172.401,338.093L174.904,337.166L176.421,335.795L178.569,336.059L178.373,336.511L180.562,336.675L182.236,337.47L183.362,338.849L184.719,340.126L186.742,340.266L190.079,337.057L191.76,336.566L191.983,335.047L193.198,331.15L195.746,329.015L198.247,328.929L198.692,327.97L201.74,328.352L205.164,326.029L206.86,325L209.091,322.778L210.442,323.058L211.3,324.275L210.31,325.826L210.045,326.91L207.653,327.448L208.666,329.537L208.313,331.945L206.235,334.618L207.315,338.272L209.058,337.976L210.319,334.649L209.289,333.028L209.533,329.545L214.705,327.666L214.465,325.499L216.051,324.049L217.018,327.284L219.782,327.354L222.004,329.927L221.97,331.446L225.508,331.493L229.794,331.018L231.81,333.075L234.776,333.644L237.151,332.21L237.348,331.049L242.277,330.776L247.025,330.706L243.503,332.07L244.606,334.244L247.73,334.587L250.478,336.854L250.751,340.539L252.814,340.438L254.267,341.52L256.725,343.211L258.913,346.209L258.844,348.576L260.335,348.685L262.302,350.935L263.753,352.531L268.451,353.458L268.932,352.625L272.167,352.29L276.347,353.528L277.674,354.034L280.525,355.124L284.525,359.008L285.097,360.892L286.465,360.674L287.348,363.219L289.336,371.258L291.453,372.013L291.508,375.188L288.508,378.978L289.737,380.363L296.763,381.079L296.941,385.694L299.932,382.674L304.938,384.324L311.582,387.133L313.562,389.826L312.979,392.371L317.564,390.954L325.349,393.39L331.28,393.211L337.275,397.017L342.553,402.17L345.672,403.493L349.067,403.68L350.58,405.128L352.246,410.983L353.08,413.77L352.073,421.38L350.304,424.379L345.345,430.785L343.389,435.993L340.934,439.993L339.965,440.079L339.287,443.472L340.771,452.112L340.79,459.218L340.874,462.265L339.948,464.086L340.377,470.261L337.596,476.291L337.931,481.064L335.22,483.068L334.931,485.847L330.713,485.831L325.03,487.609L322.803,489.668L318.804,491.023L315.185,494.704L313.137,499.296L313.52,502.752L314.876,505.307L315.535,509.986L315.348,512.251L313.452,514.799L311.869,522.951L309.793,526.618L307.982,528.789L307.848,533.191L306.352,535.83L305.829,538.742L302.613,541.308L299.484,540.385L297.646,540.878L293.406,538.898L290.914,539.047L287.618,536.487L288.318,538.898L294.675,542.857L295.481,546.046L298.644,548.055L299.416,550.312L298.448,556.218L294.1,558.688L287.158,559.646L282.896,559.187L284.988,561.927L285.912,565.364L287.735,567.679L286.354,569.293L282.949,569.929L278.58,568.253L277.78,569.456L280.678,574.004L283.87,575.381L285.091,573.942L287.424,576.317L284.862,577.731L283.518,580.564L285.573,585.146L286.124,587.575L282.756,587.59L281.323,589.907L282.349,593.298L287.886,596.604L291.826,597.511L293.142,601.55L290.618,604.076L291.82,609.305L289.836,611.067L289.857,613.141L294.207,617.738L298.327,620.288L296.719,620.065L293.644,620.035L292.777,621.114L290.864,622.697L293.392,626.784L292.027,626.888L287.106,625.468L280.873,622.415L274.704,619.901L271.54,617.11L270.615,614.521L266.729,611.571L260.923,603.97L259.502,599.658L260.934,596.177L254.692,594.864L255.522,590.872L252.08,583.33L257.042,584.931L253.403,575.49L250.286,574.275L252.435,579.978L249.784,579.337L247.168,572.804L243.779,564.307L243.812,561.164L240.474,556.678L237.599,551.483L239.09,551.335L237.858,543.881L237.158,536.487L235.856,529.588L232.217,522.653L231.891,518.836L229.318,513.114L229.579,507.462L227.325,498.504L225.66,488.893L224.049,478.552L221.888,470.988L219.578,464.484L215.068,461.827L214.327,459.937L205.596,455.305L197.572,450.261L194.013,447.413L191.709,443.605L192.136,442.279L187.816,436.235L182.719,427.738L177.906,418.568L176.064,416.473L174.5,413.085L171.155,410.079L168.177,408.218L169.308,406.163L167.102,401.78L168.152,398.558L171.175,395.655L173.16,392.215L172.24,390.207L170.79,392.347L168.353,390.332L169.119,389.032L168.367,384.861L169.746,384.168L170.468,381.305L171.972,378.34L171.699,376.464L173.899,375.484L176.645,373.647L176.143,372.223L177.624,371.881L177.51,369.577L178.491,367.912L180.475,367.601L182.257,364.713L183.88,362.301L182.475,361.203L183.364,358.533L182.746,354.33L183.674,353.123L183.349,349.23L181.963,346.777L180.757,345.453L180.158,342.969L181.254,341.738L180.288,341.427L179.709,339.908L177.885,338.623L176.113,338.919L175.137,340.516L173.416,341.676L172.53,341.832L172.045,342.79L173.68,345.29L172.554,345.882L171.92,346.559L170.043,346.793L169.621,344.044L169.03,344.83L167.744,344.558L167.132,342.704L165.538,342.4L164.568,341.863L162.87,341.871L162.651,342.868L162.267,342.175L160.223,341.154L159.532,340.188L160.079,339.386L160.039,338.373L159.073,337.267L157.631,336.363L156.351,335.771L156.252,334.423L155.319,333.605L155.401,334.945L154.479,336.044L153.729,334.766L152.52,334.314L152.102,333.379L152.319,331.984L153.035,330.527L152.017,329.88L153.056,328.991L151.905,327.541L150.341,325.686L149.721,324.127L148.294,322.684L146.658,320.602L147.222,319.884L147.755,320.578L148.108,320.259L147.679,318.816L146.56,318.41L145.926,319.502L143.654,319.432L142.313,318.987L140.846,318.075L138.713,317.786L137.775,316.795L135.912,315.992L133.461,315.906L131.836,314.993L130.098,313.089L126.686,308.125L124.977,306.626L122.052,305.424L119.771,305.759L116.228,307.501L114.148,307.953L111.648,306.735L108.906,305.861L105.726,303.745L102.943,303.097L99.036,300.949L96.306,298.746L95.64,297.511L95.332,297.471L104.246,268.66L116.012,239.799L130.778,210.97L148.689,182.342L169.821,154.167L194.088,126.739L221.159,100.318L250.527,75.08ZM262.916,65.298L264.61,66.347L262.094,68.052L259.15,68.219L262.916,65.298ZM1340.85,68.219L1338.839,68.367L1342.668,69.863L1343.456,71.298L1337.209,70.682L1330.7,69.625L1327.498,69.863L1323.444,71.192L1315.279,71.874L1311.518,72.146L1307.697,70.299L1302.328,69.236L1300.17,69.671L1292.846,66.595L1294.357,66.19L1298.183,65.529L1302.602,65.699L1305.671,65.027L1298.813,64.128L1292.819,64.434L1288.502,64.356L1285.256,62.946L1290.262,61.412L1285.779,61.47L1279.405,60.464L1278.394,57.622L1278.556,56.124L1283.436,53.851L1287.338,54.571L1287.338,54.571L1288.147,56.328L1293.158,55.191L1299.679,57.086L1300.454,55.166L1304.749,56.398L1312,60.109L1311.44,58.543L1304.248,54.685L1306.064,54.141L1309.754,54.735L1315.066,56.252L1321.826,59.929L1326.273,62.622L1333.735,64.525L1337.084,65.298L1340.85,68.219ZM1313.863,53.453L1314.693,55.921L1306.598,53.309L1306.87,52.786L1310.531,52.636ZM351.759,54.64L350.792,55.673L347.817,55.566L344.783,55.483L340.983,55.991L340.42,55.762L339.645,53.781L341.439,52.441L343.126,52.196L349.246,52.592ZM322.342,54.432L321.683,56.774L328.169,53.75L337.426,52.228L337.625,56.086L334.208,58.556L341.32,57.456L345.869,55.959L350.103,57.865L352.073,59.672L350.576,61.334L357.017,60.47L357.42,62.9L362.947,64.421L363.904,65.974L362.983,69.605L355.574,71.423L360.129,73.988L364.111,74.855L364.999,78.495L369.59,78.758L366.003,81.554L356.209,86.229L353.974,84.502L352.765,80.647L348.284,81.147L345.673,83.44L346.711,85.785L349.215,87.646L349.506,88.724L347.894,92.752L344.156,95.703L341.141,94.59L336.191,91.314L337.433,94.84L338.515,97.327L337.756,98.767L330.555,97.118L325.909,94.729L323.928,92.738L326.129,91.583L323.44,89.487L320.782,87.523L319.682,88.696L309.95,89.343L308.692,87.948L313.774,84.972L319.704,84.904L326.63,84.386L327.038,82.951L330.121,80.958L338.065,77.077L339.015,75.33L339.248,73.975L336.604,72.073L331.901,70.742L334.912,69.751L334.381,67.336L331.985,67.113L331.104,65.797L328.207,66.943L322.215,67.441L312.308,66.576L307.323,65.438L303.187,64.857L302.348,63.51L307.587,61.761L303.407,61.748L307.306,57.897L313.854,54.539L318.814,53.019L327.558,52.027ZM1326.592,57.418L1324.377,56.863L1322.779,55.661L1324.318,55.762L1326.592,57.418ZM275.682,55.762L279.733,56.124L279.911,53.68L285.86,51.883L285.86,51.883L288.208,52.661L294.017,52.19L293.277,53.271L288.134,55.058L290.37,56.672L285.36,60.077L278.603,61.554L276.174,61.231L276.05,59.781L273.408,57.418L275.682,55.762ZM990.319,54.23L985.935,54.255L979.791,53.838L979.185,53.643L981.203,52.171L984.645,51.833L989.465,53.252ZM301.177,55.877L294.361,58.697L291.196,58.556L293.751,55.248L296.302,53.39L299.965,51.814L304.209,50.807L310.03,50.932L314.31,51.833L305.603,55.147ZM1277.011,61.07L1271.466,62.972L1267.942,61.295L1258.791,59.287L1258.32,58.05L1256.884,54.938L1256.39,52.491L1250.736,50.227L1259.689,49.649L1264.78,50.414L1272.379,50.62L1276.579,51.689L1281.719,53.252L1279.294,54.192L1275.479,56.825L1275.091,59.473ZM1006.986,47.331L1004.544,48.775L999.79,48.447L993.682,47.011L993.687,45.834L999.291,46.379ZM311.068,47.712L307.529,49.128L303.764,48.855L301.664,47.897L305.54,46.262L311.024,45.291L311.667,46.563ZM989.952,45.596L989.202,48.292L978.641,48.193L974.333,49.053L967.524,46.685L967.806,44.209L971.171,43.537L978.693,43.694ZM1309.522,45.505L1308.238,45.596L1303.808,42.825L1305.485,42.88L1309.522,45.505ZM294.515,42.88L295.862,42.933L301.976,41.726L305.588,41.93L306.527,41.469L306.527,41.469L306.143,43.108L303.474,44.944L298.221,47.638L292.984,48.008L290.777,47.429L293.98,45.315L290.478,45.505L294.515,42.88ZM1288.684,43.307L1291.685,44.579L1293.298,43.978L1296.487,44.136L1299.609,45.895L1300.4,47.62L1291.555,48.181L1286.542,49.767L1282.296,49.854L1280.305,48.657L1283.99,47.048L1271.732,47.478L1266.859,46.827L1265.815,43.313L1267.03,42.32L1276.683,43.518L1284.772,45.645L1290.115,45.92L1281.046,42.494L1281.669,41.206L1285.169,41.612ZM739.176,63.666L737.369,64.004L727.746,63.504L727.261,61.806L722.103,60.786L722.086,58.729L725.242,57.922L725.537,55.864L731.898,52.686L729.335,52.228L736.813,48.998L736.344,47.343L743.028,45.431L752.701,43.126L762.138,42.464L767.07,41.146L772.55,40.693L774.375,42.086L772.394,43.192L762.234,44.968L753.369,46.692L743.99,50.165L739.113,53.781L733.95,57.386L734.01,60.534ZM319.249,40.135L320.604,41.266L326.115,41.26L326.806,42.422L324.202,43.76L326.271,44.573L326.865,45.425L330.454,45.584L334.17,45.889L339.739,45.108L345.923,44.798L350.165,45.053L351.39,46.416L350.066,47.916L347.025,48.886L341.744,49.674L338.665,49.227L329.706,49.792L323.733,49.86L319.714,49.407L313.738,48.231L315.572,46.232L317.799,44.445L317.269,42.885L312.122,42.452L310.557,41.355L313.852,39.916ZM1258.708,38.23L1262.362,40.914L1261.996,42.14L1259.634,42.314L1256.548,43.833L1252.803,44.385L1247.917,43.609L1248.968,40.955L1251.358,38.688L1255.687,38.741ZM323.892,38.665L322.477,38.765L317.636,38.541L318.462,37.575L323.933,37.628L324.853,38.266ZM1275.052,38.049L1271.458,39.047L1265.612,37.926L1266.101,36.831L1269.562,36.483L1274.314,37.016ZM652.959,37.511L646.073,38.924L641.606,38.119L643.977,37.232L642.914,36.136L648.964,35.45L649.377,36.732ZM1271.43,34.957L1269.19,35.617L1264.63,35.611L1263.885,35.129L1264.997,34.119L1266.721,34.272ZM321.379,36.813L316.133,37.523L315.22,36.72L316.201,35.445L318.414,34.045L321.709,34.181L322.916,34.403L324.186,35.577ZM1294.999,36.458L1291.314,35.83L1284.993,35.709L1285.891,34.7L1281.18,33.892L1278.687,32.611L1284.847,33.066L1290.209,33.733L1294.999,36.458ZM309.791,33.733L312.012,34.284L311.295,35.893L311.295,35.893L309.945,37.325L306.096,36.941L305.001,36.458L309.791,33.733ZM874.329,35.957L859.122,37.278L863.145,32.836L865.291,32.465L867.375,32.678L874.773,34.58ZM638.776,31.295L646.234,33.761L638.606,35.089L635.649,37.605L632.869,38.254L629.956,41.152L626.512,41.29L621.733,39.147L624.97,37.914L621.434,36.923L617.925,34.056L617.602,31.456L625.768,30.287L626.456,31.428L630.334,31.384L632.097,30.27L636.117,30.161ZM659.496,29.013L664.115,30.139L659.159,31.895L651.088,32.286L643.431,31.739L643.498,30.837L639.678,30.776L637.708,29.294L646.55,28.404L649.937,29.17L653.234,28.217ZM728.314,28.566L724.598,28.986L722.113,29.229L721.567,29.757L718.262,30.292L715.612,29.528L717.481,28.528L711.582,28.431L716.99,27.859L721.046,27.816L721.304,28.673L723.082,27.912L725.759,27.397L729.488,28.083ZM859.81,34.016L853.944,34.432L846.182,33.467L841.459,32.197L839.021,29.86L835.268,29.224L841.834,27.064L847.411,26.366L852.916,27.934L859.808,31.041ZM354.487,31.434L355.928,32.493L350.545,33.484L341.347,36.026L336.091,36.269L331.121,35.83L330.475,34.455L332.61,33.235L336.305,32.353L331.311,32.376L330.307,31.284L331.363,29.811L335.974,28.394L339.731,27.434L342.903,27.212L343.193,26.502L349.664,26.345L349.735,28.008L352.925,28.689L356.177,29.294ZM423.47,20.893L429.863,21.116L434.656,21.474L437.828,22.252L436.235,23.023L427.471,24.308L420.022,24.914L416.408,25.597L422.171,25.581L412.676,27.455L406.844,28.345L397.967,30.974L391.54,31.517L388.761,32.185L379.992,32.544L383.077,32.959L380.276,33.552L380.005,35.215L375.671,36.379L369.995,37.348L366.713,38.706L361.349,39.744L360.612,40.539L365.57,40.402L364.439,41.26L354.022,43.392L348.043,42.41L339.024,42.957L335.453,42.53L330.423,42.344L332.583,40.646L338.919,39.856L341.386,37.348L343.446,37.109L348.546,38.6L348.168,36.39L344.753,35.738L349.09,34.426L355.23,33.625L357.927,32.465L356.309,31.179L358.133,29.512L365.201,29.653L366.708,30.002L372.963,28.829L367.621,28.463L357.905,28.668L355.243,27.593L355.527,26.334L354.303,25.437L355.934,24.405L361.06,23.84L364.315,23.744L370.485,23.266L376.741,22.184L379.616,22.33L380.613,23.146L386.061,21.589L390.519,21.135L395.848,20.827L403.961,20.714L404.65,21.012L413.135,20.54L418.286,20.719ZM531.698,19.755L544.409,21.97L538.088,23.082L527.962,23.211L513.52,23.499L514.077,24.026L523.788,23.699L530.27,24.73L536.561,23.815L537.349,24.888L532.256,26.669L540.362,25.525L554.523,24.354L561.703,24.934L561.722,26.24L548.507,28.463L546.219,29.197L537.066,29.751L543.114,29.904L537.535,32.286L533.217,34.449L529.755,38.254L531.072,40.533L526.592,40.676L521.017,41.792L524.584,43.676L522.722,46.734L519.408,47.072L520.6,50.215L514.018,50.477L516.166,51.983L514.207,53.29L509.685,53.863L505.627,53.876L507.297,56.411L506.061,58.089L501.478,56.532L499.187,57.539L502.413,58.485L504.521,60.805L503.377,63.887L497.531,64.629L496.34,63.147L494.341,60.947L493.381,63.543L488.403,65.569L496.151,65.732L500.119,65.941L489.62,69.322L479.147,72.405L469.244,73.762L465.882,73.775L461.566,75.296L454.132,79.486L445.371,82.286L443.103,82.449L438.214,83.433L433.02,84.373L428.421,86.865L426.198,89.714L422.569,92.392L414.924,95.668L413.811,98.893L409.852,102.321L405.249,106.4L400.487,106.655L398.204,103.244L391.748,103.223L390.367,100.942L391.376,96.901L389.986,91.797L390.583,89.143L393.215,85.512L392.118,81.798L395.815,78.859L395.002,77.46L402.188,72.843L408.075,71.384L410.753,69.751L414.159,66.72L409.458,68.091L407.289,68.67L404.078,69.223L401.576,67.953L403.869,65.327L407.005,63.283L409.819,63.225L414.917,64.245L412.13,61.812L410.752,60.509L407.294,61.044L405.769,60.097L412.58,56.576L412.233,55.179L412.624,52.598L413.367,48.694L411.326,47.275L413.078,45.761L407.967,43.658L402.304,43.398L394.601,43.543L387.408,43.809L385.58,42.674L383.643,40.45L392.416,39.348L398.246,39.165L387.617,38.26L383.361,36.854L385.662,35.531L398.393,33.903L410.714,32.303L413.541,31.113L408.098,29.942L412.496,28.668L425.341,26.475L429.743,26.147L431.031,24.781L438.651,23.991L447.514,23.524L455.563,23.499L456.823,24.425L466.531,22.801L470.879,23.9L474.17,24.132L478.076,25.108L474.426,23.499L476.901,22.252L488.56,20.564L497.339,20.69L502.423,19.677L511.91,19.416Z"/></g>
+        <path class="route" d="M964.7,235.9 L961.5,242.6 L958.2,249.4 L955.0,256.2 L951.8,263.0 L948.7,269.8 L945.6,276.7 L942.5,283.6 L939.4,290.5 L936.4,297.4 L933.3,304.3 L930.3,311.3 L927.2,318.2 L924.2,325.2 L921.1,332.1 L918.1,339.1 L915.1,346.1 L912.0,353.1 L908.9,360.1 L905.8,367.1 L902.7,374.1"/>
+        <path class="route" d="M902.7,374.1 L898.0,372.7 L893.2,371.4 L888.5,370.0 L883.7,368.7 L879.0,367.3 L874.2,366.0 L869.5,364.6 L864.7,363.3 L860.0,362.0 L855.2,360.7 L850.4,359.4 L845.7,358.1 L840.9,356.8 L836.1,355.5 L831.3,354.3 L826.5,353.0 L821.8,351.8 L817.0,350.5 L812.2,349.3 L807.4,348.1"/>
+        <path class="route" d="M807.4,348.1 L799.1,341.8 L790.7,335.5 L782.3,329.2 L773.8,323.0 L765.3,316.9 L756.7,310.9 L748.1,305.0 L739.3,299.1 L730.5,293.4 L721.7,287.9 L712.7,282.4 L703.6,277.1 L694.4,272.0 L685.2,267.1 L675.8,262.3 L666.3,257.7 L656.7,253.4 L646.9,249.3 L637.1,245.4 L627.1,241.7"/>
+        <path class="route" d="M627.1,241.7 L623.9,236.1 L620.6,230.4 L617.3,224.8 L614.0,219.3 L610.6,213.8 L607.1,208.3 L603.6,203.0 L599.9,197.7 L596.2,192.4 L592.4,187.3 L588.5,182.2 L584.5,177.2 L580.3,172.3 L576.1,167.6 L571.6,162.9 L567.1,158.4 L562.3,154.0 L557.4,149.7 L552.3,145.6 L547.0,141.6"/>
+        <path class="route" d="M902.7,374.1 L898.1,371.3 L893.5,368.5 L888.9,365.6 L884.3,362.9 L879.6,360.1 L875.0,357.3 L870.4,354.5 L865.7,351.7 L861.0,349.0 L856.4,346.3 L851.7,343.5 L847.0,340.8 L842.3,338.1 L837.5,335.4 L832.8,332.8 L828.1,330.2 L823.3,327.5 L818.5,324.9 L813.8,322.4 L809.0,319.8"/>
+        <path class="route" d="M807.4,348.1 L802.9,343.7 L798.3,339.2 L793.8,334.8 L789.2,330.4 L784.6,326.0 L780.0,321.6 L775.4,317.3 L770.7,313.0 L766.0,308.7 L761.3,304.4 L756.6,300.2 L751.8,296.0 L747.0,291.8 L742.2,287.7 L737.3,283.6 L732.4,279.5 L727.5,275.5 L722.5,271.6 L717.4,267.7 L712.4,263.8"/>
+        <circle class="hub" cx="840.2" cy="276.0" r="4"/>
+        <circle class="hub" cx="809.0" cy="319.8" r="4"/>
+        <circle class="hub" cx="780.0" cy="292.8" r="4"/>
+        <circle class="hub" cx="793.2" cy="334.3" r="4"/>
+        <circle class="hub" cx="902.7" cy="374.1" r="4"/>
+        <circle class="hub" cx="712.4" cy="263.8" r="4"/>
+        <circle class="hub" cx="964.7" cy="235.9" r="4"/>
+        <circle class="hub" cx="547.0" cy="141.6" r="4"/>
+        <circle class="hub" cx="627.1" cy="241.7" r="4"/>
+        <circle class="hub" cx="807.4" cy="348.1" r="4"/>
       </svg>
-    </div>
-    <div class="container">
-      <p class="plate-caption">
-        <span>Plate 01 — WIG craft in ground effect</span>
-        <span>Flight height: within &#8776;1 wingspan</span>
-        <span>Class: maritime vessel (IMO)</span>
-      </p>
-    </div>
-  </section>
-  <!-- ============ WHY WIG ============ -->
-  <section class="props" aria-labelledby="props-title">
-    <div class="container">
-      <div class="sec-head reveal">
-        <p class="sec-num">01 — Why WIG</p>
-        <h2 id="props-title">A third way to cross the water</h2>
-      </div>
-      <div class="prop-grid">
-        <article class="prop reveal">
-          <p class="prop-num">A</p>
-          <svg class="prop-icon" viewBox="0 0 52 52" aria-hidden="true" focusable="false" fill="none" stroke="#0C2340" stroke-width="1.7" stroke-linecap="round">
-            <path d="M4 26 H40"/><path class="icon-accent" d="M32 18 L42 26 L32 34" stroke="#C4400F"/>
-            <path d="M6 42 q5 -5 10 0 t10 0 t10 0 t10 0"/>
-            <path d="M12 34 q5 -5 10 0 t10 0" opacity=".45"/>
-          </svg>
-          <h3>Fast &amp; affordable</h3>
-          <p>Near-aircraft speed at ship-like operating cost. Ground effect does the heavy lifting, so speed stops being a luxury on the water.</p>
-        </article>
-        <article class="prop reveal">
-          <p class="prop-num">B</p>
-          <svg class="prop-icon" viewBox="0 0 52 52" aria-hidden="true" focusable="false" fill="none" stroke="#0C2340" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 14 H24 V40 H6 Z"/><path d="M10 14 V8 h8 v6"/>
-            <path class="icon-accent" d="M13 22 a3.5 3.5 0 1 1 2 0 v8" stroke="#C4400F"/>
-            <path d="M24 40 q7 -6 14 0 t14 0" /><path d="M30 32 q5 -5 10 0" opacity=".45"/>
-          </svg>
-          <h3>Minimal infrastructure</h3>
-          <p>Operates straight from waterfronts. No runways to pour, no deep ports to dredge — if a place has a shoreline, it has a terminal.</p>
-        </article>
-        <article class="prop reveal">
-          <p class="prop-num">C</p>
-          <svg class="prop-icon" viewBox="0 0 52 52" aria-hidden="true" focusable="false" fill="none" stroke="#0C2340" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M26 6 C36 18 42 26 42 33 a16 16 0 0 1 -32 0 C10 26 16 18 26 6 Z"/>
-            <path class="icon-accent" d="M26 40 V22 M26 28 l6 -5 M26 34 l-6 -5" stroke="#C4400F"/>
-          </svg>
-          <h3>Sustainable fuel</h3>
-          <p>High speed without the heavy footprint: the craft is built around sustainable fuel, so going faster does not mean burning dirtier.</p>
-        </article>
-      </div>
-      <div class="stat-band reveal">
-        <span class="big">&#8776;10&#215;</span>
-        <span class="label">cheaper than air freight — the efficiency of flying on an air cushion, priced like the sea.</span>
-        <span class="foot">Waterfly value proposition</span>
-      </div>
-    </div>
-  </section>
-  <!-- ============ TECHNOLOGY ============ -->
-  <section class="tech" id="technology" aria-labelledby="tech-title">
-    <div class="container">
-      <div class="sec-head reveal">
-        <p class="sec-num">02 — Technology</p>
-        <h2 id="tech-title">How ground effect works</h2>
-      </div>
-      <div class="tech-cols">
-        <p class="lead reveal">When a wing flies within roughly one wingspan of a surface, the physics change in its favour: induced drag drops and lift increases. The craft rides a cushion of air trapped between wing and water — and efficiency improves dramatically.</p>
-        <div class="tech-facts reveal">
-          <div class="tech-fact">
-            <p class="t">The regime</p>
-            <p>A Wing-In-Ground craft is designed to stay inside this cushion. It skims metres above the surface, where every kilometre costs a fraction of what it would at altitude.</p>
-          </div>
-          <div class="tech-fact">
-            <p class="t">The rulebook</p>
-            <p>WIG craft are classified as maritime vessels under IMO rules — it flies, but legally and operationally it lives on the water.</p>
-          </div>
+      <div class="stat-grid" data-r style="--d:.1s">
+        <div class="stat">
+          <div class="n"><span data-count="90">90</span><small>%</small></div>
+          <div class="l">shipments over 30 days in transit</div>
+        </div>
+        <div class="stat">
+          <div class="n"><span data-count="192">192</span><small>M</small></div>
+          <div class="l">TEUs shipped every year</div>
+        </div>
+        <div class="stat">
+          <div class="n">~<span data-count="50">50</span> <small>km/h</small></div>
+          <div class="l">average ship speed</div>
+        </div>
+        <div class="stat">
+          <div class="n"><span data-count="10000" data-comma>10,000</span>+ <small>km</small></div>
+          <div class="l">typical trade routes</div>
         </div>
       </div>
-      <figure class="sheet reveal">
-        <div class="sheet-scroll">
-        <svg viewBox="0 0 1000 620" role="img" aria-labelledby="diaTitle diaDesc">
-          <title id="diaTitle">Operating regimes: airliner at cruise altitude, WIG craft within one wingspan of the sea, ship on the water</title>
-          <desc id="diaDesc">A technical drawing. An altitude axis with a scale break shows an airliner kilometres up trailing wingtip vortices, a WIG craft riding an air cushion metres above the waterline, and a displacement ship sitting in the water.</desc>
-          <defs>
-            <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
-              <path d="M25 0 H0 V25" fill="none" stroke="rgba(12,35,64,.07)" stroke-width="1"/>
-            </pattern>
-          </defs>
-          <rect x="24" y="24" width="952" height="572" fill="url(#grid)" stroke="rgba(12,35,64,.25)" stroke-width="1.2"/>
-          <!-- altitude axis with scale break -->
-          <g stroke="#43586F" stroke-width="1.2" fill="none">
-            <line x1="80" y1="60" x2="80" y2="244"/>
-            <path d="M74 252 l12 8 l-12 8"/>
-            <line x1="80" y1="276" x2="80" y2="470"/>
-            <line x1="74" y1="100" x2="86" y2="100"/>
-            <line x1="74" y1="438" x2="86" y2="438"/>
-            <line x1="74" y1="470" x2="86" y2="470"/>
-          </g>
-          <g font-family="IBM Plex Mono,monospace" font-size="13.5" fill="#43586F">
-            <text x="94" y="82">altitude</text>
-            <text x="94" y="250" fill="#C4400F">scale break</text>
-          </g>
-          <!-- airliner -->
-          <g fill="#0C2340">
-            <path d="M560 100 h96 q20 2 32 8 q-14 7 -34 7 h-94 q-11 -8 0 -15 Z"/>
-            <path d="M614 108 l-36 24 h14 l42 -20 Z"/>
-            <path d="M572 101 l-16 -18 h-11 l10 20 Z"/>
-            <path d="M640 112 l-12 12 h10 l14 -11 Z"/>
-          </g>
-          <!-- wingtip vortices: energy shed as induced drag -->
-          <g fill="none" stroke="#C4400F" stroke-width="1.6" stroke-linecap="round">
-            <path d="M576 136 q-13 5 -9 14 q4 8 12 4 q6 -3 2 -8 q-3 -3 -6 1"/>
-            <path d="M556 148 q-10 4 -7 11 q3 6 9 3 q4 -2 1 -6" opacity=".55"/>
-          </g>
-          <g font-family="IBM Plex Mono,monospace" font-size="13" fill="#C4400F" letter-spacing="1">
-            <text x="600" y="146">WINGTIP VORTICES &#8212;</text>
-            <text x="600" y="164">ENERGY LOST TO INDUCED DRAG</text>
-          </g>
-          <line x1="80" y1="100" x2="548" y2="100" stroke="rgba(67,88,111,.45)" stroke-width="1" stroke-dasharray="5 5"/>
-          <g font-family="IBM Plex Mono,monospace" font-size="14" fill="#0C2340">
-            <text x="560" y="86" font-weight="600" letter-spacing="1.5">AIRLINER</text>
-            <text x="700" y="103" fill="#43586F">kilometres up &#183; fast, expensive</text>
-          </g>
-          <!-- waterline + sea -->
-          <g>
-            <!-- ship (drawn before water so its draft sits in the sea) -->
-            <g fill="#0C2340">
-              <path d="M756 448 L936 448 L920 488 L774 488 Z"/>
-              <rect x="800" y="418" width="44" height="30"/>
-              <rect x="808" y="404" width="20" height="14"/>
-              <rect x="852" y="432" width="52" height="16"/>
-              <line x1="784" y1="418" x2="784" y2="448" stroke="#0C2340" stroke-width="2.5"/>
-            </g>
-            <rect x="24" y="470" width="952" height="126" fill="rgba(27,94,124,.18)"/>
-            <path d="M24 470 H976" stroke="#1B5E7C" stroke-width="2"/>
-            <path d="M40 486 q7 -6 14 0 t14 0 M120 502 q7 -6 14 0 t14 0 M60 528 q7 -6 14 0 t14 0 M210 486 q7 -6 14 0 t14 0 M320 516 q7 -6 14 0 t14 0 M480 492 q7 -6 14 0 t14 0 M600 530 q7 -6 14 0 t14 0" fill="none" stroke="rgba(27,94,124,.5)" stroke-width="1.4" stroke-linecap="round"/>
-          </g>
-          <!-- WIG craft, line-art, metres above waterline -->
-          <g transform="translate(320,384) scale(.62)" fill="#F3EEE5" stroke="#0C2340" stroke-width="2.4" stroke-linejoin="round">
-            <use href="#wf-hull"/>
-          </g>
-          <line x1="80" y1="438" x2="308" y2="438" stroke="rgba(67,88,111,.45)" stroke-width="1" stroke-dasharray="5 5"/>
-          <g font-family="IBM Plex Mono,monospace" font-size="14">
-            <text x="320" y="372" font-weight="600" letter-spacing="1.5" fill="#0C2340">WIG CRAFT</text>
-            <text x="415" y="372" fill="#43586F">&#8212; within ~one wingspan &#183; drag drops, lift rises</text>
-            <text x="756" y="440" font-weight="600" letter-spacing="1.5" fill="#0C2340">SHIP</text>
-            <text x="812" y="440" fill="#43586F">&#8212; pushes water aside &#183; cheap, slow</text>
-          </g>
-          <!-- air cushion arrows -->
-          <g stroke="#C4400F" stroke-width="2" fill="none" stroke-linecap="round">
-            <path d="M360 466 V448 M355 453 L360 447 L365 453"/>
-            <path d="M400 466 V448 M395 453 L400 447 L405 453"/>
-            <path d="M440 466 V448 M435 453 L440 447 L445 453"/>
-            <path d="M480 466 V448 M475 453 L480 447 L485 453"/>
-          </g>
-          <text x="360" y="510" font-family="IBM Plex Mono,monospace" font-size="13" fill="#C4400F" letter-spacing="1">AIR CUSHION &#8212; PRESSURE RISES UNDER THE WING</text>
-          <!-- title block -->
-          <g font-family="IBM Plex Mono,monospace" font-size="12.5" fill="#43586F">
-            <rect x="640" y="524" width="336" height="72" fill="#FAF7F2" stroke="rgba(12,35,64,.25)"/>
-            <line x1="640" y1="548" x2="976" y2="548" stroke="rgba(12,35,64,.18)"/>
-            <line x1="640" y1="572" x2="976" y2="572" stroke="rgba(12,35,64,.18)"/>
-            <text x="652" y="541" fill="#0C2340" font-weight="600">FIG. 02 &#8212; OPERATING REGIMES</text>
-            <text x="652" y="565">WATERFLY TECHNOLOGIES &#183; CHENNAI</text>
-            <text x="652" y="589">DRAWING NOT TO SCALE</text>
+    </div>
+  </div>
+</section>
+
+<!-- ================= S3 · THE CRAFT ================= -->
+<section class="craft dark" id="craft" aria-labelledby="h-craft">
+  <img class="bgimg" src="assets/render-studio.jpg" width="2560" height="1600" loading="lazy" decoding="async"
+       alt="3D render of blended wing body cargo craft with 30 m wingspan">
+  <div class="shade" aria-hidden="true"></div>
+  <div class="container craft-top">
+    <p class="sx" data-r>02 · The Craft</p>
+    <h2 id="h-craft" data-r>Two Containers, 500&nbsp;km/h</h2>
+    <p class="lead" data-r style="--d:.08s">A blended wing body freighter cruising five metres above the waves.</p>
+    <p class="caption tick" data-r style="--d:.14s">Flagship concept: Blended Wing Body vessel.</p>
+  </div>
+  <div class="container craft-bottom">
+    <div class="spec-row" data-r style="--d:.1s">
+      <div class="spec">
+        <div class="n"><span data-count="25">25</span> <small>t</small></div>
+        <div class="l">Payload</div>
+      </div>
+      <div class="spec">
+        <div class="n">2× <small>TEU</small></div>
+        <div class="l">Cargo, 2× 33 CBM</div>
+      </div>
+      <div class="spec">
+        <div class="n"><span data-count="500">500</span> <small>km/h</small></div>
+        <div class="l">Cruise speed</div>
+      </div>
+      <div class="spec">
+        <div class="n"><span data-count="5">5</span> <small>m</small></div>
+        <div class="l">Cruise altitude</div>
+      </div>
+      <div class="spec">
+        <div class="n">&lt; 2 <small>m</small></div>
+        <div class="l">Wave tolerance</div>
+      </div>
+      <div class="spec">
+        <div class="n"><span data-count="30">30</span> <small>m</small></div>
+        <div class="l">Wingspan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= S4 · GROUND EFFECT ================= -->
+<section class="ge" id="ground-effect" aria-labelledby="h-ge">
+  <div class="narrow" style="text-align:center">
+    <p class="sx center" data-r>03 · Ground Effect</p>
+    <h2 id="h-ge" data-r>The Ground Effect</h2>
+    <p class="lead" data-r style="--d:.08s;margin-inline:auto">Within a wingspan of the surface, drag falls and lift rises — the craft rides a cushion of air. The IMO classes WIG craft as maritime vessels.</p>
+  </div>
+  <div class="container">
+    <figure class="cushion" data-r style="--d:.12s">
+      <div class="frame">
+        <img src="assets/render-cushion.jpg" width="2560" height="1200" loading="lazy" decoding="async"
+             alt="Diagram of air cushion forming under WIG craft near water surface">
+        <svg class="anno" viewBox="0 0 1280 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path class="arc a1" d="M480,345 Q640,400 800,345"/>
+          <path class="arc a2" d="M510,368 Q640,418 770,368"/>
+          <path class="arc a3" d="M540,391 Q640,434 740,391"/>
+          <g class="dim" stroke-dasharray="none">
+            <path d="M880,282 V445"/>
+            <path d="M868,282 H892"/>
+            <path d="M868,445 H892"/>
           </g>
         </svg>
-        </div>
-        <figcaption>Ground effect, plainly: within about one wingspan of the surface, induced drag falls and lift rises — the efficiency zone Waterfly craft are built to occupy.</figcaption>
-      </figure>
-    </div>
-  </section>
-  <!-- ============ USE CASES ============ -->
-  <section class="cases" id="use-cases" aria-labelledby="cases-title">
-    <div class="container">
-      <div class="sec-head reveal">
-        <p class="sec-num">03 — Use cases</p>
-        <h2 id="cases-title">Where the air cushion earns its keep</h2>
+        <span class="anno-lab" style="left:71%;top:60.5%;transform:translateY(-50%)" aria-hidden="true">One wingspan</span>
+        <span class="anno-lab" style="left:50%;top:80%;transform:translate(-50%,-50%)" aria-hidden="true">Air cushion</span>
       </div>
-      <div class="case-grid">
-        <article class="case reveal">
-          <div class="case-art" aria-hidden="true">
-            <svg viewBox="0 0 600 250" focusable="false">
-              <line x1="0" y1="178" x2="600" y2="178" stroke="rgba(12,35,64,.2)"/>
-              <!-- quay -->
-              <g stroke="#0C2340" stroke-width="2" fill="none" stroke-linejoin="round">
-                <path d="M40 178 V120 H160 V178" fill="#F6F2EA"/>
-                <path d="M96 120 v-8 a7 7 0 0 1 14 0 v8"/>
-              </g>
-              <!-- crates -->
-              <g stroke="#0C2340" stroke-width="2" fill="#F6F2EA" stroke-linejoin="round">
-                <rect x="58" y="90" width="30" height="30"/>
-                <rect x="88" y="90" width="30" height="30"/>
-                <rect x="73" y="60" width="30" height="30"/>
-                <path d="M73 60 l30 30 M103 60 l-30 30" stroke-width="1.2" stroke="rgba(12,35,64,.4)"/>
-              </g>
-              <!-- transfer arrow -->
-              <path d="M170 96 q60 -34 120 12" fill="none" stroke="#C4400F" stroke-width="2" stroke-dasharray="5 5"/>
-              <path d="M283 100 l9 10 l-13 2 Z" fill="#C4400F"/>
-              <!-- craft hull line-art -->
-              <g transform="translate(280,86) scale(.72)" fill="#F6F2EA" stroke="#0C2340" stroke-width="2.6" stroke-linejoin="round">
-                <use href="#wf-hull"/>
-              </g>
-              <path d="M20 208 q10 -8 20 0 t20 0 t20 0 M480 214 q10 -8 20 0 t20 0 M200 220 q10 -8 20 0 t20 0 t20 0" fill="none" stroke="rgba(27,94,124,.55)" stroke-width="1.6" stroke-linecap="round"/>
-              <text x="40" y="238" font-family="IBM Plex Mono,monospace" font-size="13" fill="#43586F" letter-spacing="2">LOAD AT THE QUAY &#8212; FLY THE COAST</text>
-            </svg>
-          </div>
-          <div class="case-body">
-            <p class="case-tag">Coastal cargo</p>
-            <h3>Freight at flying speed, at sea prices</h3>
-            <p>Cargo today chooses between slow ships and expensive air freight. WIG opens a third lane along the coast — roughly a tenth of air-freight cost, loading straight from the waterfront with no runway and no deep port in sight.</p>
-            <p class="case-note">Infrastructure required: a shoreline.</p>
-          </div>
-        </article>
-        <article class="case reveal">
-          <div class="case-art" aria-hidden="true">
-            <svg viewBox="0 0 600 250" focusable="false">
-              <path d="M90 180 Q300 20 510 150" fill="none" stroke="#C4400F" stroke-width="2" stroke-dasharray="6 6"/>
-              <!-- Chennai skyline, ink line-art -->
-              <g stroke="#0C2340" stroke-width="1.8" fill="#F6F2EA" stroke-linejoin="round">
-                <rect x="24" y="150" width="14" height="30"/>
-                <rect x="42" y="136" width="18" height="44"/>
-                <rect x="64" y="156" width="12" height="24"/>
-              </g>
-              <path d="M46 144 h10 M46 152 h10 M46 160 h10" stroke="rgba(12,35,64,.35)" stroke-width="1.2"/>
-              <!-- Kolkata skyline, ink line-art -->
-              <g stroke="#0C2340" stroke-width="1.8" fill="#F6F2EA" stroke-linejoin="round">
-                <rect x="526" y="118" width="14" height="32"/>
-                <rect x="544" y="102" width="18" height="48"/>
-                <rect x="566" y="124" width="12" height="26"/>
-              </g>
-              <path d="M548 110 h10 M548 118 h10 M548 126 h10" stroke="rgba(12,35,64,.35)" stroke-width="1.2"/>
-              <!-- city markers -->
-              <g fill="#0C2340">
-                <circle cx="90" cy="180" r="6"/>
-                <circle cx="510" cy="150" r="6"/>
-              </g>
-              <circle cx="90" cy="180" r="11" fill="none" stroke="rgba(12,35,64,.35)"/>
-              <circle cx="510" cy="150" r="11" fill="none" stroke="rgba(12,35,64,.35)"/>
-              <!-- craft marker on route -->
-              <g transform="translate(268,74) rotate(-4)" fill="#0C2340">
-                <path d="M0 12 L34 6 L52 12 L34 18 Z"/>
-                <path d="M8 6 L14 -4 L20 -4 L18 7 Z"/>
-              </g>
-              <text x="60" y="212" font-family="IBM Plex Mono,monospace" font-size="14" fill="#0C2340" letter-spacing="2" font-weight="600">CHENNAI</text>
-              <text x="452" y="90" font-family="IBM Plex Mono,monospace" font-size="14" fill="#0C2340" letter-spacing="2" font-weight="600">KOLKATA</text>
-              <text x="228" y="140" font-family="IBM Plex Mono,monospace" font-size="14" fill="#C4400F" letter-spacing="1.5">&#8776;3 h &#183; ~&#8377;600</text>
-              <path d="M40 232 q10 -8 20 0 t20 0 t20 0 M300 236 q10 -8 20 0 t20 0 M480 230 q10 -8 20 0 t20 0" fill="none" stroke="rgba(27,94,124,.55)" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="case-body">
-            <p class="case-tag">Passenger ferry</p>
-            <h3>Kolkata to Chennai in about three hours</h3>
-            <p class="route-chip">Kolkata &#8594; Chennai &#183; ~3 hours &#183; ~&#8377;600</p>
-            <p>Coastal city pairs collapse from days at sea into a short skim down the coastline. Media coverage has framed the promise memorably: Kolkata to Chennai in about 3 hours, for around &#8377;600.</p>
-            <p class="case-note">Illustrative route &#8212; as covered by News18.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+      <figcaption class="caption tick">Higher lift, lower drag near the surface.</figcaption>
+    </figure>
+  </div>
+</section>
 
-  <!-- ============ PRESS ============ -->
-  <section class="press" aria-labelledby="press-title">
-    <div class="container">
-      <div class="sec-head reveal">
-        <p class="sec-num">04 — Media</p>
-        <h2 id="press-title">In the press</h2>
+<!-- ================= S5 · TECHNOLOGY ================= -->
+<section class="tech" id="technology" aria-labelledby="h-tech">
+  <div class="container">
+    <p class="sx center" data-r>04 · Technology</p>
+    <h2 id="h-tech" data-r>Six Technologies. One Craft.</h2>
+    <img class="wire" src="assets/craft-wireframe.png" width="841" height="297" loading="lazy" decoding="async"
+         alt="Technical wireframe render showing structure, propulsion and hydrofoils" data-r style="--d:.08s">
+    <div class="pillars">
+      <div class="pillar" data-r>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12,3 C14,7 18.5,9.5 21,12.5 L21,15 C17,14 14,14 12,15 C10,14 7,14 3,15 L3,12.5 C5.5,9.5 10,7 12,3 Z"/></svg>
+        <b>Blended Wing Body</b>
+        <span class="sub">streamlined aerodynamics</span>
       </div>
-      <ul class="press-list reveal" role="list">
-        <li class="press-item">
-          <span class="press-logo logo-et">The Economic Times</span>
-          <p>Anand Mahindra shared the SeaGlider design.</p>
-        </li>
-        <li class="press-item">
-          <span class="press-logo logo-n18">News18</span>
-          <p>Put the promise in plain numbers: Kolkata to Chennai in about 3 hours, for around &#8377;600.</p>
-        </li>
-        <li class="press-item">
-          <span class="press-logo logo-mc">moneycontrol</span>
-          <p>Covered the unveiling of the flying boat.</p>
-        </li>
-      </ul>
-      <p class="press-foot reveal">Publication names are the trademarks of their respective owners and are shown here to indicate coverage.</p>
+      <div class="pillar" data-r style="--d:.06s">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5,12 H21.5"/><circle cx="7" cy="12" r="2.6"/><circle cx="12" cy="12" r="2.6"/><circle cx="17" cy="12" r="2.6"/><path d="M7,9.4 V7.5 M12,9.4 V7.5 M17,9.4 V7.5 M7,14.6 V16.5 M12,14.6 V16.5 M17,14.6 V16.5"/></svg>
+        <b>Distributed Electric Propulsion</b>
+        <span class="sub">seaworthy performance</span>
+      </div>
+      <div class="pillar" data-r style="--d:.12s">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.5"/><path d="M13.4,7.5 L10,12.4 h2.6 L10.6,16.5 L14,11.6 h-2.6 Z"/></svg>
+        <b>Turbo-Electric Generator</b>
+        <span class="sub">intercontinental coverage</span>
+      </div>
+      <div class="pillar" data-r>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4,11 L11,4 M4,17.5 L17.5,4 M7.5,20 L20,7.5 M14,20 L20,14"/></svg>
+        <b>Carbon Fibre Composite Structure</b>
+        <span class="sub">high payload efficiency</span>
+      </div>
+      <div class="pillar" data-r style="--d:.06s">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4,8.5 C7,6.8 17,6.8 20,8.5 L18,11.5 H6 Z"/><path d="M9.5,11.5 L11,16 M14.5,11.5 L13,16"/><path d="M7,18.5 H17"/><path d="M2.5,14.5 H4.5 M19.5,14.5 H21.5"/></svg>
+        <b>Hydrofoil Takeoff</b>
+        <span class="sub">performance in rough seas</span>
+      </div>
+      <div class="pillar" data-r style="--d:.12s">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="1.6"/><path d="M8.5,9.5 a5,5 0 0 1 7,0 M6,7 a8.5,8.5 0 0 1 12,0 M12,14.6 V19"/></svg>
+        <b>Full Autonomy of Operations</b>
+      </div>
     </div>
-  </section>
-  <!-- ============ VISION ============ -->
-  <section class="vision" id="vision" aria-labelledby="vision-title">
-    <div class="container">
-      <h2 class="visually-hidden" id="vision-title">Our vision</h2>
-      <p class="kicker">05 — Vision</p>
-      <figure>
-        <blockquote>
-          <p>&#8220;Our mission is to offer high speed sustainable marine transportation at a cost <strong>you cannot imagine</strong>.&#8221;</p>
-        </blockquote>
-        <figcaption>Waterfly Technologies &#183; IIT Madras incubated &#183; Chennai</figcaption>
-      </figure>
-    </div>
-    <svg class="vision-waves" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-      <path d="M-240 40 q30 -12 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="rgba(255,138,94,.5)" stroke-width="1.5" class="w-drift-b"/>
-      <path d="M-240 68 q30 -12 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="rgba(250,247,242,.28)" stroke-width="1.5" class="w-drift-c"/>
-    </svg>
-  </section>
+  </div>
+</section>
 
-  <!-- ============ CONTACT ============ -->
-  <section class="contact" id="contact" aria-labelledby="contact-title">
-    <div class="container">
-      <div class="sec-head reveal">
-        <p class="sec-num">06 — Contact</p>
-        <h2 id="contact-title">The water is ready. Write to us.</h2>
-        <p class="contact-lede">Operators, ports, partners, press — if faster, cheaper coastal transport matters to you, we would like to hear from you.</p>
+<!-- ================= S6 · PROOF ================= -->
+<section class="flight" id="flight" aria-labelledby="h-flight">
+  <video id="oceanVid" muted loop playsinline preload="none"
+         poster="assets/ocean-poster.jpg" aria-hidden="true" tabindex="-1">
+    <source src="assets/ocean.mp4" type="video/mp4">
+  </video>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="container">
+    <p class="sx" data-r>05 · Proof</p>
+    <h2 id="h-flight" data-r>Flying Today</h2>
+    <p class="lead" data-r style="--d:.08s">Sub-scale prototypes are in flight test at IIT Madras. Larger demonstrators are in development.</p>
+    <p class="caption tick" data-r style="--d:.14s">Prototype development at IIT Madras.</p>
+  </div>
+</section>
+
+<!-- ================= S7 · IN THE NEWS ================= -->
+<section class="news" id="news" aria-labelledby="h-news">
+  <div class="container">
+    <h2 id="h-news" data-r>In the News</h2>
+    <div class="press" data-r style="--d:.06s">
+      <p class="chip"><span class="etname">The Economic Times</span></p>
+      <p class="chip"><img class="n18" src="assets/press-news18.jpg" alt="News18" width="866" height="650" loading="lazy" decoding="async"></p>
+      <p class="chip"><img class="mc" src="assets/press-moneycontrol.png" alt="Moneycontrol" width="301" height="167" loading="lazy" decoding="async"></p>
+    </div>
+    <div class="stat-grid" data-r style="--d:.12s">
+      <div class="stat">
+        <div class="n">~<span data-count="3">3</span> <small>hrs</small></div>
+        <div class="l">Kolkata to Chennai</div>
       </div>
-      <div class="reveal">
-        <a class="contact-mail" href="mailto:fly@waterfly.blue">fly@waterfly.blue</a>
-        <div class="contact-row">
-          <a class="link-arrow" href="https://www.linkedin.com/company/waterfly" rel="noopener">Waterfly on LinkedIn
-            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 L13 3 M6 3 h7 v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
+      <div class="stat">
+        <div class="n">~Rs <span data-count="600">600</span></div>
+        <div class="l">projected fare</div>
+      </div>
+      <div class="stat">
+        <div class="n"><span data-count="10">10</span><small>×</small></div>
+        <div class="l">cheaper than air freight</div>
       </div>
     </div>
-  </section>
+    <div class="attrib" data-r style="--d:.16s">
+      <p class="caption tick">As reported by News18.</p>
+      <p class="caption tick">Design shared by Anand Mahindra — Economic Times.</p>
+    </div>
+    <p class="legal">Press names and logos are the property of their respective publications. Coverage does not imply endorsement.</p>
+  </div>
+</section>
+
+<!-- ================= S8 · VISION + CONTACT ================= -->
+<section class="vision" id="contact" aria-labelledby="h-vision">
+  <img src="assets/render-dawn.jpg" width="2560" height="1440" loading="lazy" decoding="async"
+       alt="WIG craft flying toward the horizon at sunset">
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="container">
+    <h2 id="h-vision" data-r>A Cost You Cannot Imagine</h2>
+    <p class="lead" data-r style="--d:.08s">Our mission is to offer high speed sustainable marine transportation at a cost you cannot imagine.</p>
+    <div class="btns" data-r style="--d:.16s">
+      <a class="btn btn-p" href="mailto:fly@waterfly.blue?subject=Enquiry%20-%20Waterfly%20Technologies">Write to Us
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-g" href="https://www.linkedin.com/company/waterfly" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer>
-  <div class="container foot-inner">
-    <span class="foot-brand">
-      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-        <ellipse cx="14.5" cy="13" rx="10.5" ry="3.4" transform="rotate(-24 14.5 13)" fill="#E4572E" opacity=".85"/>
-        <ellipse cx="25.5" cy="13" rx="10.5" ry="3.4" transform="rotate(24 25.5 13)" fill="#E4572E" opacity=".85"/>
-        <ellipse cx="15.5" cy="19" rx="8.6" ry="2.7" transform="rotate(-38 15.5 19)" fill="#C4400F" opacity=".6"/>
-        <ellipse cx="24.5" cy="19" rx="8.6" ry="2.7" transform="rotate(38 24.5 19)" fill="#C4400F" opacity=".6"/>
-        <path d="M20 9.5c1.3 4 1.3 18-.001 27.5-1.3-9.5-1.3-23.5.001-27.5Z" fill="#0C2340"/>
-        <circle cx="20" cy="7.6" r="2.5" fill="#0C2340"/>
-      </svg>
-      <span>&#169; 2026 Waterfly Technologies. IIT Madras incubated.</span>
-    </span>
-    <span>waterflytechnologies.com</span>
+  <div class="container ft">
+    <div class="ft-brand">
+      <img src="assets/logo.png" alt="" width="526" height="474">
+      <span>&copy; 2026 Waterfly Technologies. IIT Madras incubated.</span>
+    </div>
+    <address>NBCC Building, IIT Madras Thaiyur Campus, Chennai 603103</address>
+    <p>
+      <a href="mailto:fly@waterfly.blue?subject=Enquiry%20-%20Waterfly%20Technologies">fly@waterfly.blue</a>
+      <span class="dot">&middot;</span>
+      <a href="https://www.linkedin.com/company/waterfly" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
   </div>
 </footer>
 
 <script>
-(function(){
-  var root=document.documentElement;
-  root.classList.add('js');
-  // entrance reveals
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var items=document.querySelectorAll('.reveal');
-  if(!reduce && 'IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}
-      });
-    },{threshold:.14,rootMargin:'0px 0px -6% 0px'});
-    items.forEach(function(el){io.observe(el);});
-  }else{
-    items.forEach(function(el){el.classList.add('in-view');});
+(function () {
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* ----- header state ----- */
+  var hd = document.getElementById('hd');
+  function onScrollHd() {
+    if (window.scrollY > 24) { hd.classList.add('on'); } else { hd.classList.remove('on'); }
   }
-  // nav shadow after scroll
-  var nav=document.querySelector('.nav');
-  var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>8);};
-  window.addEventListener('scroll',onScroll,{passive:true});
-  onScroll();
-  // scroll-spy: underline the section currently in view
-  var links=document.querySelectorAll('.nav-links a[href^="#"]');
-  var map={};
-  links.forEach(function(a){
-    var id=a.getAttribute('href').slice(1);
-    var sec=document.getElementById(id);
-    if(sec){map[id]=a;}
-  });
-  if('IntersectionObserver' in window){
-    var spy=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting && map[e.target.id]){
-          links.forEach(function(a){a.classList.remove('active');});
-          map[e.target.id].classList.add('active');
+  window.addEventListener('scroll', onScrollHd, { passive: true });
+  onScrollHd();
+
+  /* ----- mobile menu: close on link click / Esc / outside click ----- */
+  var menu = document.getElementById('menu');
+  if (menu) {
+    [].slice.call(menu.querySelectorAll('a')).forEach(function (a) {
+      a.addEventListener('click', function () { menu.removeAttribute('open'); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { menu.removeAttribute('open'); }
+    });
+    document.addEventListener('click', function (e) {
+      if (!menu.contains(e.target)) { menu.removeAttribute('open'); }
+    });
+  }
+
+  /* ----- scroll reveals (with safety net) ----- */
+  var revealEls = [].slice.call(document.querySelectorAll('[data-r]'));
+  if (rm.matches || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+    /* safety: never leave in-view content hidden */
+    window.setTimeout(function () {
+      revealEls.forEach(function (el) {
+        if (!el.classList.contains('in') && el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add('in');
         }
       });
-    },{rootMargin:'-40% 0px -55% 0px'});
-    Object.keys(map).forEach(function(id){spy.observe(document.getElementById(id));});
+    }, 2500);
   }
-})();
+
+  /* ----- count-up stats (markup already holds final values) ----- */
+  var counters = [].slice.call(document.querySelectorAll('[data-count]'));
+  function fmt(v, comma) {
+    v = Math.round(v);
+    return comma ? String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ',') : String(v);
+  }
+  if (!rm.matches && 'IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) { return; }
+        cio.unobserve(e.target);
+        var el = e.target;
+        var target = parseFloat(el.getAttribute('data-count'));
+        var comma = el.hasAttribute('data-comma');
+        var t0 = null;
+        var dur = 1100;
+        function step(t) {
+          if (!t0) { t0 = t; }
+          var p = Math.min((t - t0) / dur, 1);
+          var ease = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmt(target * ease, comma);
+          if (p < 1) { requestAnimationFrame(step); }
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) { cio.observe(el); });
+  }
+
+  /* ----- hero video: play only in view, honour reduced motion ----- */
+  var vid = document.querySelector('.hero video');
+  if (vid) {
+    if (rm.matches) {
+      vid.removeAttribute('autoplay');
+      vid.pause();
+    } else if ('IntersectionObserver' in window) {
+      var vio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            var p = vid.play();
+            if (p && p.catch) { p.catch(function () {}); }
+          } else {
+            vid.pause();
+          }
+        });
+      }, { threshold: 0.1 });
+      vio.observe(vid);
+    }
+  }
+
+  /* ----- S6 ambient ocean loop: lazy load + play on approach, pause offscreen ----- */
+  var ov = document.getElementById('oceanVid');
+  if (ov && !rm.matches && 'IntersectionObserver' in window) {
+    var oio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var p = ov.play();
+          if (p && p.catch) { p.catch(function () {}); }
+        } else {
+          ov.pause();
+        }
+      });
+    }, { rootMargin: '25% 0px', threshold: 0.05 });
+    oio.observe(ov);
+  }
+}());
 </script>
 </body>
 </html>
