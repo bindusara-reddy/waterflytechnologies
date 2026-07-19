@@ -603,8 +603,11 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:2.6rem 0
 
 <!-- ================= S6 · PROOF ================= -->
 <section class="flight" id="flight" aria-labelledby="h-flight">
-  <img id="oceanVid" src="assets/render-chase.jpg" width="2560" height="1440" loading="lazy" decoding="async"
-       alt="Rendering of a Waterfly craft flying metres above open water, its shadow on the sea below">
+  <video id="flightVid" muted loop playsinline preload="none"
+         poster="assets/render-chase.jpg" width="2560" height="1440"
+         aria-label="Animation of a Waterfly craft flying metres above open water">
+    <source src="assets/loop-chase.mp4" type="video/mp4">
+  </video>
   <div class="scrim" aria-hidden="true"></div>
   <div class="container">
     <p class="sx" data-r>05 · Proof</p>
@@ -725,6 +728,22 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:2.6rem 0
         }
       });
     }, 2500);
+  }
+
+  /* ----- Flying Today loop: lazy load + play on approach, pause offscreen ----- */
+  var fv = document.getElementById('flightVid');
+  if (fv && !rm.matches && 'IntersectionObserver' in window) {
+    var fio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var p = fv.play();
+          if (p && p.catch) { p.catch(function () {}); }
+        } else {
+          fv.pause();
+        }
+      });
+    }, { rootMargin: '25% 0px', threshold: 0.05 });
+    fio.observe(fv);
   }
 
   /* ----- count-up stats (markup already holds final values) ----- */
