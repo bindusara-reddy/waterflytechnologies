@@ -333,6 +333,14 @@ h1,h2{font-family:"Space Grotesk","Inter",sans-serif;font-weight:600;line-height
 .news .stat .n small{color:var(--ink-2)}
 .news .stat .l{color:var(--ink-2)}
 .attrib{margin-top:1.6rem;text-align:center;display:grid;gap:.45rem;justify-items:center}
+a.chip{text-decoration:none;transition:transform .25s ease,box-shadow .25s ease}
+a.chip:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(10,30,60,.12)}
+.xcard{display:block;max-width:660px;margin:2.2rem auto 0;padding:1.4rem 1.6rem;border:1px solid rgba(16,42,67,.14);border-radius:16px;background:#fff;text-decoration:none;color:inherit;transition:transform .25s ease,box-shadow .25s ease}
+.xcard:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(10,30,60,.12)}
+.xhead{display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:#41586D}
+.xhead svg{width:18px;height:18px;fill:#0F1419;flex:none}
+.xcard blockquote{margin:.8rem 0;font-size:1.02rem;line-height:1.55;color:#102A43}
+.xlink{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#2563EB}
 .legal{margin-top:2.2rem;text-align:center;font-size:.72rem;color:#41586D}
 @media (max-width:719px){.news .stat-grid{grid-template-columns:1fr}}
 
@@ -625,10 +633,18 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:2.6rem 0
   <div class="container">
     <h2 id="h-news" data-r>In the News</h2>
     <div class="press" data-r style="--d:.06s">
-      <p class="chip"><span class="etname">The Economic Times</span></p>
-      <p class="chip"><img class="n18" src="assets/press-news18.jpg" alt="News18" width="866" height="650" loading="lazy" decoding="async"></p>
-      <p class="chip"><img class="mc" src="assets/press-moneycontrol.png" alt="Moneycontrol" width="301" height="167" loading="lazy" decoding="async"></p>
+      <a class="chip" href="https://economictimes.indiatimes.com/magazines/panache/anand-mahindra-blown-away-by-iit-madras-startups-futuristic-seaglidercalls-its-design-stunning/articleshow/118569952.cms" target="_blank" rel="noopener noreferrer"><span class="etname">The Economic Times</span></a>
+      <a class="chip" href="https://www.news18.com/viral/kolkata-to-chennai-in-just-3-hours-at-just-rs-600-anand-mahindra-is-amazed-too-ws-ab-9241064.html" target="_blank" rel="noopener noreferrer"><img class="n18" src="assets/press-news18.jpg" alt="News18 article: Kolkata to Chennai in 3 hours at Rs 600" width="866" height="650" loading="lazy" decoding="async"></a>
+      <a class="chip" href="https://www.moneycontrol.com/technology/chennai-kolkata-in-3-hours-for-rs-600-iit-m-incubated-startup-s-e-flying-boat-unveiled-article-12940594.html" target="_blank" rel="noopener noreferrer"><img class="mc" src="assets/press-moneycontrol.png" alt="Moneycontrol article: e-flying boat unveiled" width="301" height="167" loading="lazy" decoding="async"></a>
     </div>
+    <a class="xcard" data-r style="--d:.09s" href="https://x.com/anandmahindra/status/1894303707162186061" target="_blank" rel="noopener noreferrer">
+      <div class="xhead">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.2h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.2h7.59l5.24 6.93ZM17.61 20.64h2.04L6.49 3.28H4.3Z"/></svg>
+        <span><b>Anand Mahindra</b> · Chairman, Mahindra Group</span>
+      </div>
+      <blockquote>&ldquo;IIT Madras promises to rival silicon valley in terms of nurturing startups&hellip;! Almost every week there&rsquo;s news of a new &lsquo;TechVenture&rsquo;. What I like about this one is not just the promise of exploitation of our vast waterways, but the fact that the design of the craft is stunning!&rdquo;</blockquote>
+      <span class="xlink">View on X &rarr;</span>
+    </a>
     <div class="stat-grid" data-r style="--d:.12s">
       <div class="stat">
         <div class="n">~<span data-count="3">3</span> <small>hrs</small></div>
@@ -645,7 +661,7 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:2.6rem 0
     </div>
     <div class="attrib" data-r style="--d:.16s">
       <p class="caption tick">As reported by News18.</p>
-      <p class="caption tick">Design shared by Anand Mahindra — Economic Times.</p>
+      
     </div>
     <p class="legal">Press names and logos are the property of their respective publications. Coverage does not imply endorsement.</p>
   </div>
