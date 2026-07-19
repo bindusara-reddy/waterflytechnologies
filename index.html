@@ -264,7 +264,7 @@ h1,h2{font-family:"Space Grotesk","Inter",sans-serif;font-weight:600;line-height
   position:relative;aspect-ratio:2560/1200;border-radius:var(--radius);overflow:hidden;
   box-shadow:0 30px 80px -40px rgba(10,26,42,.35);background:var(--sea);
 }
-.cushion img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cushion img,.cushion video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .anno{position:absolute;inset:0;width:100%;height:100%}
 .cushion figcaption{margin-top:1.1rem;text-align:center}
 .arc{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round}
@@ -346,7 +346,7 @@ a.chip:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(10,30,60,.12
 
 /* ---------- S8 vision ---------- */
 .vision{position:relative;min-height:92vh;min-height:92svh;display:flex;align-items:center;overflow:hidden;background:#F6F1E7}
-.vision>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vision>img,.vision>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vision .scrim{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,247,240,.94) 0%,rgba(250,247,240,.62) 48%,rgba(250,247,240,.18) 80%,rgba(250,247,240,0) 100%)}
 .vision .container{position:relative;z-index:1;text-align:center;padding-block:8rem}
 .vision h2{font-size:clamp(2.6rem,6.4vw,5rem);max-width:12em;margin-inline:auto}
@@ -547,8 +547,11 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:2.6rem 0
   <div class="container">
     <figure class="cushion" data-r style="--d:.12s">
       <div class="frame">
-        <img src="assets/render-flow.jpg" width="2560" height="1200" loading="lazy" decoding="async"
-             alt="Flow visualization: streamlines compress beneath the craft, forming the air cushion">
+        <video class="lazyloop" muted loop playsinline preload="none"
+         poster="assets/render-flow.jpg" width="2560" height="1200"
+         aria-label="Animated flow visualization: streamlines compress beneath the craft, forming the air cushion">
+    <source data-src="assets/loop-flow.mp4" type="video/mp4">
+  </video>
         <svg class="anno" viewBox="0 0 1280 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
           <g class="dim" stroke-dasharray="none">
             <path d="M600,262 V392"/>
@@ -563,8 +566,11 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:2.6rem 0
     </figure>
     <figure class="cushion" data-r style="--d:.1s">
       <div class="frame">
-        <img src="assets/render-afloat.jpg" width="2560" height="1440" loading="lazy" decoding="async"
-             alt="Craft at rest on the water at dusk, wingtips folded down with floats touching the surface">
+        <video class="lazyloop" muted loop playsinline preload="none"
+         poster="assets/render-afloat.jpg" width="2560" height="1440"
+         aria-label="Craft at rest on the water at dusk, wingtips folded down with floats touching the surface">
+    <source data-src="assets/loop-afloat.mp4" type="video/mp4">
+  </video>
       </div>
       <figcaption class="caption tick">Hull-borne: wings fold, floats down.</figcaption>
     </figure>
@@ -669,8 +675,11 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:2.6rem 0
 
 <!-- ================= S8 · VISION + CONTACT ================= -->
 <section class="vision" id="contact" aria-labelledby="h-vision">
-  <img src="assets/render-dawn.jpg" width="2560" height="1440" loading="lazy" decoding="async"
-       alt="WIG craft flying toward the horizon at sunset">
+  <video class="lazyloop" muted loop playsinline preload="none"
+         poster="assets/render-dawn.jpg" width="2560" height="1440"
+         aria-label="WIG craft flying toward the horizon at sunset">
+    <source data-src="assets/loop-dawn.mp4" type="video/mp4">
+  </video>
   <div class="scrim" aria-hidden="true"></div>
   <div class="container">
     <h2 id="h-vision" data-r>A Cost You Cannot Imagine</h2>
