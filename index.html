@@ -487,8 +487,11 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:2.6rem 0
 
 <!-- ================= S3 · THE CRAFT ================= -->
 <section class="craft dark" id="craft" aria-labelledby="h-craft">
-  <img class="bgimg" src="assets/render-studio.jpg" width="2560" height="1600" loading="lazy" decoding="async"
-       alt="3D render of blended wing body cargo craft with 30 m wingspan">
+  <video class="bgimg lazyloop" muted loop playsinline preload="none"
+         poster="assets/render-studio.jpg" width="2560" height="1600"
+         aria-label="3D render of blended wing body cargo craft with 30 m wingspan">
+    <source data-src="assets/loop-studio.mp4" type="video/mp4">
+  </video>
   <div class="shade" aria-hidden="true"></div>
   <div class="container craft-top">
     <p class="sx" data-r>02 · The Craft</p>
@@ -730,20 +733,23 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:2.6rem 0
     }, 2500);
   }
 
-  /* ----- Flying Today loop: lazy load + play on approach, pause offscreen ----- */
-  var fv = document.getElementById('flightVid');
-  if (fv && !rm.matches && 'IntersectionObserver' in window) {
-    var fio = new IntersectionObserver(function (entries) {
+  /* ----- render loops: lazy source attach + play on approach, pause offscreen ----- */
+  var loops = [].slice.call(document.querySelectorAll('video.lazyloop, #flightVid'));
+  if (loops.length && !rm.matches && 'IntersectionObserver' in window) {
+    var lio = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
+        var v = e.target;
         if (e.isIntersecting) {
-          var p = fv.play();
+          var s = v.querySelector('source[data-src]');
+          if (s) { s.src = s.getAttribute('data-src'); s.removeAttribute('data-src'); v.load(); }
+          var p = v.play();
           if (p && p.catch) { p.catch(function () {}); }
         } else {
-          fv.pause();
+          v.pause();
         }
       });
     }, { rootMargin: '25% 0px', threshold: 0.05 });
-    fio.observe(fv);
+    loops.forEach(function (v) { lio.observe(v); });
   }
 
   /* ----- count-up stats (markup already holds final values) ----- */
